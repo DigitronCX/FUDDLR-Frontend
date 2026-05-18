@@ -1,0 +1,95 @@
+import { IconArrowUpRight, IconCheckbox } from "@tabler/icons-react";
+import Image from "next/image";
+
+const features = [
+    {
+        title: "Trading Portal for Retailers",
+        desc: "A simple, intuitive ordering portal that lets you browse.",
+    },
+    {
+        title: "Secure Payment System",
+        desc: "Access wholesale pricing designed to support healthy.",
+    },
+    {
+        title: "Low or No Bulky MOQ’s",
+        desc: "Flexible order quantities that let you manage cash.",
+    },
+];
+
+export default function SectionRetailers() {
+    return (
+        <section className="relative bg-background py-12 sm:py-16 lg:py-20 overflow-hidden">
+
+            {/* Background blobs (hide some on mobile) */}
+            {/* <div className="z-0 hidden sm:block">
+                <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20" />
+                <div className="absolute top-25 left-40 size-10 bg-accent rounded-md opacity-20" />
+                <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20" />
+                <div className="absolute bottom-5 left-1/4 size-24 bg-linear-to-t to-background from-accent rounded-xl opacity-20" />
+                <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand rounded-2xl opacity-40" />
+                <div className="absolute bottom-1/7 right-5 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
+                <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand rounded-md opacity-40" />
+            </div> */}
+
+            <div className="px-4 sm:px-8 lg:px-14 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
+
+                {/* IMAGE */}
+                <div className="relative flex flex-col items-center justify-center order-1 lg:order-0">
+                    <Image
+                        src="/Sections/Retailers.png"
+                        alt="FUDDLR dashboard"
+                        width={650}
+                        height={500}
+                        className="w-[85%] sm:w-[70%] lg:w-[80%] h-auto drop-shadow-xl lg:-rotate-2 z-10"
+                    />
+                    {/* Glow */}
+                    <div className="absolute top-0 left-10 h-32 sm:h-40 w-full bg-accent blur-2xl rounded-full opacity-30" />
+                    <div className="absolute bottom-0 left-10 h-32 sm:h-40 w-full bg-accent blur-2xl rounded-full opacity-20" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="order-2 lg:order-0 text-center lg:text-left relative z-10">
+
+                    <p className="text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] text-primary mb-2 sm:mb-3 font-poppins">
+                        BUILD FOR RETAILERS
+                    </p>
+
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl text-secondary mb-3 font-youngSerif leading-tight">
+                        Your <span className="text-brand">Trusted</span> Wholesale <br /> Partner
+                    </h2>
+
+                    <p className="text-foreground mb-6 sm:mb-8 text-sm sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Delivering quality products worldwide with dependable margins.
+                    </p>
+
+                    {/* Feature List */}
+                    <div className="space-y-5 sm:space-y-6">
+                        {features.map((item, i) => (
+                            <div key={i} className="flex items-start gap-3 sm:gap-5 text-left">
+
+                                <div className="bg-brand rounded-full p-1 sm:p-2.5 shrink-0">
+                                    <IconCheckbox className="text-white size-3 sm:size-4" />
+                                </div>
+
+                                <div>
+                                    <h4 className="text-md sm:text-lg text-secondary mb-2 font-youngSerif font-light">
+                                        {item.title}
+                                    </h4>
+                                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </div>
+
+                            </div>
+                        ))}
+                    </div>
+
+                    <button className="mt-5 px-2 text-sm sm:text-base sm:px-10 flex gap-2 py-2 sm:py-2 bg-brand rounded-4xl cursor-pointer border-4 border-transparent text-white hover:border-brand/80 hover:text-white transition-colors z-20">
+                        Lets Begin <IconArrowUpRight className="text-white" />
+                    </button>
+                </div>
+
+            </div>
+        </section>
+    );
+}

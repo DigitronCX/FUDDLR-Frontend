@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --brand: #00b679;
+  --primary: #232323;
+  --secondary: #333333;
+  /* --accent: #8ecc14; */
+  --accent: #5798b8;
+  --tertiary: #003121;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-brand: var(--brand);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-tertiary: var(--tertiary);
+  --color-foreground: var(--foreground);
+  --font-youngSerif: var(--font-youngSerif);
+  --font-poppins: var(--font-poppins);
+  --font-unbounded: var(--font-unbounded);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  color: var(--brand);
+  color: var(--secondary);
+  color: var(--tertiary);
+  color: var(--accent);
+  font-family: var(--font-poppins);
+}
+
+@layer components {
+  .inp-primary {
+    @apply w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400;
+  }
+
+  .btn-primary {
+    @apply px-2 text-sm sm:text-base sm:px-8 py-2 sm:py-4 font-medium bg-brand rounded-4xl cursor-pointer border border-transparent text-white hover:border-brand/80 hover:text-white transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-2 text-sm sm:text-base sm:px-8 flex gap-2 py-2 sm:py-4 font-medium bg-transparent rounded-4xl cursor-pointer border border-brand text-foreground hover:border-accent/80 hover:bg-brand hover:text-white transition-colors;
+  }
+
+  .btn {
+    @apply px-2 text-sm sm:text-base sm:px-4 flex gap-2 py-2 sm:py-2 bg-foreground rounded-4xl cursor-pointer border-4 border-transparent text-white hover:border-brand/80 hover:text-white transition-colors;
+  }
+}
