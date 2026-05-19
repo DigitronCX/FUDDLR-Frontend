@@ -104,13 +104,13 @@ export default function WholesaleSteps() {
                 </div>
 
                 {/* RIGHT SIDE */}
-                <div className="relative flex items-center justify-center order-1 lg:order-2">
+                <div className="md:relative hidden md:flex items-center justify-center order-1 lg:order-2">
                     <Image
                         src="/Sections/Steps.png"
                         alt="Steps"
                         width={700}
                         height={700}
-                        className="w-full absolute -top-72 max-w-[450px] object-contain"
+                        className="w-full md:absolute md:-top-72 max-w-[250px] md:max-w-[450px] object-contain"
                         priority
                     />
                 </div>

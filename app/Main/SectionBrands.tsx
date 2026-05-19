@@ -70,7 +70,7 @@ export default function SectionFuddlerBrands() {
                         </div>
 
                         {/* RIGHT IMAGE */}
-                        <div className="relative flex justify-center lg:justify-end flex-1">
+                        <div className="mt-8 md:mt-0 relative flex justify-center lg:justify-end flex-1">
                             <div className="bg-brand w-[86%] ml-auto h-full rounded-3xl p-2 absolute inset-0 z-0 " />
                             <div className="z-10 rounded-3xl relative top-5">
                                 <Image
