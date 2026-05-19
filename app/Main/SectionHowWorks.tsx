@@ -95,7 +95,7 @@ export default function SectionHowWorks() {
                         <div className="mt-4 sm:mt-10 mx-auto">
                             <Link
                                 href="/contact-us"
-                                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1"
+                                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                             >
                                 <span
                                     className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"
@@ -148,7 +148,7 @@ export default function SectionHowWorks() {
                         <div className="mt-4 sm:mt-10 mx-auto">
                             <Link
                                 href="/contact-us"
-                                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#6c4ce4] border border-[#6c4ce4] px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1"
+                                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#6c4ce4] border border-[#6c4ce4] px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                             >
                                 <span
                                     className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"

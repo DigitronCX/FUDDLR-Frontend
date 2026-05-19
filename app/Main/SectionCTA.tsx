@@ -83,7 +83,7 @@ export default function SectionCTA() {
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact-us"
-                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                                 >
                                     <span
                                         className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover/button:translate-y-0"
@@ -153,7 +153,7 @@ export default function SectionCTA() {
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact-us"
-                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#5d3fd2] border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#5d3fd2] border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                                 >
                                     <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover/button:translate-y-0"></span>
 
