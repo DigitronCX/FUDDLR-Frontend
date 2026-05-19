@@ -1,197 +1,252 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const categories = [
-    {
-        id: 1,
-        name: "Treats",
-        bg: "#f5ede0",
-        image: "/Product/Product-1.png",
-    },
-    {
-        id: 2,
-        name: "Dry Food",
-        bg: "#eaf4ea",
-        image: "/Product/Product-2.png",
-    },
-    {
-        id: 3,
-        name: "Ice Cream",
-        bg: "#f5f5f5",
-        image: "/Product/Product-3.png",
-    },
-    {
-        id: 4,
-        name: "Butters & Buttons",
-        bg: "#e8f4fd",
-        image: "/Product/Product-4.png",
-    },
-    {
-        id: 5,
-        name: "Wet Food",
-        bg: "#fdeaea",
-        image: "/Product/Product-5.png",
-    },
-    {
-        id: 6,
-        name: "Supplements",
-        bg: "#fff8e1",
-        image: "/Product/Product-6.png",
-    },
+    { id: 1, name: "Ice Creams", bg: "#f5ede0", image: "/Product/Product-1.png" },
+    { id: 2, name: "Supplements", bg: "#eaf4ea", image: "/Product/Supplements.png" },
+    { id: 3, name: "Treats", bg: "#f5f5f5", image: "/Product/Treats.png" },
+    { id: 4, name: "Ice Creams", bg: "#e8f4fd", image: "/Product/Product-1.png" },
+    { id: 5, name: "Wet Food", bg: "#fdeaea", image: "/Product/Wet.png" },
+    { id: 6, name: "Dry Food", bg: "#fff8e1", image: "/Product/DryFood.png" },
 ];
 
-const SLOTS = [
-    { translateX: -400, scale: 0.70, zIndex: 1, opacity: 0.55 }, // -2
-    { translateX: -220, scale: 0.85, zIndex: 2, opacity: 0.80 }, // -1
-    { translateX: 0, scale: 1.00, zIndex: 3, opacity: 1.00 }, //  0 active
-    { translateX: 220, scale: 0.85, zIndex: 2, opacity: 0.80 }, // +1
-    { translateX: 400, scale: 0.70, zIndex: 1, opacity: 0.55 }, // +2
-];
+const N = categories.length;
+const CARD_W = 300;   // px — base card width
+const STEP = CARD_W * 0.76; // horizontal spacing between card centres
 
-const CARD_W = 350; // base card width in px
+function cardStyle(offset: number): React.CSSProperties {
+    const abs = Math.min(Math.abs(offset), 2.5);
+    const scale = 1 - abs * 0.145;
+    const opacity = 1 - abs * 0.245;
+    const zIndex = Math.round(30 - abs * 10);
+    const tx = offset * STEP;
+    const shadow = abs < 0.3
+        ? "0 20px 50px rgba(0,0,0,0.18)"
+        : "0 6px 20px rgba(0,0,0,0.09)";
+
+    return {
+        position: "absolute",
+        left: "50%",
+        width: CARD_W,
+        borderRadius: 20,
+        overflow: "hidden",
+        willChange: "transform, opacity",
+        transform: `translateX(calc(-50% + ${tx}px)) scale(${scale})`,
+        opacity,
+        zIndex,
+        boxShadow: shadow,
+    };
+}
 
 export default function CategoryCarousel() {
-    const [active, setActive] = useState(2);
-    const n = categories.length;
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: true,
+        startIndex: 0,
+        align: "center",
+        duration: 28,         // lower = snappier
+        skipSnaps: false,
+    });
 
-    const prev = () => setActive((i) => (i - 1 + n) % n);
-    const next = () => setActive((i) => (i + 1) % n);
+    const [offsets, setOffsets] = useState<number[]>(() =>
+        categories.map((_, i) => i)   // initial: 0,1,2,3,4,5
+    );
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
-    // Build visible slots: offsets -2 … +2
-    const slots = [-2, -1, 0, 1, 2].map((offset, si) => ({
-        cat: categories[(active + offset + n) % n],
-        offset,
-        cfg: SLOTS[si],
-    }));
+    const syncOffsets = useCallback(() => {
+        if (!emblaApi) return;
+
+        const progress = emblaApi.scrollProgress();
+        const snapList = emblaApi.scrollSnapList();
+
+        const next: number[] = snapList.map((snap) => {
+            let diff = snap - progress;
+            if (diff > 0.5) diff -= 1;
+            if (diff < -0.5) diff += 1;
+            return diff * N;
+        });
+
+        setOffsets(next);
+    }, [emblaApi]);
+
+    const syncSelected = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        emblaApi.on("scroll", syncOffsets);
+        emblaApi.on("select", syncSelected);
+        emblaApi.on("reInit", syncOffsets);
+        syncOffsets();
+        syncSelected();
+        return () => {
+            emblaApi.off("scroll", syncOffsets);
+            emblaApi.off("select", syncSelected);
+            emblaApi.off("reInit", syncOffsets);
+        };
+    }, [emblaApi, syncOffsets, syncSelected]);
+
+    /* ── Controls ────────────────────────────────────────────────────────── */
+    const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+    const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
 
     return (
-        <div className="px-4 py-10 sm:px-6 lg:p-20 flex flex-col items-start justify-center min-h-screen overflow-hidden">
+        <section className="px-4 py-10 sm:px-6 lg:p-20 flex flex-col items-start justify-center min-h-screen overflow-hidden">
 
-            {/* Header */}
-            <div className="flex flex-col items-start justify-center space-y-4 text-foreground w-full">
+            {/* ── Header ─────────────────────────────────────────────────────── */}
+            <div className="flex flex-col items-start space-y-4 text-foreground w-full">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif leading-tight">
                     Our <span className="text-brand">Categories</span>
                 </h1>
 
                 <p className="text-sm sm:text-base max-w-2xl">
-                    Explore our curated selection of the most loved products,
-                    chosen by pet parents like you.
+                    Gain access to unique brands available at exclusive wholesale pricing for approved retailers, grocery, groomers, breeders, vet and pet services.
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-5 mt-4 w-full sm:w-auto">
-                    <button className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 text-sm font-medium bg-brand rounded-4xl cursor-pointer border border-transparent text-white hover:border-brand/80 transition-colors">
-                        Login to browse our range
-                    </button>
+                    <Link
+                        href="/contact-us"
+                        className="group relative inline-flex items-center justify-center overflow-hidden
+                       rounded-full bg-brand/20 border border-brand
+                       px-4 sm:px-2 lg:px-8 py-3 md:py-4
+                       transition-all duration-300 hover:-translate-y-1"
+                    >
+                        <span className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                        <span className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs">
+                            Login to browse our range
+                        </span>
+                    </Link>
 
-                    <button className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 text-sm font-medium bg-transparent rounded-4xl cursor-pointer border border-brand text-brand hover:border-tertiary/80 hover:bg-background/70 duration-500 hover:text-secondary capitalize transition-all">
-                        New customer? Apply Here
-                    </button>
+                    <Link
+                        href="/contact-us"
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                    >
+                        <span className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                        <span className="relative z-10 font-semibold text-secondary transition-colors duration-300 group-hover:text-white text-xs">
+                            New customer? Apply Here
+                        </span>
+                    </Link>
                 </div>
             </div>
 
-            {/* Desktop Carousel */}
-            <div
-                   className="hidden md:flex mt-20 relative items-center justify-center w-full overflow-visible"
-                 style={{ height: 340 }}
-            >
-                {slots.map(({ cat, offset, cfg }) => {
-                    const isActive = offset === 0;
+            {/* ── Desktop — Coverflow Visual Layer ────────────────────────────── */}
+            <div className="hidden md:block w-full mt-20">
 
-                    return (
-                        <div
-                            key={`${cat.id}-${offset}`}
-                            onClick={() => {
-                                if (offset < 0) prev();
-                                if (offset > 0) next();
-                            }}
-                            style={{
-                                position: "absolute",
-                                left: "50%",
-                                transform: `translateX(calc(-50% + ${cfg.translateX}px)) scale(${cfg.scale})`,
-                                zIndex: cfg.zIndex,
-                                // opacity: cfg.opacity,
-                                width: CARD_W,
-                                transition: "transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.45s ease, box-shadow 0.45s ease",
-                                borderRadius: 20,
-                                overflow: "hidden",
-                                boxShadow: isActive
-                                    ? "0 20px 50px rgba(0,0,0,0.18)"
-                                    : "0 6px 20px rgba(0,0,0,0.10)",
-                                cursor: isActive ? "default" : "pointer",
-                            }}
-                        >
-                            {/* Image area */}
-                            <div className={`flex items-center justify-center transition-[height] duration-450 ease-in-out ${isActive ? 'h-[300px]' : 'h-[220px]'}`}>
-                                <Image
-                                    width={200}
-                                    height={200}
-                                    src={cat.image}
-                                    alt={cat.name}
-                                    className={`transition-all object-cover duration-450 ease ${isActive ? "w-full h-full" : "w-full h-full"
-                                        }`}
-                                />
-                            </div>
-
-                            {/* Label */}
-                            <div
-                                className={`text-white bg-[#f6ffe6] px-5 py-8 text-center font-semibold tracking-[0.02em] leading-[1.3] ${isActive ? "text-lg" : "text-sm"}`}
-                            // style={{
-                            //     background: isActive ? "#4db8d4" : "#6acce0",
-                            //     padding: isActive ? "18px 16px" : "14px 12px",
-                            //     textAlign: "center",
-                            //     transition: "all 0.3s ease",
-                            // }}
-                            >
-                                <p
-                                    className={`text-secondary font-bold tracking-[0.02em] leading-[1.3] ${isActive ? "text-2xl" : "text-base"
-                                        }`}>
-                                    {cat.name}
-                                </p>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-
-
-            {/* Mobile Carousel */}
-            <div className="md:hidden w-full mt-10">
-                <div className="relative w-full max-w-[320px] mx-auto rounded-2xl overflow-hidden shadow-lg bg-white">
-                    <div className="h-[250px]">
-                        <Image
-                            width={350}
-                            height={250}
-                            src={categories[active].image}
-                            alt={categories[active].name}
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-
-                    <div className="bg-[#f6ffe6] py-6 text-center">
-                        <p className="text-secondary text-xl font-bold">
-                            {categories[active].name}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            {/* ── Arrow + dot controls ── */}
-            <div className="flex mx-auto items-center gap-6 mt-20">
-                <button
-                    onClick={prev}
-                    aria-label="Previous"
-                    style={{
-                        width: 40, height: 40, borderRadius: "50%",
-                        border: "2px solid #d1d5db", background: "#fff",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        cursor: "pointer", transition: "border-color 0.2s, color 0.2s",
-                        color: "#9ca3af",
-                    }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#4db8d4"; (e.currentTarget as HTMLButtonElement).style.color = "#4db8d4"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#d1d5db"; (e.currentTarget as HTMLButtonElement).style.color = "#9ca3af"; }}
+                {/* Hidden Embla scroll container — captures drag but renders nothing */}
+                <div
+                    ref={emblaRef}
+                    className="overflow-hidden"
+                    style={{ height: 0, visibility: "hidden", pointerEvents: "none" }}
+                    aria-hidden="true"
                 >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="flex">
+                        {categories.map((cat) => (
+                            <div key={cat.id} className="flex-none" style={{ width: CARD_W }} />
+                        ))}
+                    </div>
+                </div>
+
+                <div
+                    className="relative flex items-center justify-center w-full select-none"
+                    style={{ height: 360 }}
+                    onPointerDown={(e) => {
+                        const root = emblaApi?.rootNode();
+                        if (!root) return;
+                        root.dispatchEvent(new PointerEvent("pointerdown", {
+                            clientX: e.clientX,
+                            clientY: e.clientY,
+                            pointerId: e.pointerId,
+                            pointerType: e.pointerType,
+                            bubbles: true,
+                            cancelable: true,
+                        }));
+                    }}
+                >
+                    {categories.map((cat, i) => {
+                        const offset = offsets[i] ?? i;
+                        const absOffset = Math.abs(offset);
+                        const isActive = absOffset < 0.4;
+
+                        if (absOffset > 2.7) return null;
+
+                        const imgScale = 0.82 + (1 - 0.82) * Math.max(0, 1 - absOffset);
+
+                        return (
+                            <div
+                                key={cat.id}
+                                style={{
+                                    ...cardStyle(offset),
+                                    cursor: isActive ? "grab" : "pointer",
+                                }}
+                                onClick={() => {
+                                    if (!isActive) scrollTo(i);
+                                }}
+                            >
+                                {/* Image */}
+                                <div
+                                    className="relative overflow-hidden"
+                                    style={{ height: 260, background: cat.bg }}
+                                >
+                                    <Image
+                                        width={CARD_W}
+                                        height={260}
+                                        src={cat.image}
+                                        alt={cat.name}
+                                        draggable={false}
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "cover",
+                                            transformOrigin: "center top",
+                                            // transform: `scale(${imgScale})`,
+                                            // transition: "transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)",
+                                            pointerEvents: "none",
+                                            userSelect: "none",
+                                        }}
+                                    />
+                                </div>
+
+                                {/* Label */}
+                                <div className="bg-[#f6ffe6] px-4 py-5 text-center">
+                                    <p
+                                        className="text-[#2d6a4f] tracking-[0.02em] leading-snug"
+                                        style={{
+                                            fontSize: isActive ? 20 : 14,
+                                            fontWeight: isActive ? 700 : 600,
+                                            transition: "font-size 0.35s ease",
+                                        }}
+                                    >
+                                        {cat.name}
+                                    </p>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* ── Mobile — Embla native full-width slider ──────────────────────── */}
+            <MobileCarousel selectedIndex={selectedIndex} scrollTo={scrollTo} />
+
+            {/* ── Arrow + Dot Controls ─────────────────────────────────────────── */}
+            <div className="flex mx-auto items-center gap-6 mt-16">
+
+                <button
+                    onClick={scrollPrev}
+                    aria-label="Previous category"
+                    className="w-10 h-10 rounded-full border-2 border-gray-200 bg-white
+                     flex items-center justify-center cursor-pointer text-gray-400
+                     transition-colors duration-200
+                     hover:border-[#4db8d4] hover:text-[#4db8d4]"
+                >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 18 9 12 15 6" />
                     </svg>
                 </button>
@@ -201,39 +256,84 @@ export default function CategoryCarousel() {
                     {categories.map((_, i) => (
                         <button
                             key={i}
-                            onClick={() => setActive(i)}
+                            onClick={() => scrollTo(i)}
                             aria-label={`Go to ${categories[i].name}`}
+                            className="border-none cursor-pointer p-0 rounded-full transition-all duration-300"
                             style={{
-                                borderRadius: 9999,
                                 height: 10,
-                                width: i === active ? 24 : 10,
-                                background: i === active ? "#4db8d4" : "#d1d5db",
-                                border: "none",
-                                cursor: "pointer",
-                                transition: "all 0.3s ease",
-                                padding: 0,
+                                width: i === selectedIndex ? 24 : 10,
+                                background: i === selectedIndex ? "#4db8d4" : "#d1d5db",
                             }}
                         />
                     ))}
                 </div>
 
                 <button
-                    onClick={next}
-                    aria-label="Next"
-                    style={{
-                        width: 40, height: 40, borderRadius: "50%",
-                        border: "2px solid #d1d5db", background: "#fff",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        cursor: "pointer", transition: "border-color 0.2s, color 0.2s",
-                        color: "#9ca3af",
-                    }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#4db8d4"; (e.currentTarget as HTMLButtonElement).style.color = "#4db8d4"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#d1d5db"; (e.currentTarget as HTMLButtonElement).style.color = "#9ca3af"; }}
+                    onClick={scrollNext}
+                    aria-label="Next category"
+                    className="w-10 h-10 rounded-full border-2 border-gray-200 bg-white
+                     flex items-center justify-center cursor-pointer text-gray-400
+                     transition-colors duration-200
+                     hover:border-[#4db8d4] hover:text-[#4db8d4]"
                 >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6" />
                     </svg>
                 </button>
+            </div>
+        </section>
+    );
+}
+
+//    MobileCarousel
+function MobileCarousel({
+    selectedIndex,
+    scrollTo,
+}: {
+    selectedIndex: number;
+    scrollTo: (i: number) => void;
+}) {
+    const [mobileRef, mobileApi] = useEmblaCarousel({
+        loop: true,
+        startIndex: selectedIndex,
+        align: "center",
+        duration: 25,
+    });
+
+    /* Mirror desktop selection to mobile */
+    const prevSelectedRef = useRef(selectedIndex);
+    useEffect(() => {
+        if (!mobileApi || selectedIndex === prevSelectedRef.current) return;
+        prevSelectedRef.current = selectedIndex;
+        mobileApi.scrollTo(selectedIndex);
+    }, [mobileApi, selectedIndex]);
+
+    return (
+        <div className="md:hidden w-full mt-10">
+            <div
+                ref={mobileRef}
+                className="overflow-hidden w-full max-w-[320px] mx-auto rounded-2xl shadow-lg"
+            >
+                <div className="flex touch-pan-y">
+                    {categories.map((cat) => (
+                        <div key={cat.id} className="flex-none w-full">
+                            <div className="h-[250px]" style={{ background: cat.bg }}>
+                                <Image
+                                    width={320}
+                                    height={250}
+                                    src={cat.image}
+                                    alt={cat.name}
+                                    draggable={false}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="bg-[#f6ffe6] py-6 text-center">
+                                <p className="text-[#2d6a4f] text-xl font-bold">{cat.name}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

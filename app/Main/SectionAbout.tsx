@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SectionAbout() {
     return (
@@ -36,15 +37,15 @@ export default function SectionAbout() {
                 {/* RIGHT: Content */}
                 <div>
                     <h2 className="text-4xl md:text-5xl mb-6 text-secondary font-youngSerif">
-                        About <span className="text-green-500">Fuddlr</span>
+                        About <span className="text-green-500">FUDDLR</span>
                     </h2>
 
                     <p className="text-primary mb-4 font-light leading-relaxed text-sm sm:text-base">
-                        FUDDLR is a pet supplies distribution business supplying trusted, high-quality brands to retailers worldwide. From day one, our focus has been simply to make it easy for retailers to discover, order, and stock products that their customers will love.
+                        FUDDLR is a pet supplies distribution business supplying trusted, high quality brands to retailers worldwide. From day one, our focus has been simply to make it easy for retailers to discover, order, and stock products that their customers will love.
                     </p>
 
                     <p className="text-primary mb-6 font-light leading-relaxed text-sm sm:text-base">
-                        We work closely with selected brands that align with our values of quality, transparency, and thoughtful nutrition. We don’t just list products, we actively support brands by helping them grow within our retail network.
+                        We work closely with selected brands that align with our values of quality, transparency, and thoughtful nutrition. We don t just list products, we actively support brands by helping them grow within our retail network.
                     </p>
                     <div className="flex flex-wrap gap-5 mb-8">
                         <div className="flex items-center gap-2">
@@ -60,9 +61,20 @@ export default function SectionAbout() {
                             <p className="text-base text-secondary font-youngSerif">Competitive</p>
                         </div>
                     </div>
-                    <button className="px-4 text-sm sm:text-sm sm:px-10 py-2 sm:py-4 font-medium bg-brand rounded-4xl cursor-pointer border border-transparent text-white hover:border-brand/80 hover:text-white transition-colors">
-                        About Us
-                    </button>
+                    <Link
+                        href="/contact-us"
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                    >
+                        <span
+                            className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                        ></span>
+
+                        <span
+                            className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                        >
+                            About Us
+                        </span>
+                    </Link>
                 </div>
             </div>
 

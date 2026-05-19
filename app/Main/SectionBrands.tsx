@@ -1,21 +1,22 @@
 import { IconBuildingStore, IconCheck, IconCurrencyDollar } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const cardsData = [
     {
         icon: IconCurrencyDollar,
         title: "Competitive Wholesale Pricing",
-        description: "Maximize margins while remaining competitive & attractive.",
+        description: "Maximise margins while remaining competitive & attractive.",
     },
     {
         icon: IconBuildingStore,
-        title: "Active In-Store Advocacy",
-        description: "Engage retailers in-person to educate, promote & place your products effect.",
+        title: "Active In Store Advocacy",
+        description: "Engage retailers in person to educate, promote & place.",
     },
     {
         icon: IconCheck,
-        title: "Tailored Brand Support",
-        description: "Sales consulting & brand-building services (POA) to strengthen market positioning.",
+        title: "Tailored Brand Building",
+        description: "Sales consulting & brand building services (POA) to strengthen market positioning.",
     }
 ]
 export default function SectionFuddlerBrands() {
@@ -30,59 +31,78 @@ export default function SectionFuddlerBrands() {
                     </p>
 
                     <h2 className="text-3xl lg:text-5xl font-youngSerif text-gray-800 mb-2">
-                        <span className="text-brand">FUDDLR</span> For Brands
+                        <span className="text-brand">FUDDLR </span> For Brands
                     </h2>
 
-                    <p className="text-primary leading-relaxed mb-10 text-sm sm:text-base">
+                    <p className="text-primary leading-relaxed mb-10 text-sm sm:text-base max-w-3xl">
                         Every brand we consider is evaluated based on product integrity, market fit, and growth opportunity within our retail network. Our focus is on building a portfolio that retailers trust and customers return to.
                     </p>
 
-                    {/* CARDS */}
-                    <div className="grid sm:grid-cols-3 gap-2 mb-2 w-full ">
-                        {
-                            cardsData.map((data, index) => (
-                                <div className="bg-[#f6ffe6] w-full rounded-2xl px-4 py-6" key={index}>
-                                    <div className="flex justify-center md:justify-end mb-4">
-                                        <div className="text-brand size-10 flex items-center justify-center">
-                                            <data.icon className="size-8" />
+                    <section className="grid lg:grid-cols-[2fr_1.1fr] items-start gap-2 mb-2 w-full">
+                        <div className="flex flex-col justify-between h-full">
+                            {/* CARDS */}
+                            <div className="grid sm:grid-cols-3 gap-2 mb-4 w-full h-full ">
+                                {
+                                    cardsData.map((data, index) => (
+                                        <div className="bg-[#f6ffe6] w-full h-full rounded-2xl px-4 py-6" key={index}>
+                                            <div className="flex justify-center md:justify-end mb-4">
+                                                <div className="text-brand size-10 flex items-center justify-center">
+                                                    <data.icon className="size-8" />
+                                                </div>
+                                            </div>
+                                            <h3 className="font-youngSerif text-lg sm:text-xl text-secondary mb-2">
+                                                {data.title}
+                                            </h3>
+                                            <p className="text-xs sm:text-sm text-secondary">
+                                                {data.description}
+                                            </p>
                                         </div>
-                                    </div>
-                                    <h3 className="font-youngSerif text-lg sm:text-xl text-secondary mb-2">
-                                        {data.title}
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-secondary">
-                                        {data.description}
-                                    </p>
-                                </div>
-                            ))
-                        }
-                    </div>
+                                    ))
+                                }
+                            </div>
 
-                    {/* NOTE */}
-                    <div className="bg-[#f6ffe6] rounded-xl px-6 py-4 flex items-center gap-3 mb-8">
-                        <p className="text-secondary text-sm sm:text-lg">
-                            Additional services are offered on a tailored, POA basis where required.
-                        </p>
-                    </div>
+                            {/* NOTE */}
+                            <div className="bg-[#f6ffe6] rounded-xl px-6 py-4 flex items-center gap-3">
+                                <p className="text-secondary text-sm sm:text-lg">
+                                    Additional services are offered on a tailored, POA basis where required.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* RIGHT IMAGE */}
+                        <div className="relative flex justify-center lg:justify-end flex-1">
+                            <div className="bg-brand w-[86%] ml-auto h-full rounded-3xl p-2 absolute inset-0 z-0 " />
+                            <div className="z-10 rounded-3xl relative top-5">
+                                <Image
+                                    width={600}
+                                    height={600}
+                                    src="/Sections/Brands.png"
+                                    alt="Products"
+                                    className="h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </section>
 
                     {/* BUTTON */}
-                    <button className="px-8 text-sm sm:text-sm sm:px-8 py-2 sm:py-4 font-medium bg-brand rounded-4xl cursor-pointer border border-transparent text-white hover:border-brand/80 hover:text-white transition-colors">
-                        BRANDS APPLY HERE
-                    </button>
-                </div>
+                    <div className="mt-8">
+                        <Link
+                            href="/contact-us"
+                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                        >
+                            <span
+                                className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                            ></span>
 
-                {/* RIGHT IMAGE */}
-                <div className="relative flex justify-center lg:justify-end flex-1">
-                    <div className="bg-brand rounded-3xl p-2">
-                        <Image
-                            width={400}
-                            height={400}
-                            src="/Sections/Brands.png"
-                            alt="Products"
-                            className="w-[400px] object-contain"
-                        />
+                            <span
+                                className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                            >
+                                BRANDS APPLY HERE
+                            </span>
+                        </Link>
                     </div>
                 </div>
+
             </div>
 
         </section>

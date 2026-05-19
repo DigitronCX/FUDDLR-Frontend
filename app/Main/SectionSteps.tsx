@@ -6,6 +6,7 @@ import {
     IconShoppingCartPlus,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const steps = [
     {
@@ -65,12 +66,12 @@ export default function WholesaleSteps() {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="font-bold text-black/80 text-lg md:text-xl leading-snug mb-2">
+                                <h3 className="font-bold text-black/80 text-lg md:text-xl leading-snug mb-2 max-w-57">
                                     {step.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-gray-600 text-sm md:text-xs font-light leading-relaxed">
+                                <p className="text-gray-800 text-sm md:text-xs font-light leading-relaxed">
                                     {step.desc}
                                 </p>
                             </div>
@@ -79,10 +80,27 @@ export default function WholesaleSteps() {
 
                     {/* Button */}
                     <div className="mt-8 md:mt-10 flex justify-center">
-                        <button className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium bg-brand rounded-full cursor-pointer border border-transparent text-white hover:border-brand/80 transition-colors flex gap-2 items-center">
+
+                        <Link
+                            href="/contact-us"
+                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                        >
+                            <span
+                                className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"
+                            ></span>
+
+                            <span
+                                className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs flex gap-2 items-center"
+                            >
+                                Apply Now <IconArrowUpRight size={20} />
+                            </span>
+                        </Link>
+
+                        {/* <button className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium bg-brand rounded-full cursor-pointer border border-transparent text-white hover:border-brand/80 transition-colors flex gap-2 items-center">
                             Apply Now <IconArrowUpRight size={20} />
-                        </button>
+                        </button> */}
                     </div>
+
                 </div>
 
                 {/* RIGHT SIDE */}
@@ -92,7 +110,7 @@ export default function WholesaleSteps() {
                         alt="Steps"
                         width={700}
                         height={700}
-                        className="w-full max-w-[400px] object-contain"
+                        className="w-full absolute -top-72 max-w-[450px] object-contain"
                         priority
                     />
                 </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // app/components/HowItWorks.tsx
 export default function SectionHowWorks() {
     const retailerFeatures = [
@@ -5,7 +7,7 @@ export default function SectionHowWorks() {
             id: "1",
             title: "Competitive wholesale pricing",
             description:
-                "Access competitive wholesale pricing designed margins while staying competitive in today's retail market.",
+                "Access competitive wholesale pricing designed margins while staying competitive in today s retail market",
         },
         {
             id: "2",
@@ -23,19 +25,19 @@ export default function SectionHowWorks() {
 
     const brandFeatures = [
         {
-            id: "4",
+            id: "1",
             title: "Access to retailer network",
             description: "Get your products stocked by trusted retailers across Australia through our growing distribution network.",
         },
         {
-            id: "5",
+            id: "2",
             title: "Sales & distribution support",
             description: "We manage sales, logistics, and retailer relationships to help your brand scale efficiently nationwide.",
         },
         {
-            id: "6",
+            id: "3",
             title: "Australia-wide reach",
-            description: "Expand beyond local markets and reach customers nationwide with our scalable distribution and retail network.",
+            description: "Expand beyond local markets and reach customers nationwide with our scalable distribution and retail network",
         },
     ];
 
@@ -44,7 +46,7 @@ export default function SectionHowWorks() {
             <div className="mx-auto px-6">
                 {/* Heading */}
                 <div className="text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#2E2E2E]">
+                    <h2 className="text-4xl md:text-5xl font-youngSerif text-[#2E2E2E]">
                         How It{" "}
                         <span className="text-emerald-500">
                             Works
@@ -73,7 +75,7 @@ export default function SectionHowWorks() {
                             </h3>
                         </div>
 
-                        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+                        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ">
                             {retailerFeatures.map((item) => (
                                 <div key={item.id} className="flex gap-2 items-start">
                                     <div className="shrink-0 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">
@@ -84,17 +86,32 @@ export default function SectionHowWorks() {
                                             {item.title}
                                         </h4>
 
-                                        <p className="text-[10px] leading-[18px] text-gray-600">
+                                        <p className="text-[10px] font-medium leading-[18px] text-gray-600">
                                             {item.description}
                                         </p>
                                     </div>
                                 </div>
                             ))}
                         </div>
+                        <div className="mt-4 sm:mt-10 mx-auto">
+                            <Link
+                                href="/contact-us"
+                                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1"
+                            >
+                                <span
+                                    className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                                ></span>
 
-                        <button className="mt-10 rounded-full bg-emerald-500 px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium text-white transition hover:bg-emerald-600 mx-auto">
+                                <span
+                                    className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                                >
+                                    Apply Now
+                                </span>
+                            </Link>
+                        </div>
+                        {/* <button className="mt-10 rounded-full bg-emerald-500 px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium text-white transition hover:bg-emerald-600 mx-auto">
                             Apply Now →
-                        </button>
+                        </button> */}
                     </div>
 
                     {/* Brands */}
@@ -109,7 +126,7 @@ export default function SectionHowWorks() {
                             </h3>
                         </div>
 
-                        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                             {brandFeatures.map((item) => (
                                 <div key={item.id} className="flex gap-2 items-start">
 
@@ -121,7 +138,7 @@ export default function SectionHowWorks() {
                                             {item.title}
                                         </h4>
 
-                                        <p className="text-[10px] text-gray-600 leading-[18px]">
+                                        <p className="text-[10px] font-medium text-gray-600 leading-[18px]">
                                             {item.description}
                                         </p>
                                     </div>
@@ -129,9 +146,25 @@ export default function SectionHowWorks() {
                             ))}
                         </div>
 
-                        <button className="mt-10 rounded-full bg-violet-500 px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium text-white transition hover:bg-violet-600 w-fit mx-auto ">
+                        <div className="mt-4 sm:mt-10 mx-auto">
+                            <Link
+                                href="/contact-us"
+                                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#6c4ce4] px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1"
+                            >
+                                <span
+                                    className="absolute inset-0 translate-y-full bg-[#6c4ce4] transition-transform duration-500 ease-out group-hover:translate-y-0"
+                                ></span>
+
+                                <span
+                                    className="relative z-10 font-semibold text-[#6c4ce4] transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                                >
+                                    Get Started
+                                </span>
+                            </Link>
+                        </div>
+                        {/* <button className="mt-10 rounded-full bg-violet-500 px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium text-white transition hover:bg-violet-600 w-fit mx-auto ">
                             Get Started →
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

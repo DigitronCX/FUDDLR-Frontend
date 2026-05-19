@@ -10,11 +10,9 @@ const logos = [
     "/Logo/logoipsum-422.png",
 ]
 const Text = [
-    "Dog Between Premium Brands",
+    "Dog Premium Brands",
     "100% Australian owned",
-    "No Minimum Orders",
-    "Low MOQ",
-    "Distributor Pricing",
+    "Low MOQ Distributor Pricing",
     "Fast Dispatch",
 ]
 const BrandMarquee = () => {

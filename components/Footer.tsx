@@ -5,15 +5,22 @@ import Link from "next/link";
 
 const Mainlinks = [
     { name: "Home", path: "/" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Our Story", path: "/our-story" },
-    { name: "Contact", path: "/contact-us" },
+    { name: "About", path: "/" },
+    { name: "Products", path: "/" },
+    { name: "Contact", path: "/" },
+];
+
+const OtherPages = [
+    { name: "FAQ's", path: "/" },
+    { name: "Our Brands", path: "/" },
+    { name: "Brands Apply Here", path: "/" },
+    { name: "Wholesale Application", path: "/" },
 ];
 
 const QuickLinks = [
     // { name: "Company", path: "/" },
+    { name: "Terms & Conditions", path: "/" },
     { name: "Privacy Policy", path: "/" },
-    { name: "Terms and Conditions", path: "/" },
     // { name: "About", path: "/about-us" },
 ];
 
@@ -24,7 +31,7 @@ const Contactus = [
     },
     {
         icon: IconMail,
-        text: "fuddler@outlook.com",
+        text: "fuddlr@outlook.com",
     },
     {
         icon: IconClock,
@@ -38,7 +45,7 @@ const Contactus = [
 const Followus = [
     {
         icon: IconBrandFacebook,
-        path: "https://www.fuddler.com.au/"
+        path: "https://www.fuddlr.com.au/"
     },
     {
         icon: IconBrandInstagram,
@@ -51,7 +58,7 @@ const Footer = () => {
             {/* Grid layout responsive */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12">
                 {/* ---- Logo ---- */}
-                <section className="flex items-start flex-col gap-2 uppercase max-w-11/12">
+                <section className="flex items-start flex-col gap-2 max-w-11/12">
                     <Image
                         src="/Logo/LogoWhite.png"
                         alt="Logo"
@@ -59,8 +66,11 @@ const Footer = () => {
                         height={200}
                         className="w-32 h-auto object-contain"
                     />
-                    <p className="text-sm capitalize tracking-wider leading-relaxed">
-                        Your ultimate destination for authentic New Zealand-made products and gifts. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, deleniti.
+                    <p className="text-sm tracking-wider font-normal leading-relaxed">
+                        Delivering high quality pet nutrition and
+                        innovative products designed to help
+                        pets live healthier, happier lives, with
+                        quality you can trust.
                     </p>
                     <div>
                         <ul className="space-y-2 text-sm capitalize pt-3 flex gap-2">
@@ -92,12 +102,12 @@ const Footer = () => {
                         ))}
                     </ul>
                 </section>
-                {/* ---- Quick Links ---- */}
+                {/* ---- Other Pages ---- */}
                 <section>
-                    <h6 className="font-bold uppercase text-white">Company</h6>
+                    <h6 className="font-bold uppercase text-white">Other Links</h6>
                     <hr className="my-2 border-gray-200/30" />
                     <ul className="space-y-2">
-                        {QuickLinks.map((item, index) => (
+                        {OtherPages.map((item, index) => (
                             <li key={index}>
                                 <Link
                                     href={item.path}
@@ -152,11 +162,11 @@ const Footer = () => {
                 <hr className="border-gray-200/10" />
                 <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3 pt-6 text-sm">
                     <p>
-                        © {new Date().getFullYear()} FUDDLER. All
+                        {new Date().getFullYear()} © FUDDLR {new Date().getFullYear()}. All
                         Rights Reserved.
                     </p>
                     <p>
-                        Developed by{" "}
+                        Powered by{" "}
                         <Link
                             target="_blank"
                             href="https://digitroncx.com/"

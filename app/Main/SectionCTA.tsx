@@ -4,6 +4,7 @@ import { useState } from "react";
 import BrandCTA from "./BrandCTA";
 import RetailersCTA from "./RetailersCTA";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SectionCTA() {
     const [activeTab, setActiveTab] = useState("brands");
@@ -17,8 +18,8 @@ export default function SectionCTA() {
             </h2>
 
             <p className="text-gray-600 max-w-xl mx-auto mb-8">
-                Getting started with Fuddlr is quick and easy. Simply sign up,
-                explore our wide range of products
+                Getting started with FUDDLR is quick and easy. Simply sign up, explore our
+                wide range of products
             </p>
 
             {/* Tabs */}
@@ -75,13 +76,30 @@ export default function SectionCTA() {
                             </h2>
 
                             <p className="text-sm text-[#4a4a4a] mt-2">
-                                Stock carefully selected premium pet brands that attract
-                                customers, build trust, and drives revenue.
+                                Stock carefully selected premium pet
+                                brands that attract customers, build
+                                trust, and drives revenue.
                             </p>
 
-                            <button className="mt-8 rounded-full bg-[#00b67a] px-7 py-3 text-xs font-medium text-white transition hover:bg-[#009f6a]">
+                            <div className="mt-4 sm:mt-8">
+                                <Link
+                                    href="/contact-us"
+                                    className=" group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <span
+                                        className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                                    ></span>
+
+                                    <span
+                                        className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                                    >
+                                        Apply to Stock Our Brands
+                                    </span>
+                                </Link>
+                            </div>
+                            {/* <button className="mt-8 rounded-full bg-[#00b67a] px-7 py-3 text-xs font-medium text-white transition hover:bg-[#009f6a]">
                                 Apply to Stock Our Brands
-                            </button>
+                            </button> */}
                         </div>
 
                         {/* Image */}
@@ -127,13 +145,26 @@ export default function SectionCTA() {
                             </h2>
 
                             <p className="text-sm text-[#4a4a4a] mt-2">
-                                We position your brand to sell through compelling storytelling
-                                and strategic retail partnerships.
+                                We position your brand to sell through
+                                compelling storytelling and strategic
+                                retail partnerships.
                             </p>
+                            <div className="mt-4 sm:mt-8">
+                                <Link
+                                    href="/contact-us"
+                                    className=" group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <span
+                                        className="absolute inset-0 translate-y-full bg-[#5d3fd2] transition-transform duration-500 ease-out group-hover:translate-y-0"
+                                    ></span>
 
-                            <button className="mt-7 rounded-full bg-[#6c4ce4] px-7 py-3 text-xs font-medium text-white transition hover:bg-[#5d3fd2]">
-                                Apply for Distribution
-                            </button>
+                                    <span
+                                        className="relative z-10 font-semibold text-[#5d3fd2] transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                                    >
+                                        Apply for Distribution
+                                    </span>
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Product Image */}
@@ -150,10 +181,6 @@ export default function SectionCTA() {
                 </div>
             </section>
 
-            {/* Floating Scroll Button */}
-            <button className="fixed bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-full border border-[#00b67a] bg-white text-[#00b67a] shadow-md transition hover:bg-[#00b67a] hover:text-white">
-                ↑
-            </button>
             {/* </main> */}
             {/* <div className="px-14">
         {activeTab === "retailers" && <RetailersCTA />}

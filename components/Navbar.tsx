@@ -41,16 +41,33 @@ const Navbar = () => {
 
                 {/* ---------- Contact Btn ---------- */}
                 <section className="hidden md:flex items-center gap-3">
-                    <Link href="/contact-us">
-                        <button className="px-2 text-sm sm:text-xs sm:px-3 flex gap-2 py-3 border font-medium bg-background rounded-3xl cursor-pointer text-brand hover:text-white hover:bg-brand transition-colors">
+                    <Link
+                        href="/contact-us"
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand/20 border border-brand px-4 sm:px-8 py-3 transition-all duration-300 hover:-translate-y-1"
+                    >
+                        <span
+                            className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                        ></span>
+
+                        <span
+                            className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-sm sm:text-xs"
+                        >
                             Brands Apply Here
-                        </button>
+                        </span>
                     </Link>
-                    {/* <span className="hidden md:block border-l h-6 border-gray-700"></span> */}
-                    <Link href="/contact-us">
-                        <button className="px-2 text-sm sm:text-xs sm:px-3 flex gap-2 py-3 font-medium bg-brand rounded-3xl cursor-pointer text-white">
+                    <Link
+                        href="/contact-us"
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-8 py-3 transition-all duration-300 hover:-translate-y-1"
+                    >
+                        <span
+                            className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                        ></span>
+
+                        <span
+                            className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-sm sm:text-xs"
+                        >
                             Retailers Sign in
-                        </button>
+                        </span>
                     </Link>
                 </section>
 

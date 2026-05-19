@@ -3,6 +3,7 @@ import { Poppins, Young_Serif, Unbounded } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import JumpToTop from "@/components/JumpToTop";
 
 const youngSerif = Young_Serif({
   variable: "--font-youngSerif",
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="font-poppins min-h-full flex flex-col">
         <Navbar />
         {children}
+        <JumpToTop />
         <Footer />
       </body>
     </html>
