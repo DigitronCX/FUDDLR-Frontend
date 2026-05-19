@@ -45,7 +45,7 @@ export default function SectionAbout() {
                     </p>
 
                     <p className="text-primary mb-6 font-light leading-relaxed text-sm sm:text-base">
-                        We work closely with selected brands that align with our values of quality, transparency, and thoughtful nutrition. We don t just list products, we actively support brands by helping them grow within our retail network.
+                        We work closely with selected brands that align with our values of quality, transparency, and thoughtful nutrition. We don&apos;t just list products, we actively support brands by helping them grow within our retail network.
                     </p>
                     <div className="flex flex-wrap gap-5 mb-8">
                         <div className="flex items-center gap-2">

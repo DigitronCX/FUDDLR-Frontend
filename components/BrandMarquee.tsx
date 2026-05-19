@@ -10,7 +10,6 @@ const logos = [
     "/Logo/logoipsum-422.png",
 ]
 const Text = [
-    "Dog Premium Brands",
     "100% Australian owned",
     "Low MOQ Distributor Pricing",
     "Fast Dispatch",
