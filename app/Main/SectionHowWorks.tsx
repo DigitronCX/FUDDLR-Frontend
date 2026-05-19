@@ -7,7 +7,7 @@ export default function SectionHowWorks() {
             id: "1",
             title: "Competitive wholesale pricing",
             description:
-                "Access competitive wholesale pricing designed margins while staying competitive in today s retail market",
+                "Access wholesale pricing that maximises margins and keeps you competitive.",
         },
         {
             id: "2",
@@ -19,7 +19,7 @@ export default function SectionHowWorks() {
             id: "3",
             title: "Easy bulk ordering",
             description:
-                "Place bulk orders quickly through a simple, efficient platform built for seamless wholesale purchasing experience.",
+                "Place bulk orders quickly through a simple, seamless wholesale platform.",
         },
     ];
 
@@ -27,17 +27,17 @@ export default function SectionHowWorks() {
         {
             id: "1",
             title: "Access to retailer network",
-            description: "Get your products stocked by trusted retailers across Australia through our growing distribution network.",
+            description: "Get your products stocked by trusted retailers globally through our growing distribution network.",
         },
         {
             id: "2",
             title: "Sales & distribution support",
-            description: "We manage sales, logistics, and retailer relationships to help your brand scale efficiently nationwide.",
+            description: "We manage sales, logistics, and retailer relationships to help your brand scale efficiently.",
         },
         {
             id: "3",
-            title: "Australia-wide reach",
-            description: "Expand beyond local markets and reach customers nationwide with our scalable distribution and retail network",
+            title: "Global wide reach",
+            description: "Expand beyond local markets and reach customers worldwide with our scalable distribution and retail network",
         },
     ];
 
@@ -58,9 +58,8 @@ export default function SectionHowWorks() {
                 <div className="relative mt-16 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-40">
                     {/* Divider */}
                     <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gray-300">
-                        <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-600">
-                            OR
-                        </div>
+                        {/* <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-600">
+                        </div>  */}
                     </div>
 
                     {/* Retailers */}
