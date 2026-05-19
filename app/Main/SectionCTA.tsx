@@ -46,10 +46,9 @@ export default function SectionCTA() {
       </div> */}
 
             {/* Content Switch */}
-            {/* <main className="min-h-screen bg-[#f5f5f5] px-6 py-16"> */}
             <section className="mx-auto grid gap-5 lg:grid-cols-2">
                 {/* Retailers Card */}
-                <div className="relative h-fit overflow-hidden rounded-[28px] bg-[#dfe8e5] py-5 sm:px-8 px-4">
+                <div className="relative h-fit overflow-hidden rounded-[28px] bg-[#dfe8e5] py-5 sm:px-8 px-4 group/image">
                     <div className="grid h-full items-center gap-4 md:grid-cols-[1fr_260px]">
                         {/* Content */}
                         <div className="max-w-md text-start">
@@ -81,17 +80,17 @@ export default function SectionCTA() {
                                 trust, and drives revenue.
                             </p>
 
-                            <div className="mt-4 sm:mt-8">
+                            <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact-us"
-                                    className=" group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
                                 >
                                     <span
-                                        className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                                        className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover/button:translate-y-0"
                                     ></span>
 
                                     <span
-                                        className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                                        className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover/button:text-white text-xs sm:text-xs"
                                     >
                                         Apply to Stock Our Brands
                                     </span>
@@ -103,7 +102,7 @@ export default function SectionCTA() {
                         </div>
 
                         {/* Image */}
-                        <div className="relative h-[200px] md:h-[330px] overflow-hidden rounded-[36px]">
+                        <div className="relative h-[200px] md:h-[330px] overflow-hidden rounded-[36px] group-hover/image:scale-105 transition-transform duration-500 ease-out">
                             <Image
                                 src="/Sections/Cta-One.png"
                                 alt="Dog treats"
@@ -115,7 +114,7 @@ export default function SectionCTA() {
                 </div>
 
                 {/* Brands Card */}
-                <div className="relative h-fit overflow-hidden rounded-[28px] bg-[#ebe6f6] py-5 sm:px-8 px-4">
+                <div className="relative h-fit overflow-hidden rounded-[28px] bg-[#ebe6f6] py-5 sm:px-8 px-4 group">
                     {/* Purple Shape */}
                     <div className="absolute bottom-[-140px] right-[-80px] h-[360px] w-[360px] rounded-full bg-[#b8a4f3]" />
 
@@ -149,18 +148,16 @@ export default function SectionCTA() {
                                 compelling storytelling and strategic
                                 retail partnerships.
                             </p>
-                            <div className="mt-4 sm:mt-8">
+
+                            {/* Button Group */}
+                            <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact-us"
-                                    className=" group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
                                 >
-                                    <span
-                                        className="absolute inset-0 translate-y-full bg-[#5d3fd2] transition-transform duration-500 ease-out group-hover:translate-y-0"
-                                    ></span>
+                                    <span className="absolute inset-0 translate-y-full bg-[#5d3fd2] transition-transform duration-500 ease-out group-hover/button:translate-y-0"></span>
 
-                                    <span
-                                        className="relative z-10 font-semibold text-[#5d3fd2] transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
-                                    >
+                                    <span className="relative z-10 font-semibold text-[#5d3fd2] transition-colors duration-300 group-hover/button:text-white text-xs sm:text-xs">
                                         Apply for Distribution
                                     </span>
                                 </Link>
@@ -168,7 +165,7 @@ export default function SectionCTA() {
                         </div>
 
                         {/* Product Image */}
-                        <div className="relative h-[200px] md:h-[330px] flex items-center justify-center">
+                        <div className="relative h-[200px] md:h-[330px] flex items-center justify-center group-hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/Sections/Cta-Two.png"
                                 alt="Dog treats"

@@ -44,7 +44,7 @@ export default function SectionFuddlerBrands() {
                             <div className="grid sm:grid-cols-3 gap-2 mb-4 w-full h-full ">
                                 {
                                     cardsData.map((data, index) => (
-                                        <div className="bg-[#f6ffe6] w-full h-full rounded-2xl px-4 py-6" key={index}>
+                                        <div className="bg-[#f6ffe6] w-full h-full rounded-2xl px-4 py-6 hover:-translate-y-2 transition-all duration-300 " key={index}>
                                             <div className="flex justify-center md:justify-end mb-4">
                                                 <div className="text-brand size-10 flex items-center justify-center">
                                                     <data.icon className="size-8" />

@@ -52,7 +52,7 @@ export default function WholesaleSteps() {
                         {steps.map((step) => (
                             <div
                                 key={step.id}
-                                className="bg-white rounded-2xl px-4 pt-4 pb-8 shadow-md relative flex flex-col items-center text-center"
+                                className="bg-white rounded-2xl px-4 pt-4 pb-8 shadow-md relative flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-300 cursor-pointer"
                             >
                                 {/* Top */}
                                 <div className="flex items-center relative gap-2 mr-auto pb-10">
@@ -80,7 +80,6 @@ export default function WholesaleSteps() {
 
                     {/* Button */}
                     <div className="mt-8 md:mt-10 flex justify-center">
-
                         <Link
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
