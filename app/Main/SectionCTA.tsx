@@ -83,14 +83,14 @@ export default function SectionCTA() {
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact-us"
-                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
                                 >
                                     <span
-                                        className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover/button:translate-y-0"
+                                        className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover/button:translate-y-0"
                                     ></span>
 
                                     <span
-                                        className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover/button:text-white text-xs sm:text-xs"
+                                        className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover/button:text-brand text-xs sm:text-xs"
                                     >
                                         Apply to Stock Our Brands
                                     </span>
@@ -153,11 +153,11 @@ export default function SectionCTA() {
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact-us"
-                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                                    className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#5d3fd2] border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
                                 >
-                                    <span className="absolute inset-0 translate-y-full bg-[#5d3fd2] transition-transform duration-500 ease-out group-hover/button:translate-y-0"></span>
+                                    <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover/button:translate-y-0"></span>
 
-                                    <span className="relative z-10 font-semibold text-[#5d3fd2] transition-colors duration-300 group-hover/button:text-white text-xs sm:text-xs">
+                                    <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover/button:text-[#5d3fd2] text-xs sm:text-xs">
                                         Apply for Distribution
                                     </span>
                                 </Link>

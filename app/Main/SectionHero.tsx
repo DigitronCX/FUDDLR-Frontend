@@ -40,14 +40,14 @@ const SectionHero = () => {
                         </Link>
                         <Link
                             href="/contact-us"
-                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
+                            className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1"
                         >
                             <span
-                                className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0"
+                                className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"
                             ></span>
 
                             <span
-                                className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs sm:text-xs"
+                                className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs"
                             >
                                 Are you a brand? <span className='underline font-semibold'>Sell on FUDDLR</span>
                             </span>
