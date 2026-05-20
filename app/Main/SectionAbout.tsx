@@ -58,7 +58,7 @@ export default function SectionAbout() {
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="bg-secondary text-white p-1 rounded-4xl w-fit h-fit"></span>
-                            <p className="text-base text-secondary font-youngSerif">Competitive</p>
+                            <p className="text-base text-secondary font-youngSerif">Competitive Pricing</p>
                         </div>
                     </div>
                     <Link

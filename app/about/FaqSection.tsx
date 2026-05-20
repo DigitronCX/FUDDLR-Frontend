@@ -30,12 +30,12 @@ const faqData = [
         answer:
             "We accept major credit/debit cards (Stripe) and local secure online payment options for a smooth and safe checkout experience.",
     },
-    {
-        id: 5,
-        question: "Can I browse products before approval?",
-        answer:
-            "No. All purchases are final as we use 3rd party providers to process orders.",
-    },
+    // {
+    //     id: 5,
+    //     question: "Can I browse products before approval?",
+    //     answer:
+    //         "No. All purchases are final as we use 3rd party providers to process orders.",
+    // },
 ];
 
 const container = {
@@ -73,15 +73,15 @@ const FaqSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="w-full hidden md:flex"
+                className="w-full hidden md:flex bg-accent h-[60%]"
             >
-                <Image
+                {/* <Image
                     src={"/Sections/Faq.png"}
                     width={1000}
                     height={1000}
                     alt="Image"
                     className="h-full w-full object-contain rounded-xl"
-                />
+                /> */}
             </motion.section>
 
             {/* FAQ Section */}
@@ -95,11 +95,11 @@ const FaqSection = () => {
                 <div className="space-y-2">
                     <motion.h5
                         variants={item}
-                        className="text-secondary text-3xl font-youngSerif sm:text-4xl md:text-5xl"
+                        className="text-secondary font-bold text-3xl font-unbounded sm:text-4xl md:text-5xl"
                     >
-                        FAQ
+                        Frequently Asked <span className="text-brand">Questions</span>
                     </motion.h5>
-                    <p className="text-secondary text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea cum.</p>
+                    <p className="text-secondary text-sm">Got questions? We’ve got answers to help you get started and grow your business smoothly.</p>
                 </div>
 
                 <motion.div variants={container} className="grid gap-5">
@@ -112,7 +112,7 @@ const FaqSection = () => {
                                 whileHover={{ scale: 1.02 }}
                                 key={itemData.id}
                                 onClick={() => toggleShow(itemData.id)}
-                                className="flex gap-x-5 py-6 px-4 justify-between border-2 shadow-md shadow-accent/10 border-accent/40 items-start cursor-pointer rounded-3xl bg-background backdrop-blur-sm"
+                                className="flex gap-x-5 py-6 px-4 justify-between border-2 shadow-md shadow-accent/10 border-brand items-start cursor-pointer rounded-3xl bg-background backdrop-blur-sm"
                             >
                                 <div className="flex items-start gap-5 flex-1">
                                     <div className="flex-1">
