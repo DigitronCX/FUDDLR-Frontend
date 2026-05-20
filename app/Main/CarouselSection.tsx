@@ -8,10 +8,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const categories = [
     { id: 1, name: "Ice Creams", bg: "#f5ede0", image: "/Product/Product-1.png" },
     { id: 2, name: "Supplements", bg: "#eaf4ea", image: "/Product/Supplements.webp" },
-    { id: 3, name: "Treats", bg: "#f5f5f5", image: "/Product/Treats.png" },
+    { id: 3, name: "Treats", bg: "#f5f5f5", image: "/Product/Treats.webp" },
     { id: 4, name: "Ice Creams", bg: "#e8f4fd", image: "/Product/Product-1.png" },
     { id: 5, name: "Wet Food", bg: "#fdeaea", image: "/Product/Wet.png" },
-    { id: 6, name: "Dry Food", bg: "#fff8e1", image: "/Product/DryFood.png" },
+    { id: 6, name: "Dry Food", bg: "#fff8e1", image: "/Product/DryFood.webp" },
 ];
 
 const N = categories.length;
@@ -187,8 +187,8 @@ export default function CategoryCarousel() {
                             >
                                 {/* Image */}
                                 <div
-                                    className="relative overflow-hidden bg-black"
-                                    style={{ height: 228, background: cat.bg }}
+                                    className="relative overflow-hidden"
+                                    style={{ height: 260, background: cat.bg }}
                                 >
                                     <Image
                                         width={CARD_W}
@@ -200,8 +200,10 @@ export default function CategoryCarousel() {
                                         style={{
                                             width: "100%",
                                             height: "100%",
+                                            // objectFit: "cover",
+                                            // objectFit: "fill",
                                             objectFit: "contain",
-                                            transformOrigin: "center top",
+                                            // transformOrigin: "center top",
                                             // transform: `scale(${imgScale})`,
                                             transition: "transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)",
                                             pointerEvents: "none",
