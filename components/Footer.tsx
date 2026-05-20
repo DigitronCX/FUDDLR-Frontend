@@ -54,7 +54,8 @@ const Followus = [
 ];
 const Footer = () => {
     return (
-        <footer className="bg-linear-to-b from-brand from-10% to-tertiary font-poppins pt-15 px-6 md:px-12 text-white">
+        // <footer className="bg-linear-to-b bg-brand from-10% to-tertiary font-poppins pt-15 px-6 md:px-12 text-white">
+        <footer className="bg-brand font-poppins pt-15 px-6 md:px-12 text-white">
             {/* Grid layout responsive */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12">
                 {/* ---- Logo ---- */}
