@@ -1,23 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import BrandCTA from "./BrandCTA";
-import RetailersCTA from "./RetailersCTA";
 import Image from "next/image";
 import Link from "next/link";
+import { IconBuildingStore, IconCircleCheck } from "@tabler/icons-react";
 
 export default function SectionCTA() {
-    const [activeTab, setActiveTab] = useState("brands");
 
     return (
-        <section className="text-center py-16 px-6 md:px-14">
+        <section className="text-center py-10 md:py-16 px-4 sm:px-6 md:px-14">
 
-            <h2 className="text-4xl text-secondary md:text-5xl font-semibold mb-4 font-youngSerif">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-secondary font-semibold mb-4 font-youngSerif">
                 Get Started On{" "}
                 <span className="text-brand">FUDDLR</span> Now
             </h2>
 
-            <p className="text-gray-600 max-w-xl mx-auto mb-8">
+            <p className="text-gray-600 max-w-xl mx-auto mb-8 text-sm sm:text-base">
                 Getting started with FUDDLR is quick and easy. Simply sign up, explore our
                 wide range of products
             </p>
@@ -54,20 +51,7 @@ export default function SectionCTA() {
                         <div className="max-w-md text-start">
                             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#00b67a] text-white">
                                 {/* Store Icon */}
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                    className="h-7 w-7"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M3 9l1.5-4.5A2 2 0 016.4 3h11.2a2 2 0 011.9 1.5L21 9m-18 0h18m-1 0v8a2 2 0 01-2 2H6a2 2 0 01-2-2V9m4 4h3m2 0h3"
-                                    />
-                                </svg>
+                                <IconBuildingStore className="h-7 w-7"/>
                             </div>
 
                             <h2 className="font-youngSerif text-2xl sm:text-4xl leading-tight text-[#2c2c2c]">
@@ -123,20 +107,7 @@ export default function SectionCTA() {
                         <div className="text-start">
                             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#6c4ce4] text-white">
                                 {/* Check Icon */}
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                    className="h-7 w-7"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M9 12l2 2 4-4m6 2A9 9 0 1112 3a9 9 0 019 9z"
-                                    />
-                                </svg>
+                                <IconCircleCheck className="h-7 w-7"/>
                             </div>
 
                             <h2 className="font-youngSerif text-2xl sm:text-4xl leading-tight text-[#2c2c2c]">

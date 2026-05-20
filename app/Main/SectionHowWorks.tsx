@@ -43,7 +43,7 @@ export default function SectionHowWorks() {
 
     return (
         <section className="px-6 sm:px-10 py-10 sm:py-16 lg:py-24">
-            <div className="mx-auto px-6">
+            <div className="mx-auto sm:px-6">
                 {/* Heading */}
                 <div className="text-center">
                     <h2 className="text-4xl md:text-5xl font-youngSerif text-[#2E2E2E]">
@@ -69,7 +69,7 @@ export default function SectionHowWorks() {
                                 ⚙
                             </div>
 
-                            <h3 className="text-3xl font-semibold text-[#2E2E2E]">
+                            <h3 className="text-2xl font-youngSerif sm:text-3xl text-[#2E2E2E]">
                                 For Retailers
                             </h3>
                         </div>
@@ -120,7 +120,7 @@ export default function SectionHowWorks() {
                                 ✿
                             </div>
 
-                            <h3 className="text-3xl font-semibold text-[#2E2E2E]">
+                            <h3 className="text-2xl font-youngSerif sm:text-3xl text-[#2E2E2E]">
                                 For Brands
                             </h3>
                         </div>

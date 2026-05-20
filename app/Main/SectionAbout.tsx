@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SectionAbout() {
     return (
-        <section className="w-full bg-white py-10 sm:py-20 px-6 md:px-16 relative z-10 overflow-hidden">
+        <section className="w-full bg-white py-10 sm:py-20 px-4 sm:px-6 md:px-16 relative z-10 overflow-hidden">
 
             <div className="mx-auto grid lg:grid-cols-2 gap-5 items-center">
                 {/* LEFT: Images */}
@@ -21,7 +21,7 @@ export default function SectionAbout() {
                     </div>
 
                     {/* Small Image */}
-                    <div className="absolute bottom-5 sm:bottom-10 lg:bottom-0 left-0 translate-y-1/4 -translate-x-3 size-28 sm:size-34 md:size-42 rounded-2xl overflow-hidden z-30">
+                    <div className="absolute bottom-5 sm:bottom-10 lg:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-28 sm:size-34 md:size-42 rounded-2xl overflow-hidden z-30">
                         <Image
                             src="/Sections/About-Two.png" // replace with your image
                             alt="Dog playing"
@@ -36,7 +36,7 @@ export default function SectionAbout() {
 
                 {/* RIGHT: Content */}
                 <div>
-                    <h2 className="text-4xl md:text-5xl mb-6 text-secondary font-youngSerif">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl mb-6 text-secondary font-youngSerif">
                         About <span className="text-green-500">FUDDLR</span>
                     </h2>
 
@@ -50,15 +50,15 @@ export default function SectionAbout() {
                     <div className="flex flex-wrap gap-5 mb-8">
                         <div className="flex items-center gap-2">
                             <span className="bg-secondary text-white p-1 rounded-4xl w-fit h-fit"></span>
-                            <p className="text-base text-secondary font-youngSerif">Proudly Australian</p>
+                            <p className="text-sm sm:text-base text-secondary font-youngSerif">Proudly Australian</p>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="bg-secondary text-white p-1 rounded-4xl w-fit h-fit"></span>
-                            <p className="text-base text-secondary font-youngSerif">Premium Quality</p>
+                            <p className="text-sm sm:text-base text-secondary font-youngSerif">Premium Quality</p>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="bg-secondary text-white p-1 rounded-4xl w-fit h-fit"></span>
-                            <p className="text-base text-secondary font-youngSerif">Competitive Pricing</p>
+                            <p className="text-sm sm:text-base text-secondary font-youngSerif">Competitive Pricing</p>
                         </div>
                     </div>
                     <Link

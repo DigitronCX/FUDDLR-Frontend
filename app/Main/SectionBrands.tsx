@@ -30,7 +30,7 @@ export default function SectionFuddlerBrands() {
                         GROW YOUR BRAND WITH FUDDLR
                     </p>
 
-                    <h2 className="text-3xl lg:text-5xl font-youngSerif text-gray-800 mb-2">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif text-gray-800 mb-2">
                         <span className="text-brand">FUDDLR </span> For Brands
                     </h2>
 
@@ -53,7 +53,7 @@ export default function SectionFuddlerBrands() {
                                             <h3 className="font-youngSerif text-lg sm:text-xl text-secondary mb-2">
                                                 {data.title}
                                             </h3>
-                                            <p className="text-xs sm:text-sm text-secondary">
+                                            <p className="text-sm sm:text-sm text-secondary">
                                                 {data.description}
                                             </p>
                                         </div>

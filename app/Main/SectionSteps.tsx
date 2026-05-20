@@ -37,11 +37,11 @@ const steps = [
 
 export default function WholesaleSteps() {
     return (
-        <section className="w-full bg-accent py-14 md:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
+        <section className="w-full bg-accent py-10 md:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
             {/* Heading */}
             <div className="mb-12 md:mb-16">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center capitalize font-unbounded leading-tight">
-                    get started in 4 Easy Steps
+                    Get started in 4 Easy Steps
                 </h2>
             </div>
 
@@ -66,7 +66,7 @@ export default function WholesaleSteps() {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="font-bold text-black/80 text-lg md:text-xl leading-snug mb-2 max-w-57">
+                                <h3 className="font-bold text-black/80 text-lg md:text-xl mb-2 max-w-57">
                                     {step.title}
                                 </h3>
 

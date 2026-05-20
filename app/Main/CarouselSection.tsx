@@ -105,7 +105,7 @@ export default function CategoryCarousel() {
                     Our <span className="text-brand">Categories</span>
                 </h1>
 
-                <p className="text-sm sm:text-base max-w-2xl">
+                <p className="text-sm sm:text-sm md:text-base max-w-2xl">
                     Gain access to unique brands available at exclusive wholesale pricing for approved retailers, grocery, groomers, breeders, vet and pet services.
                 </p>
 

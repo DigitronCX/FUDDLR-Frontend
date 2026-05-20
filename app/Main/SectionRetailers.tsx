@@ -19,7 +19,7 @@ const features = [
 
 export default function SectionRetailers() {
     return (
-        <section className="relative bg-background py-12 sm:py-16 lg:py-20 overflow-hidden">
+        <section className="relative bg-background py-10 sm:py-16 lg:py-20 overflow-hidden">
 
             {/* Background blobs (hide some on mobile) */}
 
@@ -47,16 +47,16 @@ export default function SectionRetailers() {
                         BUILD FOR RETAILERS
                     </p>
 
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl text-secondary mb-3 font-youngSerif leading-tight">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl text-secondary mb-3 font-youngSerif leading-tight">
                         Your <span className="text-brand">Trusted</span> Wholesale <br /> Partner
                     </h2>
 
-                    <p className="text-foreground mb-6 sm:mb-8 text-sm sm:text-sm leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    <p className="text-foreground mb-6 sm:mb-8 text-sm sm:text-sm max-w-xl mx-auto lg:mx-0">
                         Delivering quality products worldwide with dependable margins.
                     </p>
 
                     {/* Feature List */}
-                    <div className="space-y-5 sm:space-y-4">
+                    <div className="space-y-5 sm:space-y-4 mt-10 md:mt-0">
                         {features.map((item, i) => (
                             <div key={i} className="flex items-start gap-3 sm:gap-5 text-left">
 
@@ -64,11 +64,11 @@ export default function SectionRetailers() {
                                     <IconCheck className="text-white size-3 sm:size-5" />
                                 </div>
 
-                                <div className="">
-                                    <h4 className="text-md sm:text-sm text-secondary mb-2 font-youngSerif font-light">
+                                <div className="space-y-0 sm:space-y-2">
+                                    <h4 className="text-base sm:text-sm text-secondary font-youngSerif font-light">
                                         {item.title}
                                     </h4>
-                                    <p className="text-gray-600 text-xs sm:text-xs leading-relaxed">
+                                    <p className="text-gray-600 text-sm sm:text-sm leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>
