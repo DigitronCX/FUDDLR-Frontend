@@ -71,7 +71,7 @@ export default function WholesaleSteps() {
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-gray-800 text-sm md:text-xs font-light leading-relaxed">
+                                <p className="text-gray-800 text-xs md:text-xs font-light leading-relaxed">
                                     {step.desc}
                                 </p>
                             </div>
@@ -103,7 +103,7 @@ export default function WholesaleSteps() {
                 </div>
 
                 {/* RIGHT SIDE */}
-                <div className="md:relative hidden md:flex items-center justify-center order-1 lg:order-2">
+                <div className="md:relative hidden lg:flex items-center justify-center order-1 lg:order-2">
                     <Image
                         src="/Sections/Steps.png"
                         alt="Steps"

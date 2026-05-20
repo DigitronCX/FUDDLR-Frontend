@@ -45,7 +45,7 @@ export default function SectionCTA() {
             {/* Content Switch */}
             <section className="mx-auto grid gap-5 lg:grid-cols-2">
                 {/* Retailers Card */}
-                <div className="relative h-fit overflow-hidden rounded-[28px] bg-[#dfe8e5] py-5 sm:px-8 px-4 group/image">
+                <div className="relative h-full overflow-hidden rounded-[28px] bg-[#dfe8e5] py-5 sm:px-8 px-4 group/image">
                     <div className="grid h-full items-center gap-4 md:grid-cols-[1fr_260px]">
                         {/* Content */}
                         <div className="max-w-md text-start">
@@ -98,7 +98,7 @@ export default function SectionCTA() {
                 </div>
 
                 {/* Brands Card */}
-                <div className="relative h-fit overflow-hidden rounded-[28px] bg-[#ebe6f6] py-5 sm:px-8 px-4 group">
+                <div className="relative h-full overflow-hidden rounded-[28px] bg-[#ebe6f6] py-5 sm:px-8 px-4 group">
                     {/* Purple Shape */}
                     <div className="absolute bottom-[-140px] right-[-80px] h-[360px] w-[360px] rounded-full bg-[#b8a4f3]" />
 

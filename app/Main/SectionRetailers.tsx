@@ -68,7 +68,7 @@ export default function SectionRetailers() {
                                     <h4 className="text-base sm:text-sm text-secondary font-youngSerif font-light">
                                         {item.title}
                                     </h4>
-                                    <p className="text-gray-600 text-sm sm:text-sm leading-relaxed">
+                                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>

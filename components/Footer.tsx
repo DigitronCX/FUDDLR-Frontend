@@ -65,9 +65,9 @@ const Footer = () => {
                         alt="Logo"
                         width={200}
                         height={200}
-                        className="w-32 h-auto object-contain"
+                        className="w-28 sm:w-32 h-auto object-contain"
                     />
-                    <p className="text-sm tracking-wider font-normal leading-relaxed">
+                    <p className="text-xs sm:text-sm tracking-wider font-normal leading-relaxed">
                         Delivering high quality pet nutrition and
                         innovative products designed to help
                         pets live healthier, happier lives, with
@@ -77,7 +77,7 @@ const Footer = () => {
                         <ul className="space-y-2 text-sm capitalize pt-3 flex gap-2">
                             {
                                 Followus.map((item, index) => (
-                                    <li key={index} className="text-white p-2 size-12 rounded-full">{<item.icon strokeWidth={1.5} />}   </li>
+                                    <li key={index} className="text-white p-2 sm:size-12 size-8 rounded-full">{<item.icon strokeWidth={1.5} />}   </li>
                                 ))
                             }
                         </ul>
@@ -96,7 +96,7 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     href={item.path}
-                                    className="hover:text-white transition-colors font-light text-sm">
+                                    className="hover:text-white transition-colors font-light text-xs sm:text-sm">
                                     {item.name}
                                 </Link>
                             </li>
@@ -112,7 +112,7 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     href={item.path}
-                                    className="hover:text-white font-light text-sm transition-colors">
+                                    className="hover:text-white font-light text-xs sm:text-sm transition-colors">
                                     {item.name}
                                 </Link>
                             </li>
@@ -128,7 +128,7 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     href={item.path}
-                                    className="hover:text-white font-light text-sm transition-colors">
+                                    className="hover:text-white font-light text-xs sm:text-sm transition-colors">
                                     {item.name}
                                 </Link>
                             </li>
@@ -148,9 +148,9 @@ const Footer = () => {
                                 <div className={"flex items-center gap-2"}>
                                     <item.icon
                                         strokeWidth={1.5}
-                                        className="size-5 text-white shrink-0"
+                                        className="size-4 sm:size-5 text-white shrink-0"
                                     />
-                                    <p className="hover:text-white font-light text-sm transition-colors">{item.text}</p>
+                                    <p className="hover:text-white font-light text-xs sm:text-sm transition-colors">{item.text}</p>
                                 </div>
                             </li>
                         ))}

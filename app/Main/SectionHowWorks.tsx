@@ -46,7 +46,7 @@ export default function SectionHowWorks() {
             <div className="mx-auto sm:px-6">
                 {/* Heading */}
                 <div className="text-center">
-                    <h2 className="text-4xl md:text-5xl font-youngSerif text-[#2E2E2E]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-youngSerif text-[#2E2E2E]">
                         How It{" "}
                         <span className="text-emerald-500">
                             Works
@@ -55,7 +55,7 @@ export default function SectionHowWorks() {
                 </div>
 
                 {/* Content */}
-                <div className="relative mt-16 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-40">
+                <div className="relative mt-10 sm:mt-16 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-40">
                     {/* Divider */}
                     <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gray-300">
                         {/* <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-600">
