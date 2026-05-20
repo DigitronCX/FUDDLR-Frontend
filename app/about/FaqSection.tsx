@@ -1,6 +1,6 @@
 "use client";
 
-import { IconArrowDown, IconChevronDownFilled } from "@tabler/icons-react";
+import { IconArrowDown, IconChevronDownFilled, IconQuestionMark } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -8,25 +8,25 @@ import { useState } from "react";
 const faqData = [
     {
         id: 1,
-        question: "What is FUDDLR?",
+        question: "Who qualifies to be a wholesale partner?",
         answer:
             "Simply browse our Shop page, select your favorite pieces, and proceed to checkout. Follow the easy steps to complete your purchase securely.",
     },
     {
         id: 2,
-        question: "Who can use the FUDDLR portal?",
+        question: "How long does it take to get access?",
         answer:
             "Yes, we provide fast and reliable delivery across Australia. Orders are processed quickly to ensure you receive your jewelry as soon as possible.",
     },
     {
         id: 3,
-        question: "How do I register on the platform?",
+        question: "What s the lead time for orders?",
         answer:
             "Delivery typically takes 4–7 business days, depending on your location. You will receive tracking details once your order is dispatched via email.",
     },
     {
         id: 4,
-        question: "Are all brands on FUDDLR verified?",
+        question: "What if I need support for my order?",
         answer:
             "We accept major credit/debit cards (Stripe) and local secure online payment options for a smooth and safe checkout experience.",
     },
@@ -65,7 +65,7 @@ const FaqSection = () => {
     };
 
     return (
-        <div className="min-h-screen relative z-10 grid md:grid-cols-[1fr_1fr] place-items-center gap-10 px-4 sm:px-10 py-10 overflow-hidden bg-background">
+        <div className="min-h-screen relative z-10 grid md:grid-cols-[1fr_1.5fr] place-items-center gap-10 px-4 sm:px-10 py-10 overflow-hidden bg-background">
 
             {/* Image Section */}
             <motion.section
@@ -73,15 +73,19 @@ const FaqSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="w-full hidden md:flex bg-accent h-[60%]"
+                className="w-full hidden md:flex bg-accent h-[60%] justify-center items-center rounded-2xl relative"
             >
-                {/* <Image
-                    src={"/Sections/Faq.png"}
-                    width={1000}
-                    height={1000}
-                    alt="Image"
-                    className="h-full w-full object-contain rounded-xl"
-                /> */}
+                {/* --------- Question Marks --------- */}
+                <div className="absolute top-0 left-0 size-20 bg-background rounded-xl grid place-items-center">
+                    <IconQuestionMark className="text-accent size-18 stroke-3" />
+                </div>
+                <div className="absolute bottom-0 right-0 size-20 bg-background rounded-xl grid place-items-center">
+                    <IconQuestionMark className="text-accent size-18 stroke-3" />
+                </div>
+                {/* --------- Heading --------- */}
+                <div>
+                    <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-unbounded text-white">FAQs</h3>
+                </div>
             </motion.section>
 
             {/* FAQ Section */}
