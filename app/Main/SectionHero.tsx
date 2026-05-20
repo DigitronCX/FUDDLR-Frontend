@@ -8,12 +8,12 @@ const SectionHero = () => {
             background: 'url(/Sections/HeroBck.webp) no-repeat center center fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-        }} className="min-h-screen h-full pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden">
+        }} className="min-h-screen h-full pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
 
-            <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-10">
+            <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-4">
 
                 {/* ============ Left Side ============ */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1 gap-4 lg:mb-20">
+                <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left flex-1 gap-4 lg:mb-20">
 
                     <h2 className='text-3xl md:text-5xl lg:text-[70px] font-bold text-secondary leading-tight font-youngSerif'>
                         Distributor of all <span className="text-brand">things pet.</span>
@@ -54,6 +54,10 @@ const SectionHero = () => {
                             </span>
                         </Link>
                     </div>
+
+                    <section className='hidden lg:block absolute bottom-0 lg:-bottom-[28%] w-full'>
+                        <BrandMarquee />
+                    </section>
                 </div>
 
 
@@ -71,7 +75,7 @@ const SectionHero = () => {
 
             </section>
 
-            <section className='absolute -bottom-0 lg:bottom-[8%] left-0 right-0 w-full'>
+            <section className='block lg:hidden absolute bottom-0 lg:-bottom-[28%] w-full'>
                 <BrandMarquee />
             </section>
         </div>

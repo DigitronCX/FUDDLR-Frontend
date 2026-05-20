@@ -16,7 +16,7 @@ const Text = [
 ]
 const BrandMarquee = () => {
     return (
-        <div className='py-1 px-4 sm:px-6 lg:pl-10 lg:pr-20'>
+        <div className='py-1 w-full'>
             <Marquee speed={80} pauseOnHover  autoFill>
                 {
                     Text.map((text, i) => (
