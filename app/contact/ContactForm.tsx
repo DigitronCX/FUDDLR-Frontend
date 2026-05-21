@@ -1,27 +1,27 @@
-import { IconMail, IconMapPin, IconMapPinFilled, IconPhoneCall } from "@tabler/icons-react";
+// import { IconMail, IconMapPin, IconMapPinFilled, IconPhoneCall } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
 // components/ContactSection.jsx
 export default function ContactSection() {
     return (
-        <section className="py-20 px-6 lg:px-20 relative overflow-hidden">
+        <section className="px-4 py-10 sm:px-6 lg:p-20 relative overflow-hidden">
 
             {/* Header */}
             <div className="text-center mb-5">
-                <h2 className="text-5xl font-youngSerif font-semibold text-secondary">Contact Us</h2>
-                <p className="text-gray-500 mt-3">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif font-semibold text-secondary">Contact Us</h2>
+                <p className="text-gray-500 mt-3 text-sm sm:text-base">
                     Have questions, need support, or want to partner with us? We’re here to help.
                 </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* LEFT: Form */}
-                <div className="bg-white rounded-4xl border-2 border-brand p-8 shadow-sm">
-                    <p className="text-sm tracking-widest text-secondary mb-2">
+                <div className="bg-white rounded-4xl border-2 border-brand p-6 sm:p-8 shadow-sm">
+                    <p className="text-xs sm:text-sm tracking-widest text-secondary mb-2">
                         GET IN TOUCH
                     </p>
-                    <h3 className="text-3xl font-medium mb-6 text-secondary font-youngSerif">Contact Form</h3>
+                    <h3 className="text-2xl sm:text-3xl font-medium mb-6 text-secondary font-youngSerif">Contact Form</h3>
 
                     <form className="space-y-5">
                         {/* Name */}
@@ -111,7 +111,7 @@ export default function ContactSection() {
                 </div>
 
                 {/* RIGHT: Image + Floating Icons */}
-                <div className="relative flex justify-center">
+                <div className="relative hidden md:flex justify-center">
                     {/* Background shapes */}
                     {/* <div className="absolute w-72 h-72 bg-green-200 rounded-3xl top-0 right-10 z-5"></div> */}
                     {/* <div className="absolute w-48 h-48 bg-accent/40 rounded-3xl top-0 left-0 z-5"></div> */}
