@@ -91,7 +91,7 @@ export default function CategoryCarousel() {
         };
     }, [emblaApi, syncOffsets, syncSelected]);
 
-    /* ── Controls ────────────────────────────────────────────────────────── */
+    /* ── Controls ── */
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
     const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
@@ -99,7 +99,7 @@ export default function CategoryCarousel() {
     return (
         <section className="px-4 py-10 sm:px-6 lg:p-20 flex flex-col items-start justify-center min-h-screen overflow-hidden">
 
-            {/* ── Header ─────────────────────────────────────────────────────── */}
+            {/* ── Header ── */}
             <div className="flex flex-col items-start space-y-4 text-foreground w-full">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif leading-tight">
                     Our <span className="text-brand">Categories</span>
@@ -131,7 +131,7 @@ export default function CategoryCarousel() {
                 </div>
             </div>
 
-            {/* ── Desktop — Coverflow Visual Layer ────────────────────────────── */}
+            {/* ── Desktop — Coverflow Visual Layer ── */}
             <div className="hidden md:block w-full mt-20">
 
                 {/* Hidden Embla scroll container — captures drag but renders nothing */}
@@ -230,10 +230,10 @@ export default function CategoryCarousel() {
                 </div>
             </div>
 
-            {/* ── Mobile — Embla native full-width slider ──────────────────────── */}
+            {/* ── Mobile — Embla native full-width slider ── */}
             <MobileCarousel selectedIndex={selectedIndex} scrollTo={scrollTo} />
 
-            {/* ── Arrow + Dot Controls ─────────────────────────────────────────── */}
+            {/* ── Arrow + Dot Controls ── */}
             <div className="flex mx-auto items-center gap-6 mt-16">
 
                 <button

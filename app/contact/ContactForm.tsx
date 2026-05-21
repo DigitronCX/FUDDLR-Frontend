@@ -83,7 +83,7 @@ export default function ContactSection() {
                         >
                             <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
                             <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-secondary text-xs">
-                                Contact Us
+                                Submit
                             </span>
                         </button>
 
