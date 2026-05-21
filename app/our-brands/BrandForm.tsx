@@ -1,4 +1,4 @@
-import { IconFlag3Filled, IconMail, IconMapPinFilled, IconPhoneCall } from "@tabler/icons-react";
+import { IconFlag3Filled, IconMail, IconMapPinFilled, IconPawFilled, IconPhoneCall } from "@tabler/icons-react";
 import Image from "next/image";
 
 // components/ContactSection.jsx
@@ -6,7 +6,7 @@ export default function BrandForm() {
     return (
         <section className="py-20 px-6 lg:px-20 relative overflow-hidden">
             {/* Background blobs */}
-            <div className="z-0">
+            {/* <div className="z-0">
                 <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
                 <div className="absolute top-25 left-40 size-10 bg-accent rounded-md opacity-20 " />
                 <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20 " />
@@ -14,7 +14,7 @@ export default function BrandForm() {
                 <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand  rounded-2xl opacity-40" />
                 <div className="absolute bottom-1/7 right-5 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
                 <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
-            </div>
+            </div> */}
 
 
             <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -138,7 +138,17 @@ export default function BrandForm() {
                 <div className="relative flex justify-center">
                     {/* Background shapes */}
                     {/* <div className="absolute w-72 h-72 bg-green-200 rounded-3xl top-0 right-10 z-5"></div> */}
-                    <div className="absolute w-48 h-48 bg-accent/40 rounded-3xl top-0 left-0 z-5"></div>
+                    {/* <div className="absolute size-32 bg-accent rounded-3xl bottom-0 left-0 z-50"></div> */}
+                      <div className="absolute z-40 bottom-2 md:bottom-10 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
+                        <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" />
+                        {/* <Image
+                            src="/Images/Vector.svg" // replace with your image
+                            alt="Dog playing"
+                            width={100}
+                            height={100}
+                            className="object-cover size-12"
+                        /> */}
+                    </div>
 
                     {/* Image */}
                     <Image
@@ -148,9 +158,9 @@ export default function BrandForm() {
                         alt="Dog"
                         className="rounded-3xl w-[85%] object-cover z-20"
                     />
-                    <div className="bg-linear-to-t from-accent/50 to-accent/50 absolute top-1/2 -translate-y-1/2 w-9/12 right-1/6 h-[80%] rounded-3xl z-10"></div>
+                    <div className="bg-brand absolute top-1/2 -translate-y-1/2 w-9/12 right-1/6 h-[80%] rounded-3xl z-10"></div>
                     {/* Floating Icons */}
-                    <div className="absolute left-0 top-1/3 bg-brand text-white p-4 rounded-full shadow-lg size-20 flex items-center justify-center text-3xl z-20">
+                    {/* <div className="absolute left-0 top-1/3 bg-brand text-white p-4 rounded-full shadow-lg size-20 flex items-center justify-center text-3xl z-20">
                         <div className="p-2 bg-white rounded-full">
                             <IconMail className="size-7 text-brand" />
                         </div>
@@ -166,14 +176,11 @@ export default function BrandForm() {
                         <div className="p-2 bg-white rounded-full">
                             <IconPhoneCall className="size-6 text-brand" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
-            <div className="my-10 py-3 w-full mx-auto text-center bg-accent/20 rounded-2xl text-secondary text-sm sm:text-base md:text-lg font-medium flex items-center justify-center gap-2">
-                <div className="p-2 text-accent rounded-full">
-                    <IconFlag3Filled className="size-6" />
-                </div>
+            <div className="my-10 py-3 w-full mx-auto text-center bg-accent rounded-2xl text-sm sm:text-base md:text-lg font-medium flex items-center justify-center gap-2 text-white">
                 <p>
                     NOTE: We carefully review all brands. Additional sales and brand support may be offered where needed (POA).
                 </p>

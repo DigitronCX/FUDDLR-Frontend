@@ -7,7 +7,7 @@ import BrandForm from './BrandForm'
 const page = () => {
     return (
         <>
-            <main className="min-h-screen">
+            <main>
                 <BrandGrowthSection />
                 <FeaturedBrands />
                 <Banner />

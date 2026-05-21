@@ -18,7 +18,7 @@ export default function FeaturedBrands() {
   return (
     <section className="py-16 px-6 md:px-12 relative overflow-hidden">
       {/* Background blobs */}
-      <div className="z-0">
+      {/* <div className="z-0">
         <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
         <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20 " />
 
@@ -26,7 +26,7 @@ export default function FeaturedBrands() {
         <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand  rounded-2xl opacity-40" />
         <div className="absolute bottom-1/7 right-0 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
         <div className="absolute right-20 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
-      </div>
+      </div> */}
 
       <div className="relative z-10">
         {/* Header */}
@@ -48,7 +48,7 @@ export default function FeaturedBrands() {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm hover:shadow-md transition px-2 py-6 flex flex-col items-center justify-center text-center cursor-pointer"
+              className="bg-white rounded-2xl shadow-xl hover:shadow-md transition px-2 py-6 flex flex-col items-center justify-center text-center cursor-pointer border border-gray-200"
             >
               <div className="relative w-full h-34 mb-4">
                 <Image
