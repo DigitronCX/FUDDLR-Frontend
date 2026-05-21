@@ -128,7 +128,6 @@ export default function CategoryCarousel() {
                             New customer? Apply Here
                         </span>
                     </Link>
-
                 </div>
             </div>
 

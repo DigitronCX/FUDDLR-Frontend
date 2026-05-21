@@ -1,20 +1,11 @@
 import { IconMail, IconMapPin, IconMapPinFilled, IconPhoneCall } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // components/ContactSection.jsx
 export default function ContactSection() {
     return (
         <section className="py-20 px-6 lg:px-20 relative overflow-hidden">
-            {/* Background blobs */}
-            <div className="z-0">
-                <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
-                <div className="absolute top-25 left-40 size-10 bg-accent rounded-md opacity-20 " />
-                <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20 " />
-                <div className="absolute bottom-5 left-1/4 size-24 bg-linear-to-t to-background from-accent rounded-xl opacity-20 " />
-                <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand  rounded-2xl opacity-40" />
-                <div className="absolute bottom-1/7 right-5 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
-                <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
-            </div>
 
             {/* Header */}
             <div className="text-center mb-5">
@@ -26,7 +17,7 @@ export default function ContactSection() {
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* LEFT: Form */}
-                <div className="bg-white rounded-2xl border-2 border-brand p-8 shadow-sm">
+                <div className="bg-white rounded-4xl border-2 border-brand p-8 shadow-sm">
                     <p className="text-sm tracking-widest text-secondary mb-2">
                         GET IN TOUCH
                     </p>
@@ -88,10 +79,34 @@ export default function ContactSection() {
                         </div>
                         <button
                             type="submit"
-                            className="btn-primary"
+                            className="w-full group relative inline-flex items-center justify-center overflow-hidden bg-secondary rounded-full border border-secondary px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >
-                            Send Message
+                            <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                            <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-secondary text-xs">
+                                Contact Us
+                            </span>
                         </button>
+
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-2 mt-4 w-full sm:w-auto">
+                            <Link
+                                href="/contact-us"
+                                className="group relative w-full inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                            >
+                                <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                                <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
+                                    Apply Now Wholesaler
+                                </span>
+                            </Link>
+                            <Link
+                                href="/contact-us"
+                                className="group relative w-full inline-flex items-center justify-center overflow-hidden rounded-full bg-white border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                            >
+                                <span className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                                <span className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs ">
+                                    Apply Now Brands
+                                </span>
+                            </Link>
+                        </div>
                     </form>
                 </div>
 
@@ -99,19 +114,19 @@ export default function ContactSection() {
                 <div className="relative flex justify-center">
                     {/* Background shapes */}
                     {/* <div className="absolute w-72 h-72 bg-green-200 rounded-3xl top-0 right-10 z-5"></div> */}
-                    <div className="absolute w-48 h-48 bg-accent/40 rounded-3xl top-0 left-0 z-5"></div>
+                    {/* <div className="absolute w-48 h-48 bg-accent/40 rounded-3xl top-0 left-0 z-5"></div> */}
 
                     {/* Image */}
                     <Image
                         width={1000}
                         height={1000}
-                        src="/Sections/BrandContact.png" // replace with your image
+                        src="/Sections/ContactHero.webp" // replace with your image
                         alt="Dog"
-                        className="rounded-3xl w-[85%] object-cover z-20"
+                        className="rounded-3xl w-[80%] object-cover z-20"
                     />
-                    <div className="bg-linear-to-t from-accent/50 to-accent/50 absolute top-1/2 -translate-y-1/2 w-9/12 right-1/6 h-[80%] rounded-3xl z-10"></div>
+                    <div className="bg-brand absolute top-1/2 -translate-y-1/2 w-9/12 right-1/6 h-[80%] rounded-3xl z-10"></div>
                     {/* Floating Icons */}
-                    <div className="absolute left-0 top-1/3 bg-brand text-white p-4 rounded-full shadow-lg size-20 flex items-center justify-center text-3xl z-20">
+                    {/* <div className="absolute left-0 top-1/3 bg-brand text-white p-4 rounded-full shadow-lg size-20 flex items-center justify-center text-3xl z-20">
                         <div className="p-2 bg-white rounded-full">
                             <IconMail className="size-7 text-brand" />
                         </div>
@@ -127,7 +142,7 @@ export default function ContactSection() {
                         <div className="p-2 bg-white rounded-full">
                             <IconPhoneCall className="size-6 text-brand" />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
