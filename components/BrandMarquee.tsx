@@ -11,13 +11,14 @@ const logos = [
 ]
 const Text = [
     "100% Australian owned",
-    "Low MOQ Distributor Pricing",
+    "Low MOQ",
+    "Distributor Pricing",
     "Fast Dispatch",
 ]
 const BrandMarquee = () => {
     return (
         <div className='py-1 w-full'>
-            <Marquee speed={80} pauseOnHover  autoFill>
+            <Marquee speed={80} pauseOnHover autoFill>
                 {
                     Text.map((text, i) => (
                         <span
