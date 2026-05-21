@@ -1,11 +1,11 @@
-import { IconBrandInstagram, IconBrandLinkedin, IconQuoteFilled } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconQuoteFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 // import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function FounderMsg() {
     return (
-        <section className="bg-gray-50 py-16 px-6 md:px-14 relative overflow-hidden">
+        <section className="bg-gray-50 py-10 md:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
             <div className="grid md:grid-cols-[1.1fr_2fr] gap-12 items-start relative z-10">
 
                 {/* LEFT: Image Card */}
@@ -19,7 +19,7 @@ export default function FounderMsg() {
                             height={300}
                             className="object-cover w-full h-full"
                         />
-                        
+
                         {/* Name Badge */}
                         <div className="absolute w-[90%] bottom-4 bg-white/90 backdrop-blur-md rounded-3xl py-4 px-6 text-center shadow-md">
                             <h3 className="text-3xl font-youngSerif text-gray-900">
@@ -40,12 +40,12 @@ export default function FounderMsg() {
                         Our Message
                     </p>
 
-                    <h2 className="text-4xl md:text-6xl mb-6 font-youngSerif">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-6 font-youngSerif">
                         <span className="text-brand">Founder&apos;s</span>{" "}
                         <span className="text-secondary">Message</span>
                     </h2>
 
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
                         FUDDLR was born from my lifelong love for animals and a desire to create something meaningful and aligned with my values. After years in the corporate world, I set out to build a business focused on quality, transparency, and genuine care for pets. Through FUDDLR, we bring together trusted pet food brands that support better nutrition and healthier lives for pets, while helping retailers grow with confidence.
                     </p>
 
@@ -59,7 +59,7 @@ export default function FounderMsg() {
                         </Link>
                         <Link
                             href="#"
-                            className="flex items-center justify-center rounded-full px-8 bg-brand text-white hover:opacity-80 capitalize"
+                            className="flex items-center justify-center rounded-full px-8 bg-brand text-white hover:opacity-80 capitalize text-sm sm:text-base"
                         >
                             {/* <IconBrandInstagram /> */}
                             Follow my professional&nbsp; <span className="underline">profile here</span>

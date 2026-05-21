@@ -64,7 +64,7 @@ const SectionHero = () => {
                 {/* ============ Right Side ============ */}
                 <div className="w-10/12 lg:w-[55%] flex-1 relative flex items-center justify-center">
                     <Image
-                        src="/Sections/Hero-Main.webp"
+                        src="/Sections/HeroHome.webp"
                         alt="Dog"
                         width={600}
                         height={600}

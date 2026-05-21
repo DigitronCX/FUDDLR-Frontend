@@ -19,7 +19,7 @@ const features = [
 
 export default function MainTrusted() {
     return (
-        <section className="relative bg-background py-20 overflow-hidden">
+        <section className="relative bg-background py-10 md:py-20 px-4 sm:px-6 md:px-12  overflow-hidden">
 
             {/* Background blobs */}
             {/* <div className="z-0">
@@ -32,11 +32,11 @@ export default function MainTrusted() {
                 <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
             </div> */}
 
-            <div className="mx-14 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
                 {/* LEFT - Tablet Image */}
 
-                <div className="relative flex justify-center">
+                <div className="relative flex justify-start">
                     <Image
                         src="/Sections/FeatureMain.jpeg" // replace with your mockup image
                         alt="FUDDLR dashboard"
@@ -46,7 +46,7 @@ export default function MainTrusted() {
                     />
 
                     {/* Small Image */}
-                    <div className="absolute bottom-0 right-0 translate-y-1/4 -translate-x-3 size-40 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10">
+                    <div className="absolute bottom-0 right-0 translate-y-1/4 -translate-x-3 size-24 sm:size-32 md:size-40 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10">
                         <Image
                             src="/Sections/FeatureMain.jpeg" // replace with your image
                             alt="Dog playing"
@@ -64,11 +64,11 @@ export default function MainTrusted() {
                         TRUSTED WHOLESALE
                     </p>
 
-                    <h2 className="text-4xl text-secondary mb-2 font-youngSerif">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl text-secondary mb-2 font-youngSerif">
                         <span className="text-brand">Your Trusted </span> Wholesale Partner
                     </h2>
 
-                    <p className="text-gray-600 mb-8 leading-relaxed">
+                    <p className="text-gray-600 text-sm sm:text-base mb-8 leading-relaxed">
                         Your trusted wholesale partner for Australian pet retailers, delivering quality products worldwide with dependable margins.
                     </p>
 
@@ -81,10 +81,10 @@ export default function MainTrusted() {
                                 </div>
 
                                 <div>
-                                    <h3 className="text-xl text-secondary font-youngSerif">
+                                    <h3 className="text-lg sm:text-xl text-secondary font-youngSerif">
                                         {item.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>

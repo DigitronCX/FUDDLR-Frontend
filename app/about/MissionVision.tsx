@@ -2,12 +2,12 @@ import { IconBulb, IconDiamondFilled, IconPawFilled, IconTargetArrow, IconTrophy
 
 export default function MissionVision() {
 	return (
-		<section className="py-16 px-6 md:px-16 min-h-screen place-content-center relative overflow-hidden">
+		<section className="py-10 md:py-20 px-4 sm:px-6 md:px-12 min-h-screen place-content-center relative overflow-hidden">
 			<div className="mx-auto grid md:grid-cols-[1fr_2fr_1fr] gap-5 items-center">
 
 				{/* LEFT - Mission */}
 				<div>
-					<h2 className="text-5xl text-secondary font-youngSerif">
+					<h2 className="text-3xl sm:text-4xl lg:text-5xl text-secondary font-youngSerif">
 						Our <span className="text-brand">Mission</span>
 					</h2>
 					<p className="mt-4 text-primary text-base sm:text-xl">
@@ -16,9 +16,9 @@ export default function MissionVision() {
 				</div>
 
 				{/* CENTER - ICON GRID */}
-				<div className="grid grid-cols-2 gap-4 relative">
+				<div className="grid md:grid-cols-2 gap-4 relative">
 					{/* <div className="absolute left-1/2 top-1/3 -translate-x-1/2 translate-y-1/2 size-20 bg-secondary rounded-full z-50"></div> */}
-					<div className="absolute z-20 inset-0 mb-10 flex items-center justify-center">
+					<div className="hidden absolute z-20 inset-0 mb-10 md:flex items-center justify-center">
 						<div className="size-30 bg-background rounded-3xl flex justify-center items-center">
 							<IconPawFilled className="size-18 text-accent" />
 						</div>
@@ -39,7 +39,7 @@ export default function MissionVision() {
 							</span>
 						</div>
 					</div>
-					<div className="flex flex-col gap-4 -translate-y-10">
+					<div className="flex flex-col gap-4 md:gap-0 md:-translate-y-10">
 						{/* Card 3 */}
 						<div className="rounded-3xl h-55 w-full flex items-center justify-center bg-accent shadow-lg">
 							<span className="text-white text-5xl">
@@ -58,7 +58,7 @@ export default function MissionVision() {
 
 				{/* RIGHT - Vision */}
 				<div>
-					<h2 className="text-5xl text-secondary font-youngSerif">
+					<h2 className="text-3xl sm:text-4xl lg:text-5xl text-secondary font-youngSerif">
 						Our <span className="text-brand">Vision</span>
 					</h2>
 					<p className="mt-4 text-primary text-base sm:text-lg">

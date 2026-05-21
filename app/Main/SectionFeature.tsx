@@ -32,10 +32,10 @@ const features = [
 
 export default function SectionFeature() {
     return (
-        <section className="py-20 bg-gray-50 relative">
+        <section className="py-10 md:py-20 px-4 sm:px-6 md:px-12 bg-gray-50 relative">
             {/* Heading */}
             <div className="text-center mb-12 flex flex-col gap-4">
-                <h2 className="text-4xl text-secondary font-youngSerif ">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl text-secondary font-youngSerif ">
                     What Sets{" "}
                     <span className="text-brand font-bold">FUDDLR</span> Apart
                 </h2>
@@ -54,16 +54,16 @@ export default function SectionFeature() {
             </div>
 
             {/* Cards */}
-            <div className="mx-4 md:mx-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pb-25">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pb-25">
                 {features.map((item, i) => (
                     <div
                         key={i}
                         className={`${item.class} relative rounded-3xl border border-accent md:p-6 p-4 h-[220px] sm:h-[290px] md:min-h-[370px] overflow-hidden shadow-sm w-full`}
                     >
-                        <h3 className="text-2xl text-secondary mb-3 font-youngSerif">
+                        <h3 className="text-xl sm:text-2xl text-secondary mb-3 font-youngSerif">
                             {item.title}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                             {item.desc}
                         </p>
 

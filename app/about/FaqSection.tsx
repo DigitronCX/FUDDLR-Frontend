@@ -3,6 +3,7 @@
 import { IconArrowDown, IconChevronDownFilled, IconQuestionMark } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const faqData = [
@@ -65,7 +66,7 @@ const FaqSection = () => {
     };
 
     return (
-        <div className="min-h-screen relative z-10 grid md:grid-cols-[1fr_1.5fr] place-items-center gap-10 px-4 sm:px-10 py-10 overflow-hidden bg-background">
+        <div className="min-h-screen relative z-10 grid md:grid-cols-[1fr_1.5fr] place-items-center gap-10 py-10 md:py-20 px-4 sm:px-6 md:px-12 overflow-hidden bg-background">
 
             {/* Image Section */}
             <motion.section
@@ -73,7 +74,7 @@ const FaqSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="w-full hidden md:flex bg-accent h-[60%] justify-center items-center rounded-2xl relative"
+                className="w-full hidden md:flex bg-accent h-[80%] justify-center items-center rounded-2xl relative"
             >
                 {/* --------- Question Marks --------- */}
                 <div className="absolute top-0 left-0 size-20 bg-background rounded-xl grid place-items-center">
@@ -99,11 +100,11 @@ const FaqSection = () => {
                 <div className="space-y-2">
                     <motion.h5
                         variants={item}
-                        className="text-secondary font-bold text-3xl font-unbounded sm:text-4xl md:text-5xl"
+                        className="text-secondary font-bold font-unbounded text-3xl sm:text-4xl lg:text-5xl"
                     >
                         Frequently Asked <span className="text-brand">Questions</span>
                     </motion.h5>
-                    <p className="text-secondary text-sm">Got questions? We’ve got answers to help you get started and grow your business smoothly.</p>
+                    <p className="text-secondary text-sm sm:text-base">Got questions? We’ve got answers to help you get started and grow your business smoothly.</p>
                 </div>
 
                 <motion.div variants={container} className="grid gap-5">
@@ -116,7 +117,7 @@ const FaqSection = () => {
                                 whileHover={{ scale: 1.02 }}
                                 key={itemData.id}
                                 onClick={() => toggleShow(itemData.id)}
-                                className="flex gap-x-5 py-6 px-4 justify-between border-2 shadow-md shadow-accent/10 border-brand items-start cursor-pointer rounded-3xl bg-background backdrop-blur-sm"
+                                className="flex gap-x-5 py-6 px-4 justify-between border shadow-md shadow-accent/10 border-brand items-start cursor-pointer rounded-3xl bg-background backdrop-blur-sm"
                             >
                                 <div className="flex items-start gap-5 flex-1">
                                     <div className="flex-1">
@@ -156,6 +157,30 @@ const FaqSection = () => {
                         );
                     })}
                 </motion.div>
+                <div className="flex w-full gap-8">
+                    <button>
+                        <Link
+                            href="/contact-us"
+                            className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                        >
+                            <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                            <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
+                                Register Now
+                            </span>
+                        </Link>
+                    </button>
+                    <button>
+                        <Link
+                            href="/contact-us"
+                            className="group relative inline-flex items-center justify-center overflow-hidden bg-white rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                        >
+                            <span className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                            <span className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs">
+                                Brands Apply
+                            </span>
+                        </Link>
+                    </button>
+                </div>
             </motion.section>
 
         </div>

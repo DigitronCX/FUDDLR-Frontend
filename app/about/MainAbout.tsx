@@ -1,9 +1,10 @@
 import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MainAbout() {
     return (
-        <section className="w-full bg-white py-20 px-6 md:px-16 relative z-10 overflow-hidden">
+        <section className="w-full bg-white py-10 md:py-20 px-4 sm:px-6 md:px-12 relative z-10 overflow-hidden">
             {/* <div className="absolute top-10 left-10 size-10 bg-accent rounded-lg opacity-30 "></div>
             <div className="absolute bottom-10 -right-10 w-20 h-20 bg-green-300 rounded-xl opacity-40"></div> */}
             <div className="mx-auto grid md:grid-cols-2 gap-5 items-center">
@@ -23,8 +24,8 @@ export default function MainAbout() {
                     </div>
 
                     {/* Small Image */}
-                    <div className="absolute z-20 bottom-0 left-0 translate-y-1/4 -translate-x-3 size-30 rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
-                        <IconPawFilled className="text-white size-14 -rotate-15" />
+                    <div className="absolute z-20 bottom-2 md:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
+                        <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" />
                         {/* <Image
                             src="/Images/Vector.svg" // replace with your image
                             alt="Dog playing"
@@ -42,21 +43,30 @@ export default function MainAbout() {
                         ABOUT US
                     </p>
 
-                    <h2 className="text-4xl md:text-5xl mb-6 text-brand font-youngSerif">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-6 text-brand font-youngSerif">
                         About <span className="text-secondary">Our Journey</span>
                     </h2>
 
-                    <p className="text-primary mb-4 leading-relaxed">
+                    <p className="text-primary mb-4 leading-relaxed text-sm sm:text-base">
                         At FUDDLR, we believe pets are more than just animals they are family. Our goal is simple: to bring better, cleaner, and more honest food choices to the pets we love.
                     </p>
 
-                    <p className="text-primary mb-6 leading-relaxed">
+                    <p className="text-primary mb-6 leading-relaxed text-sm sm:text-base">
                         We work with brands that care about what goes into their products, focusing on real ingredients, thoughtful nutrition, and complete transparency Because when it comes to our pets, only the best will do.
                     </p>
 
-                    <button className="btn-primary">
-                        About Us
-                    </button>
+                    
+                <button>
+                    <Link
+                        href="/contact-us"
+                        className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                    >
+                        <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                        <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
+                            About Us
+                        </span>
+                    </Link>
+                </button>
                 </div>
             </div>
         </section>
