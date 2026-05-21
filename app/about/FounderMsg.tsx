@@ -50,7 +50,7 @@ export default function FounderMsg() {
                     </p>
 
                     {/* Social Icons */}
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-4">
                         <Link
                             href="#"
                             className="flex items-center justify-center rounded-full bg-[#4f7ec8] text-white hover:opacity-80 p-1.5"
@@ -59,7 +59,7 @@ export default function FounderMsg() {
                         </Link>
                         <Link
                             href="#"
-                            className="flex items-center justify-center rounded-full px-8 bg-brand text-white hover:opacity-80 capitalize text-sm sm:text-base"
+                            className="flex items-center justify-center rounded-full px-8 bg-brand py-2 text-white hover:opacity-80 capitalize text-sm sm:text-base"
                         >
                             {/* <IconBrandInstagram /> */}
                             Follow my professional&nbsp; <span className="underline">profile here</span>

@@ -18,13 +18,13 @@ export default function MissionVision() {
 				{/* CENTER - ICON GRID */}
 				<div className="grid md:grid-cols-2 gap-4 relative">
 					{/* <div className="absolute left-1/2 top-1/3 -translate-x-1/2 translate-y-1/2 size-20 bg-secondary rounded-full z-50"></div> */}
-					<div className="hidden absolute z-20 inset-0 mb-10 md:flex items-center justify-center">
-						<div className="size-30 bg-background rounded-3xl flex justify-center items-center">
-							<IconPawFilled className="size-18 text-accent" />
+					<div className="absolute z-20 inset-0 mb-10 flex items-center justify-center">
+						<div className="size-25 md:size-30 bg-background rounded-3xl flex justify-center items-center">
+							<IconPawFilled className="size-14 md:size-18 text-accent" />
 						</div>
 					</div>
 
-					<div className="flex flex-col gap-4">
+					<div className="flex flex-row md:flex-col gap-4">
 						{/* Card 1 */}
 						<div className="rounded-3xl h-55 w-full flex items-center justify-center bg-accent shadow-lg">
 							<span className="text-white text-5xl">
@@ -39,7 +39,7 @@ export default function MissionVision() {
 							</span>
 						</div>
 					</div>
-					<div className="flex flex-col gap-4 md:gap-0 md:-translate-y-10">
+					<div className="flex flex-row md:flex-col gap-4 md:-translate-y-10">
 						{/* Card 3 */}
 						<div className="rounded-3xl h-55 w-full flex items-center justify-center bg-accent shadow-lg">
 							<span className="text-white text-5xl">

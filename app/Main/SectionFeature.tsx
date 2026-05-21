@@ -7,26 +7,30 @@ const features = [
         desc: "We carefully choose innovative, high quality pet food brands that align with our values of trust, nutrition, and transparency.",
         img: "/Sections/Feat1.png",
         imgClass: "bottom-0 -right-1 w-16 md:w-24",
+        class: "md:hover:translate-y-5"
     },
     {
         title: "Innovative Retailer Portal",
         desc: "Our dedicated retailer portal simplifies bulk ordering, wholesale pricing access, and seamless product management for efficient business operations.",
         img: "/Sections/Feat2.png",
         imgClass: "-bottom-4 left-1/2 -translate-x-1/2 w-20 md:w-28",
-        class: "translate-y-15"
+        class: "md:translate-y-15 md:hover:translate-y-10"
+        
     },
     {
         title: "Diversified Brand Network",
         desc: "We offer a wide range of trusted and innovative pet food brands, giving retailers access to multiple categories in one place.",
         img: "/Sections/Feat3.png",
         imgClass: "bottom-0 -right-1 w-20 md:w-28",
+        class: "md:hover:translate-y-5"
+
     },
     {
         title: "Flexible Trade Credit Access",
         desc: "Approved retailers can access trade credit options, helping manage cash flow while ensuring consistent product availability.",
         img: "/Sections/Feat4.png",
         imgClass: "bottom-0 -right-1 w-14 md:w-22",
-        class: "translate-y-15"
+        class: "md:translate-y-15 md:hover:translate-y-10"
     },
 ];
 
@@ -58,12 +62,14 @@ export default function SectionFeature() {
                 {features.map((item, i) => (
                     <div
                         key={i}
-                        className={`${item.class} relative rounded-3xl border border-accent md:p-6 p-4 h-[220px] sm:h-[290px] md:min-h-[370px] overflow-hidden shadow-sm w-full`}
+                        className={`${item.class} group relative transition-all duration-300 rounded-3xl border border-accent md:p-6 p-4 h-[220px] sm:h-[290px] md:min-h-[370px] overflow-hidden shadow-sm w-full hover:-translate-y-1`}
                     >
-                        <h3 className="text-xl sm:text-2xl text-secondary mb-3 font-youngSerif">
+                        <span className="absolute inset-0 translate-y-full bg-accent/20 transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                        <h3 className="text-2xl text-secondary transition-all duration-300 group-hover:text-accent mb-3 font-youngSerif">
                             {item.title}
                         </h3>
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        <p className="text-gray-600 text-sm transition-all duration-300 group-hover:text-secondary leading-relaxed">
                             {item.desc}
                         </p>
 
