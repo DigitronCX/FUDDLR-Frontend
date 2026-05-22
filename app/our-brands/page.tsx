@@ -3,16 +3,17 @@ import BrandGrowthSection from './SectionHero'
 import FeaturedBrands from './FeaturedBrands'
 import Banner from './Banner'
 import BrandForm from './BrandForm'
+import CardsSection from './HeroCards'
 
 const page = () => {
     return (
         <>
-            <main>
-                <BrandGrowthSection />
-                <FeaturedBrands />
-                <Banner />
-                <BrandForm />
-            </main>
+            <CardsSection />
+            {/* <BrandGrowthSection /> */}
+
+            <FeaturedBrands />
+            <Banner />
+            <BrandForm />
         </>
     )
 }
