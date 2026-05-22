@@ -1,10 +1,10 @@
-import { IconFlag3Filled, IconMail, IconMapPinFilled, IconPawFilled, IconPhoneCall } from "@tabler/icons-react";
+import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
 // components/ContactSection.jsx
 export default function BrandForm() {
     return (
-        <section className="py-20 px-6 lg:px-20 relative overflow-hidden">
+        <section className="py-10 px-6 lg:px-20 relative overflow-hidden">
             {/* Background blobs */}
             {/* <div className="z-0">
                 <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
@@ -19,7 +19,7 @@ export default function BrandForm() {
 
             <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 {/* LEFT: Form */}
-                <div className="bg-white rounded-2xl border-2 border-brand p-8 shadow-sm">
+                <div className="bg-white rounded-2xl border-2 border-brand p-5 md:p-8 shadow-sm">
                     <div className="space-y-2 mb-6">
                         <p className="text-sm tracking-widest text-secondary">
                             Contact Form
@@ -31,7 +31,7 @@ export default function BrandForm() {
                     </div>
 
                     <form className="space-y-5">
-                        <section className="grid grid-cols-2 gap-5">
+                        <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {/* Name */}
                             <div>
                                 <label htmlFor="brandName" className="block text-sm text-secondary font-medium mb-1">
@@ -56,7 +56,7 @@ export default function BrandForm() {
                                 />
                             </div>
                         </section>
-                        <section className="grid grid-cols-2 gap-5">
+                        <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {/* Name */}
                             <div>
                                 <label htmlFor="fullName" className="block text-sm text-secondary font-medium mb-1">
@@ -82,7 +82,7 @@ export default function BrandForm() {
                                 />
                             </div>
                         </section>
-                        <section className="grid grid-cols-2 gap-5">
+                        <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {/* Contact */}
                             <div>
                                 <label className="block text-sm  text-secondary font-medium mb-1">
@@ -98,13 +98,12 @@ export default function BrandForm() {
                             {/* Country */}
                             <div className="text-secondary">
                                 <label className="block text-secondary text-sm font-medium mb-1">
-                                    Country <span className="text-red-500">*</span>
+                                    Product Category <span className="text-red-500">*</span>
                                 </label>
                                 <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
-                                    <option>Select a Country</option>
-                                    <option>USA</option>
-                                    <option>UK</option>
-                                    <option>Canada</option>
+                                    <option>Select a Category</option>
+                                    <option>Pet Food</option>
+                                    <option>Pet Ice Cream</option>
                                 </select>
                             </div>
                         </section>
@@ -120,26 +119,51 @@ export default function BrandForm() {
                                 className="inp-primary"
                             ></textarea>
                         </div>
+                        {/* Currently Stocked  */}
+                        <div>
+                            <label className="block text-sm  text-secondary font-medium mb-1">
+                                Are you currently stocked in retail? <span className="text-red-500">*</span>
+                            </label>
+                            <div className="flex items-center gap-5">
+                                <label htmlFor="" className='flex items-center gap-2'>
+                                    <input type="radio" name="stockedInRetail" id="stockedInRetail" value="yes" className='accent-brand size-3' />
+                                    <p className='text-sm text-secondary'>
+                                        Yes
+                                    </p>
+                                </label>
+                                <label htmlFor="" className='flex items-center gap-2'>
+                                    <input type="radio" name="stockedInRetail" id="stockedInRetail" value="no" className='accent-brand size-3' />
+                                    <p className='text-sm text-secondary'>
+                                        No
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
 
-                        <div className="text-secondary flex gap-2">
+                        {/* Terms and Conditions */}
+                        {/* <div className="text-secondary flex gap-2">
                             <input type="checkbox" name="checkbox" id="checkbox" className="border rounded-none border-gray-500" />
                             <label htmlFor="checkbox" className="text-sm">Terms and Conditions <span className="text-brand">Privacy Policy </span><span className="text-red-500">*</span></label>
-                        </div>
+                        </div> */}
+
                         <button
                             type="submit"
-                            className="btn-primary"
+                            className="w-full group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30 cursor-pointer"
                         >
-                            Send Message
+                            <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                            <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
+                                Submit
+                            </span>
                         </button>
                     </form>
                 </div>
 
                 {/* RIGHT: Image + Floating Icons */}
-                <div className="relative flex justify-center">
+                <div className="relative hidden md:flex justify-center">
                     {/* Background shapes */}
                     {/* <div className="absolute w-72 h-72 bg-green-200 rounded-3xl top-0 right-10 z-5"></div> */}
                     {/* <div className="absolute size-32 bg-accent rounded-3xl bottom-0 left-0 z-50"></div> */}
-                      <div className="absolute z-40 bottom-2 md:bottom-10 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
+                    <div className="absolute z-40 bottom-2 md:bottom-10 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
                         <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" />
                         {/* <Image
                             src="/Images/Vector.svg" // replace with your image
@@ -180,7 +204,7 @@ export default function BrandForm() {
                 </div>
             </div>
 
-            <div className="my-10 py-3 w-full mx-auto text-center bg-accent rounded-2xl text-sm sm:text-base md:text-lg font-medium flex items-center justify-center gap-2 text-white">
+            <div className="my-10 px-4 lg:px-8 py-3 w-full mx-auto text-center bg-accent rounded-2xl text-sm sm:text-base md:text-lg md:font-medium flex items-center justify-center gap-2 text-white">
                 <p>
                     NOTE: We carefully review all brands. Additional sales and brand support may be offered where needed (POA).
                 </p>

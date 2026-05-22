@@ -16,7 +16,7 @@ const brands = [
 
 export default function FeaturedBrands() {
   return (
-    <section className="py-16 px-6 md:px-12 relative overflow-hidden">
+    <section className="py-10 md:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
       {/* Background blobs */}
       {/* <div className="z-0">
         <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
@@ -30,21 +30,21 @@ export default function FeaturedBrands() {
 
       <div className="relative z-10">
         {/* Header */}
-        <div className="max-w-7xl mx-auto mb-10">
+        <div className="mx-auto mb-10 space-y-3">
           <p className="text-sm tracking-widest text-gray-500 uppercase">
             Brands
           </p>
-          <h2 className="text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif text-gray-900">
             Our Featured{" "}
             <span className="text-green-600">Brands</span>
           </h2>
-          <p className="text-gray-500 mt-3 max-w-xl">
+          <p className="text-gray-500 mt-3 max-w-xl text-sm sm:text-base">
             Simple, honest nutrition for pets sourced from brands that truly care.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-4 md:gap-6">
           {brands.map((brand, index) => (
             <div
               key={index}
@@ -59,15 +59,13 @@ export default function FeaturedBrands() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <p className="text-sm font-medium tracking-wide text-gray-700 uppercase">
+              <p className="text-sm font-medium tracking-wider text-gray-700 uppercase">
                 {brand.name}
               </p>
             </div>
           ))}
         </div>
       </div>
-
-
     </section>
   );
 }

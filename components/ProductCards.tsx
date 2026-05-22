@@ -1,3 +1,4 @@
+import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
 type Props = {
@@ -12,7 +13,11 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
     return (
-        <div className="bg-white border border-accent/40 rounded-xl hover:shadow-md transition">
+        <div className="relative bg-white border border-accent/40 rounded-xl hover:shadow-md transition">
+            <div className="absolute top-0 left-0 z-20 px-4 py-3 rounded-tl-lg rounded-br-lg bg-brand overflow-hidden shadow-lg flex items-center justify-center">
+                {/* <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" /> */}
+                <p className="text-white text-sm">New</p>
+            </div>
             <div className="h-40 flex items-center justify-center mb-4">
                 <Image
                     src={product.image}

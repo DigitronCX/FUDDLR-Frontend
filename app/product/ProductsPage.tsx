@@ -3,6 +3,7 @@
 
 import ProductCard from "@/components/ProductCards";
 import Sidebar from "@/components/Sidebar";
+import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
 const products = [
@@ -96,14 +97,14 @@ export default function Home() {
     return (
         <main className="min-h-screen px-14 py-20 relative overflow-hidden">
             {/*Background Blobs*/}
-            <div className="z-0">
+            {/* <div className="z-0">
                 <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
                 <div className="absolute top-25 left-40 size-10 bg-accent rounded-md opacity-20 " />
                 <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20 " />
                 <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand  rounded-2xl opacity-40" />
                 <div className="absolute bottom-1/7 right-5 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
                 <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
-            </div>
+            </div> */}
 
             <div className="relative z-10">
                 {/* Header */}
@@ -129,7 +130,7 @@ export default function Home() {
                         <div className="relative mt-20 flex justify-center md:justify-center w-full">
 
                             {/* Main Image */}
-                            <div className="relative rounded-3xl overflow-hidden bg-linear-to-tl from-green-900/30 to-accent/50 w-3/4 flex justify-center z-20">
+                            <div className="relative rounded-3xl overflow-hidden bg-brand to-accent/50 w-3/4 flex justify-center z-20">
                                 <Image
                                     src="/Sections/AboutPage.png" //replace with your image
                                     alt="Dog"
@@ -140,16 +141,17 @@ export default function Home() {
                             </div>
 
                             {/* Small Image */}
-                            <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-3 size-30 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center">
-                                <Image
+                            <div className="absolute bottom-0 left-0 z-20 translate-y-1/4 -translate-x-3 size-30 rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
+                             <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" />
+                                {/* <Image
                                     src="/Images/Vector.svg" // replace with your image
                                     alt="Dog playing"
                                     width={100}
                                     height={100}
                                     className="object-cover size-12"
-                                />
+                                /> */}
                             </div>
-                            <div className="absolute top-0 right-0 -translate-y-10 -translate-x-3 size-30 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10"></div>
+                            {/* <div className="absolute top-0 right-0 -translate-y-10 -translate-x-3 size-30 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10"></div> */}
                         </div>
 
                     </div>
