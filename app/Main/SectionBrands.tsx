@@ -72,13 +72,13 @@ export default function SectionFuddlerBrands() {
                         {/* RIGHT IMAGE */}
                         <div className="mt-8 md:mt-0 relative flex justify-center lg:justify-end flex-1">
                             <div className="bg-brand w-[86%] ml-auto h-full rounded-3xl p-2 absolute inset-0 z-0 " />
-                            <div className="z-10 rounded-3xl relative top-5">
+                            <div className="z-10 rounded-3xl relative top-5 w-full -mr-6">
                                 <Image
-                                    width={600}
-                                    height={600}
-                                    src="/Sections/Brands.png"
+                                    width={700}
+                                    height={700}
+                                    src="/Sections/FuddlrBrands.webp"
                                     alt="Products"
-                                    className="h-full object-cover"
+                                    className="h-full object-cover w-full"
                                 />
                             </div>
                         </div>

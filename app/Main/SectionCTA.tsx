@@ -51,7 +51,7 @@ export default function SectionCTA() {
                         <div className="max-w-md text-start">
                             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#00b67a] text-white">
                                 {/* Store Icon */}
-                                <IconBuildingStore className="h-7 w-7"/>
+                                <IconBuildingStore className="h-7 w-7" />
                             </div>
 
                             <h2 className="font-youngSerif text-2xl sm:text-4xl leading-tight text-[#2c2c2c]">
@@ -88,7 +88,7 @@ export default function SectionCTA() {
                         {/* Image */}
                         <div className="relative h-[200px] md:h-[330px] overflow-hidden rounded-[36px] group-hover/image:scale-105 transition-transform duration-500 ease-out">
                             <Image
-                                src="/Sections/Cta-One.png"
+                                src="/Sections/Retailers.webp"
                                 alt="Dog treats"
                                 className="relative z-10 object-contain"
                                 width={1000}
@@ -107,7 +107,7 @@ export default function SectionCTA() {
                         <div className="text-start">
                             <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#6c4ce4] text-white">
                                 {/* Check Icon */}
-                                <IconCircleCheck className="h-7 w-7"/>
+                                <IconCircleCheck className="h-7 w-7" />
                             </div>
 
                             <h2 className="font-youngSerif text-2xl sm:text-4xl leading-tight text-[#2c2c2c]">
@@ -138,9 +138,9 @@ export default function SectionCTA() {
                         {/* Product Image */}
                         <div className="relative h-[200px] md:h-[330px] flex items-center justify-center group-hover:scale-105 transition-all duration-300">
                             <Image
-                                src="/Sections/Cta-Two.png"
+                                src="/Sections/Brands.webp"
                                 alt="Dog treats"
-                                className="absolute -bottom-6 z-10 object-contain h-48 md:h-full"
+                                className="absolute -bottom-5 md:-bottom-15 left-4 z-10 object-contain h-48 md:h-full w-full scale-115"
                                 width={1000}
                                 height={1000}
                             />

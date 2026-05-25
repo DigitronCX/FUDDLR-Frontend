@@ -10,7 +10,6 @@ const page = () => {
         <>
             <CardsSection />
             {/* <BrandGrowthSection /> */}
-
             <FeaturedBrands />
             <Banner />
             <BrandForm />
