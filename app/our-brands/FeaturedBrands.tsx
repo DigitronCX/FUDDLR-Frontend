@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 const brands = [
-  { name: "Fishtastic", logo: "/Brands/Brand-1.png" },
+ 
   { name: "Mood Food", logo: "/Brands/Brand-2.png" },
   { name: "Josera", logo: "/Brands/Brand-3.png" },
   { name: "Dog Yog", logo: "/Brands/Brand-4.png" },
