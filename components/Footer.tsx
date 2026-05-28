@@ -39,7 +39,7 @@ const Contactus = [
     },
     {
         icon: IconLocation,
-        text: "181 Rouse Street, Port Melbourne, VIC 3207",
+        text: "181 Rouse Street, Port Melbourne, VIC 3207 (By Appointment Only)",
     },
 ];
 const Followus = [
