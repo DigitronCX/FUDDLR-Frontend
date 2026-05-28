@@ -22,7 +22,7 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "Fuddler",
+  title: "FUDDLR Distribution",
   description: "",
 };
 
