@@ -8,7 +8,7 @@ const brands = [
   { name: "VetActiv8", logo: "/Brands/Brand-4.png" },
   { name: "Mood Food", logo: "/Brands/Brand-5.png" },
   { name: "Dog Yog", logo: "/Brands/Brand-6.png" },
-  { name: "U Chews", logo: "/Brands/Brand-7.png" },
+  { name: "N/A", logo: "/Brands/Brand-7.png" },
   { name: "Ipromea", logo: "/Brands/Brand-8.png" },
   { name: "Feed For Thought", logo: "/Brands/Brand-9.png" },
   { name: "Classytails", logo: "/Brands/Brand-10.png" },
