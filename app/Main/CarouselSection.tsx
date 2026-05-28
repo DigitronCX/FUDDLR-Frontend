@@ -6,7 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const categories = [
-    { id: 1, name: "Ice Creams", bg: "#f5ede0", image: "/Product/Product-1.png" },
+    
     { id: 2, name: "Supplements", bg: "#eaf4ea", image: "/Product/Supplements.webp" },
     { id: 3, name: "Treats", bg: "#f5f5f5", image: "/Product/Treats.webp" },
     { id: 4, name: "Ice Creams", bg: "#e8f4fd", image: "/Product/IceCream.webp" },
