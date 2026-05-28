@@ -8,6 +8,7 @@ const brands = [
   { name: "Dog Yog", logo: "/Brands/Brand-4.png" },
   { name: "Ipromea", logo: "/Brands/Brand-5.png" },
   { name: "Vetactive8", logo: "/Brands/Brand-6.png" },
+  { name: "XYZ", logo: "/Brands/Brand-7.png" },
   { name: "Feed for thought", logo: "/Brands/Brand-8.png" },
   { name: "Naturawr", logo: "/Brands/Brand-9.png" },
   { name: "Classy tails", logo: "/Brands/Brand-10.png" },
