@@ -24,6 +24,9 @@ const unbounded = Unbounded({
 export const metadata: Metadata = {
   title: "FUDDLR Distribution",
   description: "",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

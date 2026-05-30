@@ -33,13 +33,13 @@ export default function SectionFuddlerBrands() {
                         <span className="text-brand">FUDDLR </span> For Brands
                     </h2>
 
-                    <p className="text-primary leading-relaxed mb-10 text-sm sm:text-base max-w-3xl">
+                    <p className="text-primary leading-relaxed mb-2 text-sm sm:text-base max-w-3xl">
                         Every brand we consider is evaluated based on product integrity, market fit, and growth opportunity within our retail network. Our focus is on building a portfolio that retailers trust and customers return to.
                     </p>
 
-                    <section className="grid lg:grid-cols-[2fr_1.1fr] items-start gap-2 mb-2 w-full">
+                    <section className="grid lg:grid-cols-[2fr_1.1fr] items-center gap-2 w-full h-fit">
                         {/* LEFT CONTENT */}
-                        <div className="flex flex-col justify-between h-full">
+                        <div className="flex flex-col justify-between ">
                             {/* CARDS */}
                             <div className="grid sm:grid-cols-3 gap-2 mb-4 w-full h-full ">
                                 {
@@ -70,23 +70,23 @@ export default function SectionFuddlerBrands() {
                         </div>
 
                         {/* RIGHT IMAGE */}
-                        <div className="mt-8 md:mt-0 relative flex justify-center lg:justify-end flex-2 h-full">
-                        {/* <div className="mt-8 md:mt-0 relative bg-black h-full"> */}
-                            <div className="bg-brand w-full md:w-[90%] ml-auto h-full rounded-3xl absolute inset-0 z-0 " />
-                            <div className="z-10 rounded-3xl relative top-5 w-full -mr-6">
+                        <div className="mt-8 bg-white md:mt-0 relative flex justify-center lg:justify-end flex-2 h-[80%]">
+                            {/* <div className="mt-8 md:mt-0 relative bg-black h-full"> */}
+                            <div className="bg-brand w-full md:w-[80%] md:ml-15 h-[90%] rounded-3xl absolute inset-0 z-0 mt-2 " />
+                            <div className="z-10 rounded-3xl relative top-0 w-full -mr-6">
                                 <Image
                                     width={700}
                                     height={700}
                                     src="/Sections/FuddlrBrands.webp"
                                     alt="Products"
-                                    className="h-full object-contain w-full"
+                                    className="h-full object-contain w-full scale-125"
                                 />
                             </div>
                         </div>
                     </section>
 
                     {/* BUTTON */}
-                    <div className="mt-8">
+                    <div className="sm:mt-0 mt-0">
                         <Link
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
