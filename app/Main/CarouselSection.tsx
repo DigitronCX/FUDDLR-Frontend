@@ -24,17 +24,25 @@ type CarouselSizing = {
 
 function getCarouselSizing(viewportWidth: number): CarouselSizing {
     const baseCardWidth = 300;
-    const baseStep = baseCardWidth * 0.76;
+    const baseStep = baseCardWidth * 0.70;
     const baseDesktopHeight = 360;
     const baseImageHeight = 260;
 
-    const scale = viewportWidth >= 1920
-        ? 1.5
-        : viewportWidth >= 1536
-            ? 1.3
-            : viewportWidth >= 1280
-                ? 1.15
-                : 1;
+    const scale = viewportWidth >= 3100
+        ? 3.4
+        : viewportWidth >= 2560
+            ? 2.4
+            : viewportWidth >= 1920
+                ? 1.6
+                : viewportWidth >= 1536
+                    ? 1.4
+                    : viewportWidth >= 1326
+                        ? 1.2
+                        : viewportWidth >= 1280
+                            ? 1.1
+                            : viewportWidth >= 1024
+                                ? 1
+                                : 0.9;
 
     return {
         cardWidth: Math.round(baseCardWidth * scale),
@@ -139,7 +147,7 @@ export default function CategoryCarousel() {
     const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
 
     return (
-        <section className="px-4 py-10 sm:px-6 lg:px-12 xl:px-20  lg:py-16 flex flex-col items-start justify-center min-h-screen overflow-hidden">
+        <section className="px-4 py-10 sm:px-6 lg:px-12 xl:px-16 lg:py-16 flex flex-col items-start justify-center min-h-screen overflow-hidden">
             <div className="flex flex-col items-start space-y-4 text-foreground w-full">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif leading-tight">
                     Our <span className="text-brand">Categories</span>
@@ -171,7 +179,7 @@ export default function CategoryCarousel() {
                 </div>
             </div>
 
-            <div className="hidden md:block w-full mt-20">
+            <div className="hidden md:block w-full mt-12">
                 <div
                     ref={emblaRef}
                     className="overflow-hidden"
