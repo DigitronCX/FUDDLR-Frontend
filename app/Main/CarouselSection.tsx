@@ -237,7 +237,7 @@ export default function CategoryCarousel() {
                                         src={cat.image}
                                         alt={cat.name}
                                         draggable={false}
-                                        className="bg-[#ececec]"
+                                        className="bg-[#ffffff]"
                                         style={{
                                             width: "100%",
                                             height: "100%",
