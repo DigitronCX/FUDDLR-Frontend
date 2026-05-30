@@ -38,9 +38,9 @@ export default function SectionFuddlerBrands() {
                     </p>
 
                     {/* <section className="grid bg-black lg:grid-cols-[2fr_1.1fr] items-start gap-2 w-full"> */}
-                    <section className="flex lg:flex-row flex-col justify-center items-center gap-2 w-full">
+                    <section className="mt-8 flex lg:flex-row flex-col justify-center items-center gap-2 w-full">
                         {/* LEFT CONTENT */}
-                        <div className="flex-2 flex flex-col justify-between ">
+                        <div className="flex-2 flex flex-col ">
                             {/* CARDS */}
                             <div className="grid sm:grid-cols-3 gap-2 mb-4 w-full h-full ">
                                 {
@@ -71,7 +71,7 @@ export default function SectionFuddlerBrands() {
                         </div>
 
                         {/* RIGHT IMAGE */}
-                        <div className="md:mt-0 relative flex justify-center lg:justify-end flex-1 h-[80%]">
+                        <div className="md:mt-0 relative flex justify-center lg:justify-end flex-1 max-h-80 2xl:max-h-70 h-full">
                             {/* <div className="mt-8 md:mt-0 relative bg-black h-full"> */}
                             <div className="bg-brand w-full md:w-[80%] md:ml-15 h-[90%] rounded-3xl absolute inset-0 z-0 mt-2 " />
                             <div className="z-10 rounded-3xl relative top-0 w-full -mr-6">
@@ -87,7 +87,7 @@ export default function SectionFuddlerBrands() {
                     </section>
 
                     {/* BUTTON */}
-                    <div className="sm:mt-0 mt-8">
+                    <div className="mt-8">
                         <Link
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
