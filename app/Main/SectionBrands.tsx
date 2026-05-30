@@ -37,9 +37,10 @@ export default function SectionFuddlerBrands() {
                         Every brand we consider is evaluated based on product integrity, market fit, and growth opportunity within our retail network. Our focus is on building a portfolio that retailers trust and customers return to.
                     </p>
 
-                    <section className="grid lg:grid-cols-[2fr_1.1fr] items-center gap-2 w-full h-fit">
+                    {/* <section className="grid bg-black lg:grid-cols-[2fr_1.1fr] items-start gap-2 w-full"> */}
+                    <section className="flex justify-center items-center gap-2 w-full">
                         {/* LEFT CONTENT */}
-                        <div className="flex flex-col justify-between ">
+                        <div className="flex-2 flex flex-col justify-between ">
                             {/* CARDS */}
                             <div className="grid sm:grid-cols-3 gap-2 mb-4 w-full h-full ">
                                 {
@@ -70,7 +71,7 @@ export default function SectionFuddlerBrands() {
                         </div>
 
                         {/* RIGHT IMAGE */}
-                        <div className="mt-8 bg-white md:mt-0 relative flex justify-center lg:justify-end flex-2 h-[80%]">
+                        <div className="md:mt-0 relative flex justify-center lg:justify-end flex-1 h-[80%]">
                             {/* <div className="mt-8 md:mt-0 relative bg-black h-full"> */}
                             <div className="bg-brand w-full md:w-[80%] md:ml-15 h-[90%] rounded-3xl absolute inset-0 z-0 mt-2 " />
                             <div className="z-10 rounded-3xl relative top-0 w-full -mr-6">

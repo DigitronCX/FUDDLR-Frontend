@@ -45,7 +45,7 @@ export default function WholesaleSteps() {
                 </h2>
             </div>
 
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+            <div className="mx-auto grid lg:grid-cols-2 gap-10 items-center">
                 {/* LEFT SIDE */}
                 <div className="flex flex-col items-center justify-center order-2 lg:order-1">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
