@@ -29,11 +29,11 @@ export default function SectionRetailers() {
                 <div className="relative flex flex-col items-center justify-center order-1 lg:order-0">
                     <Image
                         // src="/Sections/Retailers.png"
-                        src="/Sections/Retailers.png"
+                        src="/Sections/RetailersMain.webp"
                         alt="FUDDLR"
-                        width={700}
-                        height={700}
-                        className="w-[85%] sm:w-[70%] lg:w-[90%] h-auto drop-shadow-xl lg:-rotate-2 z-10"
+                        width={1200}
+                        height={1200}
+                        className="w-[85%] sm:w-[70%] lg:w-[90%] h-auto drop-shadow-xl lg:-rotate-2 z-10 object-cover"
                     />
                     {/* Glow */}
                     <div className="absolute top-0 left-10 h-32 sm:h-40 w-full bg-accent blur-2xl rounded-full opacity-30" />
