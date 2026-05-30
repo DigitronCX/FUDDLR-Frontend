@@ -139,7 +139,7 @@ export default function CategoryCarousel() {
     const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
 
     return (
-        <section className="px-4 py-10 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 lg:py-16 flex flex-col items-start justify-center min-h-screen overflow-hidden">
+        <section className="px-4 py-10 sm:px-6 lg:px-12 xl:px-20  lg:py-16 flex flex-col items-start justify-center min-h-screen overflow-hidden">
             <div className="flex flex-col items-start space-y-4 text-foreground w-full">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif leading-tight">
                     Our <span className="text-brand">Categories</span>

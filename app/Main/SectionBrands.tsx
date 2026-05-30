@@ -38,7 +38,7 @@ export default function SectionFuddlerBrands() {
                     </p>
 
                     {/* <section className="grid bg-black lg:grid-cols-[2fr_1.1fr] items-start gap-2 w-full"> */}
-                    <section className="flex justify-center items-center gap-2 w-full">
+                    <section className="flex lg:flex-row flex-col justify-center items-center gap-2 w-full">
                         {/* LEFT CONTENT */}
                         <div className="flex-2 flex flex-col justify-between ">
                             {/* CARDS */}
@@ -87,7 +87,7 @@ export default function SectionFuddlerBrands() {
                     </section>
 
                     {/* BUTTON */}
-                    <div className="sm:mt-0 mt-0">
+                    <div className="sm:mt-0 mt-8">
                         <Link
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
