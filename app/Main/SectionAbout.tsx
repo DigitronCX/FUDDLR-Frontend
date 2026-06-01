@@ -37,7 +37,7 @@ export default function SectionAbout() {
                 {/* RIGHT: Content */}
                 <div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl mb-6 text-secondary font-youngSerif">
-                        About <span className="text-green-500">FUDDLR</span>
+                        About <span className="text-brand">FUDDLR</span>
                     </h2>
 
                     <p className="text-primary mb-4 font-light leading-relaxed text-sm sm:text-base">
