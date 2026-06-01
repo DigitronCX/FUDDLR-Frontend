@@ -41,7 +41,7 @@ const Navbar = () => {
                 {/* ---------- Contact Btn ---------- */}
                 <section className="hidden md:flex items-center gap-3">
                     <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand/20 border border-brand px-4 sm:px-8 py-3 transition-all duration-300 hover:-translate-y-1"
                     >
                         <span
@@ -55,7 +55,7 @@ const Navbar = () => {
                         </span>
                     </Link>
                     <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-8 py-3 transition-all duration-300 hover:-translate-y-1"
                     >
                         <span
@@ -112,13 +112,13 @@ const Navbar = () => {
 
                 {/* ---------- Contact Btn ---------- */}
                 <section className="flex w-full px-8 md:flex-row justify-start items-start gap-3">
-                    <Link href="/contact-us">
+                    <Link href="/contact">
                         <button className="px-5 text-xs sm:text-xs sm:px-3 flex gap-2 py-3 border font-medium bg-transparent rounded-3xl cursor-pointer text-background hover:text-white hover:bg-brand transition-colors">
                             Brands Apply Here
                         </button>
                     </Link>
                     {/* <span className="hidden md:block border-l h-6 border-gray-700"></span> */}
-                    <Link href="/contact-us">
+                    <Link href="/contact">
                         <button className="px-5 text-xs sm:text-xs sm:px-3 flex gap-2 py-3 font-medium bg-background/40 rounded-3xl cursor-pointer text-white hover:text-secondary hover:bg-background transition-colors">
                             Retailers Sign in
                         </button>
