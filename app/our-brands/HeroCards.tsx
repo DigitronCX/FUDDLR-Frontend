@@ -60,14 +60,12 @@ const CardsSection = () => {
     });
 
     return (
-        <div ref={containerRef} className="relative h-[300vh] w-full ">
+        <div ref={containerRef} className="relative lg:h-[300vh] w-full py-10 lg:py-0 ">
             {/* <div className="sticky top-0 min-h-screen w-full overflow-x-hidden"> */}
             <div className="lg:sticky lg:top-0 min-h-screen w-full overflow-hidden">
     
                 {/* <section className="w-full h-screen pl-10 flex items-center gap-10 overflow-hidden"> */}
                  <section className="w-full min-h-screen px-5 lg:pl-10 flex flex-col lg:flex-row items-center gap-10">
-
-       
 
                     {/* LEFT CONTENT */}
                     <div>
@@ -90,7 +88,7 @@ const CardsSection = () => {
                     {/* RIGHT CONTENT */}
 
                     {/* MOBILE CARDS */}
-                    <div className="flex flex-col gap-5 w-full lg:hidden">
+                    <div className="flex flex-col gap-2 w-full lg:hidden">
                         {cards.map((card) => (
                             <div
                                 key={card.title}
