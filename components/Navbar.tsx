@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const PagesNav = [
     { name: "Home", path: "/" },
-    { name: "Products", path: "/product" },
+    // { name: "Products", path: "/product" },
     { name: "Our Brands", path: "/our-brands" },
     { name: "Why Fuddlr", path: "/about" },
     { name: "Contact", path: "/contact" },
