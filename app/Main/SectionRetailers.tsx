@@ -87,7 +87,7 @@ export default function SectionRetailers() {
                         <span
                             className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs flex gap-1 items-center"
                         >
-                            Lets Begin <IconArrowUpRight className="size-4" />
+                            Let&apos;s Begin <IconArrowUpRight className="size-4" />
                         </span>
                     </Link>
                     {/* <button className="mt-5 px-2 text-sm sm:text-base sm:px-10 flex gap-2 py-2 sm:py-2 bg-brand rounded-4xl cursor-pointer border-4 border-transparent text-white hover:border-brand/80 hover:text-white transition-colors z-20">

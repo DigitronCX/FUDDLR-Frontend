@@ -6,7 +6,7 @@ import Link from "next/link";
 const Mainlinks = [
     { name: "Home", path: "/" },
     // { name: "Products", path: "/product" },
-    { name: "About", path: "/about" },
+    { name: "Why Fuddlr", path: "/about" },
     { name: "Contact", path: "/contact" },
 ];
 
