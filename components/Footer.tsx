@@ -5,14 +5,14 @@ import Link from "next/link";
 
 const Mainlinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/" },
-    { name: "Products", path: "/" },
-    { name: "Contact", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Products", path: "/product" },
+    { name: "Contact", path: "/contact" },
 ];
 
 const OtherPages = [
-    { name: "FAQ's", path: "/" },
-    { name: "Our Brands", path: "/" },
+    { name: "FAQ's", path: "/faq" },
+    { name: "Our Brands", path: "/our-brands" },
     { name: "Brands Apply Here", path: "/" },
     { name: "Wholesale Application", path: "/" },
 ];
