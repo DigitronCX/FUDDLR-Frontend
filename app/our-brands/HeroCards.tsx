@@ -8,6 +8,23 @@ import {
     useSpring,
 } from "framer-motion";
 
+const cards = [
+    {
+        title: "Competitive Wholesale Pricing",
+        description:
+            "Maximise margins while remain competitive & attractive.",
+    },
+    {
+        title: "Active In-Store Advocacy",
+        description:
+            "Engage retailers in person to educate, promote & place your products effectively.",
+    },
+    {
+        title: "Tailored Brand Support",
+        description:
+            "Sales consulting & brand building services (POA) to strengthen market positioning.",
+    },
+];
 const CardsSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -44,8 +61,13 @@ const CardsSection = () => {
 
     return (
         <div ref={containerRef} className="relative h-[300vh] w-full ">
-            <div className="sticky top-0 min-h-screen w-full overflow-x-hidden">
-                <section className="w-full h-screen pl-10 flex items-center gap-10 overflow-hidden">
+            {/* <div className="sticky top-0 min-h-screen w-full overflow-x-hidden"> */}
+            <div className="lg:sticky lg:top-0 min-h-screen w-full overflow-hidden">
+    
+                {/* <section className="w-full h-screen pl-10 flex items-center gap-10 overflow-hidden"> */}
+                 <section className="w-full min-h-screen px-5 lg:pl-10 flex flex-col lg:flex-row items-center gap-10">
+
+       
 
                     {/* LEFT CONTENT */}
                     <div>
@@ -65,14 +87,31 @@ const CardsSection = () => {
                         </button>
                     </div>
 
-                    {/* RIGHT CARDS */}
-                    <div className="flex-2 py-5">
+                    {/* RIGHT CONTENT */}
+
+                    {/* MOBILE CARDS */}
+                    <div className="flex flex-col gap-5 w-full lg:hidden">
+                        {cards.map((card) => (
+                            <div
+                                key={card.title}
+                                className="bg-accent rounded-3xl p-6 min-h-[200px] flex flex-col justify-center"
+                            >
+                                <h3 className="text-xl text-white font-semibold mb-3">
+                                    {card.title}
+                                </h3>
+                                <p className="text-white text-sm">{card.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                    {/* DESKTOP ANIMATION */}
+
+                    <div className="hidden lg:flex flex-1 py-5">
                         <div className="relative flex items-center ">
 
                             {/* Card 1 */}
                             <motion.div
                                 style={{ zIndex: 1 }}
-                                className="absolute left-0 w-[420px] h-[280px] bg-accent border-2 border-accent rounded-[30px] p-8 shadow-2xl will-change-transform flex flex-col justify-center "
+                                className="absolute left-0 w-[420px] h-[280px] bg-accent border-2 border-accent rounded-[30px] p-8 shadow-2xl will-change-transform flex flex-col justify-center"
                             >
                                 <h3 className="text-2xl mb-3 text-white font-semibold font-youngSerif">
                                     Competitive Wholesale Pricing

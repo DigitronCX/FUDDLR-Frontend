@@ -42,7 +42,7 @@ export default function Sidebar() {
                     SEARCH
                 </button> */}
             </div>
-            <h2 className="text-2xl mb-4 text-secondary font-youngSerif">Brands</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl mb-4 text-secondary font-youngSerif">Brands</h2>
 
             <div className="flex flex-wrap gap-3">
                 {brands.map((brand, i) => (
@@ -60,7 +60,7 @@ export default function Sidebar() {
                     </button>
                 ))}
             </div>
-            <h2 className="text-2xl my-4 text-secondary font-youngSerif">Categories</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl my-4 text-secondary font-youngSerif">Categories</h2>
 
             <div className="flex flex-wrap gap-3">
                 {categories.map((brand, i) => (

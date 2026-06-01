@@ -112,11 +112,11 @@ export default function Home() {
                     <p className="text-xs tracking-[5px] text-primary uppercase">
                         Our Product
                     </p>
-                    <h1 className="text-5xl mt-2 text-secondary font-youngSerif">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl mt-2 text-secondary font-youngSerif">
                         Explore Our{" "}
                         <span className="text-brand">Product</span> Range
                     </h1>
-                    <p className="text-primary mt-3 max-w-3xl mx-auto">
+                    <p className="text-xs sm:text-sm md:text-base text-primary mt-3 max-w-3xl mx-auto">
                         Browse through our carefully organized product range, where items are
                         grouped by categories and brands for a seamless shopping experience.
                     </p>

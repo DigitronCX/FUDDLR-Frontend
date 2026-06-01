@@ -13,7 +13,7 @@ const features = [
     },
     {
         title: "Low or No Bulky MOQ's",
-        desc: "lexible order quantities that let you manage cash",
+        desc: "Flexible order quantities that let you manage cash",
     },
 ];
 

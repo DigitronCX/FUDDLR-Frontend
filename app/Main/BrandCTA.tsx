@@ -38,26 +38,26 @@ export default function BrandCTA() {
                 {/* Left Content */}
                 <div className="flex flex-col gap-8 items-stretch justify-center h-full">
 
-                        {/* Item */}
-                        {
-                            data.map((item, index) => (
-                                <div key={index} className="flex flex-row items-center gap-4">
-                                    <div className="text-background text-xl">
-                                        <item.icon className="size-8" />
-                                    </div>
-                                    <div className="w-full flex flex-col justify-center items-start">
-                                        <h4 className="text-lg sm:text-2xl font-youngSerif text-background">{item.title}</h4>
-                                        <p className="text-background text-xs sm:text-sm text-left max-w-2xl">{item.description}</p>
-                                    </div>
+                    {/* Item */}
+                    {
+                        data.map((item, index) => (
+                            <div key={index} className="flex flex-row items-center gap-4">
+                                <div className="text-background text-xl">
+                                    <item.icon className="size-8" />
                                 </div>
-                            ))
-                        }
+                                <div className="w-full flex flex-col justify-center items-start">
+                                    <h4 className="text-lg sm:text-2xl font-youngSerif text-background">{item.title}</h4>
+                                    <p className="text-background text-xs sm:text-sm text-left max-w-2xl">{item.description}</p>
+                                </div>
+                            </div>
+                        ))
+                    }
 
-                        <div className="flex gap-4">
-                            <button className="bg-primary text-white px-6 py-3 rounded-full hover:bg-brand/90 transition">
-                                Brands Apply Here
-                            </button>
-                        </div>
+                    <div className="hidden md:flex gap-4">
+                        <button className="bg-primary text-white px-6 py-3 rounded-full hover:bg-brand/90 transition">
+                            Brands Apply Here
+                        </button>
+                    </div>
                 </div>
 
                 {/* Right Image */}
@@ -71,6 +71,12 @@ export default function BrandCTA() {
                         className="w-full object-contain"
                     />
                 </div>
+            </div>
+
+            <div className="flex md:hidden gap-4">
+                <button className="bg-primary text-white px-6 py-3 rounded-full hover:bg-brand/90 transition text-xs md:text-base">
+                    Brands Apply Here
+                </button>
             </div>
         </section>
     );
