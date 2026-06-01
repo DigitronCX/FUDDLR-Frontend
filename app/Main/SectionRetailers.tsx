@@ -5,7 +5,7 @@ import Link from "next/link";
 const features = [
     {
         title: "Trading Portal for Retailers",
-        desc: "A simple, intuitive ordering portal that lets you browse.",
+        desc: "A simple, intuitive ordering portal that let's you browse.",
     },
     {
         title: "Access Wholesale Pricing",
