@@ -24,7 +24,7 @@ export default function BrandForm() {
                         <p className="text-sm tracking-widest text-secondary">
                             Contact Form
                         </p>
-                        <h3 className="text-3xl font-medium text-secondary font-youngSerif">Apply to Join FUDDLR</h3>
+                        <h3 className="text-3xl font-medium text-secondary font-youngSerif">Apply to Join <span className="text-brand">FUDDLR</span> </h3>
                         <p className="text-sm text-secondary">
                             We are partner with selected brands. Tell us a bit about yours.
                         </p>
