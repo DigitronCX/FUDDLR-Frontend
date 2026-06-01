@@ -95,7 +95,7 @@ const products = [
 
 export default function Home() {
     return (
-        <main className="min-h-screen px-14 py-20 relative overflow-hidden">
+        <main className="min-h-screen md:px-14 px-4 md:py-20 py-10 relative overflow-hidden">
             {/*Background Blobs*/}
             {/* <div className="z-0">
                 <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
@@ -123,11 +123,11 @@ export default function Home() {
                 </div>
 
 
-                <div className="grid grid-cols-[1fr_2fr] gap-10">
+                <div className="grid lg:grid-cols-[1fr_2fr] grid-cols-1 gap-10">
                     {/* Sidebar */}
                     <div className="flex flex-col gap-20">
                         <Sidebar />
-                        <div className="relative mt-20 flex justify-center md:justify-center w-full">
+                        <div className="relative mt-20 hidden lg:flex justify-center md:justify-center w-full">
 
                             {/* Main Image */}
                             <div className="relative rounded-3xl overflow-hidden bg-brand to-accent/50 w-3/4 flex justify-center z-20">
@@ -162,7 +162,7 @@ export default function Home() {
                             12 Item Show
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                             {products.map((product) => (
                                 <ProductCard key={product.id} product={product} />
                             ))}
