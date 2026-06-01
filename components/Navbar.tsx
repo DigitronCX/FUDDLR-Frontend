@@ -12,7 +12,6 @@ const PagesNav = [
     { name: "Contact", path: "/contact" },
 ];
 
-
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
