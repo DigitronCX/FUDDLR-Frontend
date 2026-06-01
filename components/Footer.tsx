@@ -45,11 +45,11 @@ const Contactus = [
 const Followus = [
     {
         icon: IconBrandFacebook,
-        path: "https://www.fuddlr.com.au/"
+        path: "https://www.facebook.com/fuddlr/"
     },
     {
         icon: IconBrandInstagram,
-        path: ""
+        path: "https://www.instagram.com/fuddlr/"
     },
 ];
 const Footer = () => {
@@ -77,7 +77,11 @@ const Footer = () => {
                         <ul className="space-y-2 text-sm capitalize pt-3 flex gap-2">
                             {
                                 Followus.map((item, index) => (
-                                    <li key={index} className="text-white p-2 sm:size-12 size-8 rounded-full">{<item.icon strokeWidth={1.5} />}   </li>
+                                    <li key={index} className="text-white  p-2 sm:size-12 size-8 rounded-full">
+                                        <Link href={item.path} target="_blank" className="cursor-pointer">
+                                            <item.icon strokeWidth={1.5} />
+                                        </Link>
+                                    </li>
                                 ))
                             }
                         </ul>

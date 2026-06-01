@@ -12,7 +12,7 @@ export default function SectionAbout() {
                     {/* Main Image */}
                     <div className="relative rounded-3xl overflow-hidden z-20 w-3/4 flex justify-center">
                         <Image
-                            src="/Sections/About-One.png" // replace with your image
+                            src="/Sections/About-One.webp" // replace with your image
                             alt="Dog"
                             width={400}
                             height={400}

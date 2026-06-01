@@ -52,13 +52,13 @@ export default function FounderMsg() {
                     {/* Social Icons */}
                     <div className="flex flex-wrap gap-4">
                         <Link
-                            href="#"
+                            href="https://au.linkedin.com/in/fotinipratis"
                             className="flex items-center justify-center rounded-full bg-[#4f7ec8] text-white hover:opacity-80 p-1.5"
                         >
                             <IconBrandLinkedin className="size-8" />
                         </Link>
                         <Link
-                            href="#"
+                            href="https://au.linkedin.com/in/fotinipratis"
                             className="flex items-center justify-center rounded-full px-8 bg-brand py-2 text-white hover:opacity-80 capitalize text-sm sm:text-base"
                         >
                             {/* <IconBrandInstagram /> */}
