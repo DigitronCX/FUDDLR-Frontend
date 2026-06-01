@@ -19,8 +19,8 @@ const OtherPages = [
 
 const QuickLinks = [
     // { name: "Company", path: "/" },
-    { name: "Terms & Conditions", path: "/" },
-    { name: "Privacy Policy", path: "/" },
+    { name: "Terms & Conditions", path: "/terms-and-conditions" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
     // { name: "About", path: "/about-us" },
 ];
 

@@ -94,7 +94,6 @@ export default function SectionRetailers() {
                         Lets Begin <IconArrowUpRight className="text-white" />
                     </button> */}
                 </div>
-
             </div>
         </section>
     );
