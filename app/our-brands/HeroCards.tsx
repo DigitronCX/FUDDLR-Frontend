@@ -43,27 +43,27 @@ const CardsSection = () => {
     });
 
     return (
-        <div ref={containerRef} className="relative h-[300vh] w-full">
+        <div ref={containerRef} className="relative h-[300vh] w-full ">
             <div className="sticky top-0 min-h-screen w-full overflow-x-hidden">
-                <section className="w-full h-screen pl-10 flex items-center gap-10">
+                <section className="w-full h-screen pl-10 flex items-center gap-10 overflow-hidden">
 
                     {/* LEFT CONTENT */}
-                <div>
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl  text-secondary leading-tight font-youngSerif">
-                        Are You a Brand <br /> Looking to Grow?
-                    </h1>
+                    <div>
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl text-secondary leading-tight font-youngSerif">
+                            Are You a Brand <br /> Looking to Grow?
+                        </h1>
 
-                    <p className="mt-6 text-gray-600 max-w-lg leading-relaxed text-sm sm:text-base">
-                        Partner with FUDDLR to access a boutique distribution model designed to help your brand stand out & not get lost. We work closely with a curated selection of brands, offering dedicated support, retail connections, and optional sales growth packages to help you scale in the Australian market.
-                    </p>
+                        <p className="mt-6 text-gray-600 max-w-lg leading-relaxed text-sm sm:text-base">
+                            Partner with FUDDLR to access a boutique distribution model designed to help your brand stand out & not get lost. We work closely with a curated selection of brands, offering dedicated support, retail connections, and optional sales growth packages to help you scale in the Australian market.
+                        </p>
 
-                    <button className="mt-8 w-fit group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30 cursor-pointer">
-                        <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                        <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
-                            Brands Apply Now
-                        </span>
-                    </button>
-                </div>
+                        <button className="mt-8 w-fit group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30 cursor-pointer">
+                            <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                            <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
+                                Brands Apply Now
+                            </span>
+                        </button>
+                    </div>
 
                     {/* RIGHT CARDS */}
                     <div className="flex-2 py-5">
@@ -106,7 +106,7 @@ const CardsSection = () => {
                                 style={{
                                     x: card3X,
                                     zIndex: 3,
-                                    left: 840,
+                                    left: 920,
                                 }}
                                 className="bg-accent border-2 border-accent absolute w-[420px] h-[280px]  rounded-[30px] p-8 shadow-xl will-change-transform flex flex-col justify-center"
                             >
