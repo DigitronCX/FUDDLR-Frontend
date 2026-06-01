@@ -67,14 +67,14 @@ const TncData = [
 ]
 const page = () => {
     return (
-        <main className='min-h-screen py-16 px-14 text-secondary'>
+        <main className='min-h-screen py-8 sm:py-16 px-4 sm:px-14 text-secondary'>
             <section className='flex flex-col items-start justify-start mb-10'>
-                <h1 className='font-youngSerif text-6xl text-secondary font-bold'>Terms & Conditions</h1>
+                <h1 className='font-youngSerif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-secondary font-bold'>Terms & Conditions</h1>
             </section>
             {TncData.map((item, index) => (
-                <section className='flex flex-col items-start justify-start mb-10' key={index}>
-                    <h2 className='font-youngSerif text-5xl text-secondary font-bold'>{item.heading}</h2>
-                    <ul className='space-y-2 list-disc mt-5'>
+                <section className='flex flex-col items-start justify-start mb-5 sm:mb-10' key={index}>
+                    <h2 className='font-youngSerif text-2xl sm:text-3xl md:text-5xl text-secondary font-bold'>{item.heading}</h2>
+                    <ul className='space-y-2 list-disc mt-2 sm:mt-5'>
                         {item.points.map((item, index) => (
                             <li key={index} className=' ml-5'>
                                 <p className='font-light text-xs sm:text-lg'>{item}</p>
@@ -84,18 +84,18 @@ const page = () => {
                 </section>
             ))}
 
-            <section className='flex flex-col items-start justify-start mb-10'>
-                <h2 className='font-youngSerif text-5xl text-secondary font-bold'>Packaging Condition Disclaimer</h2>
-                <div className='space-y-2 list-disc mt-5 font-light text-xs sm:text-lg'>
+            <section className='flex flex-col items-start justify-start mb-5 sm:mb-10'>
+                <h2 className='font-youngSerif text-2xl sm:text-3xl md:text-5xl text-secondary font-bold'>Packaging Condition Disclaimer</h2>
+                <div className='space-y-2 list-disc mt-2 sm:mt-5 font-light text-xs sm:text-lg'>
                     <p>
                         We take great care in packaging your order to ensure it arrives safely. However, if the packaging is damaged upon delivery, but the product itself remains in good condition, no refund will be issued.We advise that you inspect your order immediately upon receipt. If the product is undamaged, we consider the sale final, and no refunds will be provided for any issues with the packaging. In the event the product is damaged or defective, please contact us right away for assistance with a return or exchange, as outlined in our Returns Policy.By completing your purchase, you agree to this policy and understand that no refunds will be given for packaging damage if the product is unaffected.
                     </p>
                 </div>
             </section>
 
-            <section className='flex flex-col items-start justify-start mb-10'>
-                <h2 className='font-youngSerif text-5xl text-secondary font-bold'>Change of Mind Disclaimer</h2>
-                <div className='space-y-2 list-disc mt-5 font-light text-xs sm:text-lg'>
+            <section className='flex flex-col items-start justify-start mb-5 sm:mb-10'>
+                <h2 className='font-youngSerif text-2xl sm:text-3xl md:text-5xl text-secondary font-bold'>Change of Mind Disclaimer</h2>
+                <div className='space-y-2 list-disc mt-2 sm:mt-5 font-light text-xs sm:text-lg'>
                     <p>
                         We want you to be completely satisfied with your purchase. However, please note that we do not accept returns or offer refunds for change of mind. We encourage you to carefully review your order before finalizing your purchase.
                     </p>
@@ -109,27 +109,27 @@ const page = () => {
                 </div>
             </section>
 
-            <section className='flex flex-col items-start justify-start mb-10'>
-                <h2 className='font-youngSerif text-5xl text-secondary font-bold'>Important Notice</h2>
-                <div className='space-y-2 list-disc mt-5 font-light text-xs sm:text-lg'>
+            <section className='flex flex-col items-start justify-start mb-5 sm:mb-10'>
+                <h2 className='font-youngSerif text-2xl sm:text-3xl md:text-5xl text-secondary font-bold'>Important Notice</h2>
+                <div className='space-y-2 list-disc mt-2 sm:mt-5 font-light text-xs sm:text-lg'>
                     <p>
                         We reserve the right to decline new orders from you if there are repeated issues with previous transactions, such as payment problems, order
                         cancellations, or abuse of our policies.
                     </p>
                 </div>
             </section>
-            <section className='flex flex-col items-start justify-start mb-10'>
+            <section className='flex flex-col items-start justify-start mb-5 sm:mb-10'>
 
-                <h2 className='font-youngSerif text-5xl text-secondary font-bold'>
+                <h2 className='font-youngSerif text-2xl sm:text-3xl md:text-5xl text-secondary font-bold'>
                     Contact Us
                 </h2>
 
-                <div className="mt-5 font-light text-xs sm:text-lg">
+                <div className="mt-2 sm:mt-5 font-light text-xs sm:text-lg">
                     Check out our SHIPPING & DELIVERY, RETURNS & REPLACEMENTS, PRIVACY &
                     SECURITY, and FAQ page as well.
                 </div>
 
-                <div className="mt-5 font-semibold text-xs sm:text-lg">
+                <div className="mt-2 sm:mt-5 font-semibold text-xs sm:text-lg">
                     <p>FUDDLR Distributors PTY LTD</p>
                     <p>215 Jackson Road</p>
                     <p>Sunnybank Hills, 4109 (QLD)</p>
