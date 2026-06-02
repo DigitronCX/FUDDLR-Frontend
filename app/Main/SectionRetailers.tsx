@@ -1,3 +1,4 @@
+"use client";
 import { IconArrowUpRight, IconCheck } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,6 +34,9 @@ export default function SectionRetailers() {
                         alt="FUDDLR"
                         width={1200}
                         height={1200}
+                        sizes="(max-width: 640px) 85vw,
+                                (max-width: 1024px) 70vw,
+                                45vw"
                         className="w-[85%] sm:w-[70%] lg:w-[90%] h-auto drop-shadow-xl lg:-rotate-2 z-10 object-cover"
                     />
                     {/* Glow */}

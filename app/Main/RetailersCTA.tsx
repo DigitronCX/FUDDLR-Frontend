@@ -1,5 +1,4 @@
-// components/RetailersSection.jsx
-
+"use client";
 import { IconCircleCheck } from "@tabler/icons-react";
 import Image from "next/image";
 

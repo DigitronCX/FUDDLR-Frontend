@@ -1,5 +1,4 @@
-import React from 'react'
-
+"use client";
 const Banner = () => {
     return (
         <section className='text-start mx-auto py-14 md:py-20 px-4 sm:px-6 md:px-12'>

@@ -1,3 +1,4 @@
+"use client";
 import {
     IconArrowUpRight,
     IconCheck,
@@ -76,28 +77,6 @@ export default function WholesaleSteps() {
                                 </p>
                             </div>
                         ))}
-                    </div>
-
-                    {/* Button */}
-                    <div className="mt-8 md:mt-10 flex justify-center">
-                        <Link
-                            href="/contact"
-                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
-                        >
-                            <span
-                                className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"
-                            ></span>
-
-                            <span
-                                className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs flex gap-2 items-center"
-                            >
-                                Apply Now <IconArrowUpRight size={20} />
-                            </span>
-                        </Link>
-
-                        {/* <button className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium bg-brand rounded-full cursor-pointer border border-transparent text-white hover:border-brand/80 transition-colors flex gap-2 items-center">
-                            Apply Now <IconArrowUpRight size={20} />
-                        </button> */}
                     </div>
 
                 </div>

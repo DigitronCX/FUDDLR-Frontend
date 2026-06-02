@@ -1,6 +1,6 @@
+"use client";
 import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function MainAbout() {
     return (

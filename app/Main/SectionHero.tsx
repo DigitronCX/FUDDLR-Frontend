@@ -1,3 +1,4 @@
+"use client";
 import BrandMarquee from '@/components/BrandMarquee'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +9,7 @@ const SectionHero = () => {
             background: 'url(/Sections/HeroBck.webp) no-repeat center center fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-        }} className="sm:min-h-screen h-full  pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
+        }} className="sm:min-h-screen pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
 
             <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-4">
 
@@ -29,6 +30,10 @@ const SectionHero = () => {
                             width={600}
                             height={600}
                             priority
+                            fetchPriority="high"
+                            quality={60}
+                            sizes="83vw"
+                            // sizes="(max-width: 768px) 83vw, 55vw"
                             className="z-10 w-full h-auto object-cover"
                         />
                     </div>

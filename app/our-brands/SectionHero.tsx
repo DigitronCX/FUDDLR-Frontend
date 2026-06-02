@@ -1,3 +1,4 @@
+"use client";
 export default function BrandGrowthSection() {
     return (
         <section className="relative py-10 md:py-20 px-4 sm:px-6 md:px-12 overflow-hidden">

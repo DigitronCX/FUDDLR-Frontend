@@ -1,3 +1,4 @@
+"use client";
 import { IconBulb, IconDiamondFilled, IconPawFilled, IconTargetArrow, IconTrophy } from "@tabler/icons-react";
 
 export default function MissionVision() {

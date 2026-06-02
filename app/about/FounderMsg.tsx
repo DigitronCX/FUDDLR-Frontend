@@ -1,7 +1,7 @@
+"use client";
 import { IconBrandLinkedin, IconQuoteFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-// import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function FounderMsg() {
     return (
@@ -67,16 +67,6 @@ export default function FounderMsg() {
                     </div>
                 </div>
             </div>
-            {/* ==== Blobs ==== */}
-            {/* <div className="z-0">
-                <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
-                <div className="absolute top-25 left-40 size-10 bg-accent rounded-md opacity-20 " />
-                <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20 " />
-                <div className="absolute bottom-5 left-1/4 size-24 bg-linear-to-t to-background from-accent rounded-xl opacity-20 " />
-                <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand  rounded-2xl opacity-40" />
-                <div className="absolute bottom-1/7 right-5 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
-                <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
-            </div> */}
 
         </section>
     );

@@ -1,4 +1,5 @@
-import { IconCheck, IconCheckbox } from "@tabler/icons-react";
+"use client";
+import { IconCheck } from "@tabler/icons-react";
 import Image from "next/image";
 // import { CheckCircle } from "lucide-react";
 
@@ -20,17 +21,6 @@ const features = [
 export default function MainTrusted() {
     return (
         <section className="relative bg-background py-10 md:py-20 px-4 sm:px-6 md:px-12  overflow-hidden">
-
-            {/* Background blobs */}
-            {/* <div className="z-0">
-                <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
-                <div className="absolute top-25 left-40 size-10 bg-accent rounded-md opacity-20 " />
-                <div className="absolute top-1/4 -left-14 size-24 bg-accent rounded-xl opacity-20 " />
-                <div className="absolute bottom-5 left-1/4 size-24 bg-linear-to-t to-background from-accent rounded-xl opacity-20 " />
-                <div className="absolute bottom-1/3 -right-14 w-28 h-28 bg-linear-to-b to-background from-brand  rounded-2xl opacity-40" />
-                <div className="absolute bottom-1/7 right-5 w-20 h-20 bg-linear-to-l to-background from-brand rounded-xl opacity-20" />
-                <div className="absolute right-1/6 bottom-5 size-12 bg-linear-to-t to-background from-brand  rounded-md opacity-40 " />
-            </div> */}
 
             <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
