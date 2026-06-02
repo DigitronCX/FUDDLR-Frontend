@@ -365,7 +365,7 @@ function MobileCarousel({
                                     src={cat.image}
                                     alt={cat.name}
                                     draggable={false}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                             <div className="bg-[#f6ffe6] py-6 text-center">

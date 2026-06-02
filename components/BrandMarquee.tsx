@@ -23,7 +23,7 @@ const BrandMarquee = () => {
                     Text.map((text, i) => (
                         <span
                             key={i}
-                            className='w-20 h-12 sm:w-24 sm:h-24 lg:w-32 lg:h-28 text-base text-secondary mx-4 sm:mx-6 font-youngSerif'
+                            className='w-20 h-12 sm:w-24 sm:h-24 lg:w-32 lg:h-28 text-sm sm:text-base text-secondary mx-4 sm:mx-6 font-youngSerif'
                         >
                             <div className='flex gap-3 items-center ml-4'>
                                 <div className='p-1 rounded-full border border-brand'>
