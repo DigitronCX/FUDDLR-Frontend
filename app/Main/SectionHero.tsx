@@ -8,7 +8,7 @@ const SectionHero = () => {
             background: 'url(/Sections/HeroBck.webp) no-repeat center center fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-        }} className="min-h-screen h-full pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
+        }} className="sm:min-h-screen h-full pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
 
             <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-4">
 
@@ -22,7 +22,16 @@ const SectionHero = () => {
                     <p className='text-sm sm:text-lg text-secondary font-poppins max-w-md'>
                         Boutique distribution of premium pet supplies, worldwide.
                     </p>
-
+                    <div className="w-10/12 lg:w-[55%] flex-1 relative flex md:hidden items-center justify-center">
+                        <Image
+                            src="/Sections/HeroHome.webp"
+                            alt="Dog"
+                            width={600}
+                            height={600}
+                            priority
+                            className="z-10 w-full h-auto object-cover"
+                        />
+                    </div>
                     <div className='flex flex-col md:flex-row justify-center items-center gap-2 mt-5'>
 
                         <Link
@@ -62,7 +71,7 @@ const SectionHero = () => {
 
 
                 {/* ============ Right Side ============ */}
-                <div className="w-10/12 lg:w-[55%] flex-1 relative flex items-center justify-center">
+                <div className="w-10/12 lg:w-[55%] flex-1 relative md:flex hidden items-center justify-center">
                     <Image
                         src="/Sections/HeroHome.webp"
                         alt="Dog"
@@ -72,7 +81,6 @@ const SectionHero = () => {
                         className="z-10 w-full h-auto object-cover"
                     />
                 </div>
-
             </section>
 
             <section className='block lg:hidden absolute bottom-0 lg:-bottom-[28%] w-full'>

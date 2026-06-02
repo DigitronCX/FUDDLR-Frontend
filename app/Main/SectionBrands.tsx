@@ -74,7 +74,7 @@ export default function SectionFuddlerBrands() {
                         <div className="md:mt-0 relative flex justify-center lg:justify-end flex-1 max-h-80 2xl:max-h-70 h-full">
                             {/* <div className="mt-8 md:mt-0 relative bg-black h-full"> */}
                             <div className="bg-brand w-full md:w-[80%] md:ml-15 h-[90%] rounded-3xl absolute inset-0 z-0 mt-2 " />
-                            <div className="z-10 rounded-3xl relative top-0 w-full -mr-6">
+                            <div className="z-10 rounded-3xl relative top-0 w-full sm:-mr-6">
                                 <Image
                                     width={700}
                                     height={700}
