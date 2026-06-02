@@ -91,7 +91,7 @@ export default function WholesaleSteps() {
                             <span
                                 className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs flex gap-2 items-center"
                             >
-                                Contact Us <IconArrowUpRight size={20} />
+                                Apply Now <IconArrowUpRight size={20} />
                             </span>
                         </Link>
 

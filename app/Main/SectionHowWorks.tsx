@@ -104,7 +104,7 @@ export default function SectionHowWorks() {
                                 <span
                                     className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs"
                                 >
-                                    Contact Us
+                                    Apply Now
                                 </span>
                             </Link>
                         </div>
