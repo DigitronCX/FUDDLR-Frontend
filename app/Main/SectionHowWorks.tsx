@@ -94,7 +94,7 @@ export default function SectionHowWorks() {
                         </div>
                         <div className="mt-4 sm:mt-10 mx-auto">
                             <Link
-                                href="/contact-us"
+                                href="/contact"
                                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                             >
                                 <span
@@ -104,7 +104,7 @@ export default function SectionHowWorks() {
                                 <span
                                     className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs"
                                 >
-                                    Apply Now
+                                    Contact Us
                                 </span>
                             </Link>
                         </div>
