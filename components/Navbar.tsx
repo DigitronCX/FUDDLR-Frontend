@@ -1,5 +1,5 @@
 "use client"
-import { IconMenu, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -78,7 +78,7 @@ const Navbar = () => {
                     {menuOpen ? (
                         <IconX className="size-5" />
                     ) : (
-                        <IconMenu className="size-5" />
+                        <IconMenu2 className="size-5" />
                     )}
                 </button>
             </div>

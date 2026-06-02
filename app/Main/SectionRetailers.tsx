@@ -77,7 +77,7 @@ export default function SectionRetailers() {
                         ))}
                     </div>
                     <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="group mt-5 relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-14 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                     >
                         <span
