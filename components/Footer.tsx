@@ -6,13 +6,13 @@ import Link from "next/link";
 const Mainlinks = [
     { name: "Home", path: "/" },
     // { name: "Products", path: "/product" },
+    { name: "Our Brands", path: "/our-brands" },
     { name: "Why Fuddlr", path: "/about" },
     { name: "Contact", path: "/contact" },
 ];
 
 const OtherPages = [
     { name: "FAQ's", path: "/faq" },
-    { name: "Our Brands", path: "/our-brands" },
     { name: "Brands Apply Here", path: "/" },
     { name: "Wholesale Application", path: "/" },
 ];

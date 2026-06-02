@@ -8,7 +8,7 @@ const SectionHero = () => {
             background: 'url(/Sections/HeroBck.webp) no-repeat center center fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-        }} className="sm:min-h-screen h-full pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
+        }} className="sm:min-h-screen h-full  pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
 
             <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-4">
 
