@@ -1,14 +1,18 @@
 "use client"
-import BrandMarquee from '@/components/BrandMarquee'
+import dynamic from 'next/dynamic'
 import SectionAbout from './Main/SectionAbout'
 import SectionHero from './Main/SectionHero'
 import SectionRetailers from './Main/SectionRetailers'
 import SectionFuddlerBrands from './Main/SectionBrands'
 import SectionCTA from './Main/SectionCTA'
-import CarouselSection from './Main/CarouselSection'
+// import CarouselSection from './Main/CarouselSection'
 import SectionSteps from './Main/SectionSteps'
-import MainCTA from './Main/MainCTA'
 import SectionHowWorks from './Main/SectionHowWorks'
+
+const CarouselSection = dynamic(() => import("./Main/CarouselSection"), {
+  ssr: false,
+  loading: () => <div className="min-h-screen" />,
+});
 
 const page = () => {
   return (
@@ -20,7 +24,6 @@ const page = () => {
       <SectionFuddlerBrands />
       <SectionAbout />
       <SectionCTA />
-      {/* <MainCTA /> */}
       <SectionHowWorks />
     </main>
   )

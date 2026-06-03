@@ -1,13 +1,18 @@
 "use client";
-import React from 'react'
-import MainFaqSection from './MainFaqSection'
 
-const page = () => {
+import dynamic from "next/dynamic";
+
+const MainFaqSection = dynamic(() => import("./MainFaqSection"), {
+    ssr: false,
+    loading: () => <div className="min-h-screen" />,
+});
+
+const Page = () => {
     return (
         <main>
             <MainFaqSection />
         </main>
-    )
-}
+    );
+};
 
-export default page
+export default Page;

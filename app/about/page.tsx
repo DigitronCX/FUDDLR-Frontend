@@ -1,4 +1,3 @@
-"use client";
 import MainAbout from './MainAbout'
 import MainTrusted from './MainTrusted'
 import MissionVision from './MissionVision'

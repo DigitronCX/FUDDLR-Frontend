@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const categories = [
     { id: 2, name: "Supplements", bg: "#eaf4ea", image: "/Product/Supplements.webp" },
@@ -89,7 +89,7 @@ export default function CategoryCarousel() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [viewportWidth, setViewportWidth] = useState(0);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const updateViewportWidth = () => setViewportWidth(window.innerWidth);
 
         updateViewportWidth();
@@ -121,24 +121,46 @@ export default function CategoryCarousel() {
         setSelectedIndex(emblaApi.selectedScrollSnap());
     }, [emblaApi]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!emblaApi) return;
 
-        emblaApi.on("scroll", syncOffsets);
-        emblaApi.on("select", syncSelected);
-        emblaApi.on("reInit", syncOffsets);
+        const handleSelect = () => {
+            setSelectedIndex(emblaApi.selectedScrollSnap());
+        };
 
-        syncOffsets();
-        syncSelected();
+        const handleScroll = () => {
+            syncOffsets();
+        };
+
+        emblaApi.on("select", handleSelect);
+        emblaApi.on("scroll", handleScroll);
+        emblaApi.on("reInit", handleScroll);
+
+        emblaApi.emit("select");
+        emblaApi.emit("scroll");
 
         return () => {
-            emblaApi.off("scroll", syncOffsets);
-            emblaApi.off("select", syncSelected);
-            emblaApi.off("reInit", syncOffsets);
+            emblaApi.off("select", handleSelect);
+            emblaApi.off("scroll", handleScroll);
+            emblaApi.off("reInit", handleScroll);
         };
+        // if (!emblaApi) return;
+
+        // emblaApi.on("scroll", syncOffsets);
+        // emblaApi.on("select", syncSelected);
+        // emblaApi.on("reInit", syncOffsets);
+
+        // syncOffsets();
+        // syncSelected();
+
+        // return () => {
+        //     emblaApi.off("scroll", syncOffsets);
+        //     emblaApi.off("select", syncSelected);
+        //     emblaApi.off("reInit", syncOffsets);
+        // };
     }, [emblaApi, syncOffsets, syncSelected]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         emblaApi?.reInit();
     }, [emblaApi, sizing.cardWidth, sizing.step]);
 
@@ -196,18 +218,19 @@ export default function CategoryCarousel() {
                 <div
                     className="relative flex items-center justify-center w-full select-none"
                     style={{ height: sizing.desktopHeight }}
-                    onPointerDown={(e) => {
-                        const root = emblaApi?.rootNode();
-                        if (!root) return;
-                        root.dispatchEvent(new PointerEvent("pointerdown", {
-                            clientX: e.clientX,
-                            clientY: e.clientY,
-                            pointerId: e.pointerId,
-                            pointerType: e.pointerType,
-                            bubbles: true,
-                            cancelable: true,
-                        }));
-                    }}
+                // onPointerDown={(e) => {
+                //     console.log(e, ".........................")
+                //     // const root = emblaApi?.rootNode();
+                //     // if (!root) return;
+                //     // root.dispatchEvent(new PointerEvent("pointerdown", {
+                //     //     clientX: e.clientX,
+                //     //     clientY: e.clientY,
+                //     //     pointerId: e.pointerId,
+                //     //     pointerType: e.pointerType,
+                //     //     bubbles: true,
+                //     //     cancelable: true,
+                //     // }));
+                // }}
                 >
                     {categories.map((cat, i) => {
                         const offset = offsets[i] ?? i;

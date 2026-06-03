@@ -1,4 +1,3 @@
-"use client";
 import BrandMarquee from '@/components/BrandMarquee'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -27,19 +26,20 @@ const SectionHero = () => {
                         <Image
                             src="/Sections/HeroHome.webp"
                             alt="Dog"
-                            width={600}
-                            height={600}
+                            width={640}
+                            height={485}
                             priority
                             fetchPriority="high"
-                            quality={60}
-                            sizes="83vw"
-                            // sizes="(max-width: 768px) 83vw, 55vw"
+                            placeholder="blur"
+                            sizes="(max-width: 768px) 83vw, 55vw"
                             className="z-10 w-full h-auto object-cover"
+                            blurDataURL="/Sections/HeroHome-blur.webp"
                         />
                     </div>
                     <div className='flex flex-col md:flex-row justify-center items-center gap-2 mt-5'>
 
                         <Link
+                            rel="preload"
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >
@@ -54,6 +54,7 @@ const SectionHero = () => {
                             </span>
                         </Link>
                         <Link
+                            rel="preload"
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >

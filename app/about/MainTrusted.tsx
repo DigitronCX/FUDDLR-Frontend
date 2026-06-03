@@ -1,7 +1,5 @@
-"use client";
 import { IconCheck } from "@tabler/icons-react";
 import Image from "next/image";
-// import { CheckCircle } from "lucide-react";
 
 const features = [
     {
@@ -28,7 +26,7 @@ export default function MainTrusted() {
 
                 <div className="relative flex justify-start">
                     <Image
-                        src="/Sections/FeatureMain.jpeg" // replace with your mockup image
+                        src="/Sections/TrustedWholesale.jpeg" // replace with your mockup image
                         alt="FUDDLR dashboard"
                         width={650}
                         height={500}

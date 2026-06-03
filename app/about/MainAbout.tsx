@@ -1,4 +1,3 @@
-"use client";
 import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
 

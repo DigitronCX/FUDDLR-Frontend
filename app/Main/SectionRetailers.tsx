@@ -1,4 +1,3 @@
-"use client";
 import { IconArrowUpRight, IconCheck } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
