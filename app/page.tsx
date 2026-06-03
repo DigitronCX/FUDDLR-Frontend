@@ -8,6 +8,7 @@ import SectionCTA from './Main/SectionCTA'
 // import CarouselSection from './Main/CarouselSection'
 import SectionSteps from './Main/SectionSteps'
 import SectionHowWorks from './Main/SectionHowWorks'
+import { Suspense } from 'react'
 
 const CarouselSection = dynamic(() => import("./Main/CarouselSection"), {
   ssr: false,
@@ -18,7 +19,9 @@ const page = () => {
   return (
     <main>
       <SectionHero />
-      <CarouselSection />
+      <Suspense fallback={<div>Loading Carousel...</div>}>
+        <CarouselSection />
+      </Suspense>
       <SectionRetailers />
       <SectionSteps />
       <SectionFuddlerBrands />

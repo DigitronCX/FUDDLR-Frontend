@@ -259,6 +259,7 @@ export default function CategoryCarousel() {
                                         height={sizing.imageHeight}
                                         src={cat.image}
                                         alt={cat.name}
+                                        loading="eager"
                                         draggable={false}
                                         className="bg-[#ffffff]"
                                         style={{
@@ -376,7 +377,8 @@ function MobileCarousel({
         <div className="md:hidden w-full mt-10">
             <div
                 ref={mobileRef}
-                className="overflow-hidden w-full max-w-[92vw] sm:max-w-[360px] mx-auto rounded-2xl shadow-lg"
+                // className="overflow-hidden w-full max-w-[92vw] sm:max-w-[360px] mx-auto rounded-2xl shadow-lg"
+                className="overflow-hidden w-full mx-auto max-w-[360px] rounded-2xl shadow-lg"
             >
                 <div className="flex touch-pan-y">
                     {categories.map((cat) => (
@@ -388,7 +390,7 @@ function MobileCarousel({
                                     src={cat.image}
                                     alt={cat.name}
                                     draggable={false}
-                                    className="w-full h-full object-contain"
+                                    className="w-auto h-auto object-contain"
                                 />
                             </div>
                             <div className="bg-[#f6ffe6] py-6 text-center">

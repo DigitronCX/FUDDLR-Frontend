@@ -33,6 +33,7 @@ export default function SectionRetailers() {
                         alt="FUDDLR"
                         width={1200}
                         height={1200}
+                        loading="eager"
                         sizes="(max-width: 640px) 85vw,
                                 (max-width: 1024px) 70vw,
                                 45vw"
