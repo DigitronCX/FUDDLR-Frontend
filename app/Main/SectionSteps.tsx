@@ -1,12 +1,10 @@
 import {
-    IconArrowUpRight,
     IconCheck,
     IconCurrencyDollar,
     IconFileDescription,
     IconShoppingCartPlus,
 } from "@tabler/icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const steps = [
     {
