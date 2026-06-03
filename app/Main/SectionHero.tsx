@@ -4,13 +4,18 @@ import Link from 'next/link'
 
 const SectionHero = () => {
     return (
-        <div style={{
-            background: 'url(/Sections/HeroBck.webp) no-repeat center center fixed',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-        }} className="sm:min-h-screen pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
+        <div className="sm:min-h-screen pb-24 pt-10 lg:pb-0 lg:pt-20 px-4 sm:px-8 lg:px-14 relative overflow-hidden flex justify-center items-center">
 
-            <section className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-4">
+            <Image
+                src="/Sections/HeroBck.webp"
+                alt=""
+                fill
+                priority
+                fetchPriority="high"
+                className="object-cover"
+            />
+
+            <section className="relative z-10 flex flex-col-reverse lg:flex-row justify-between items-center gap-8 sm:gap-4">
 
                 {/* ============ Left Side ============ */}
                 <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left flex-1 gap-4 lg:mb-20">

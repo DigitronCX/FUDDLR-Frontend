@@ -13,12 +13,12 @@ const youngSerif = Young_Serif({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: [ "400", "600", "800"],
 });
 const unbounded = Unbounded({
   variable: "--font-unbounded",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "800", "900"],
 });
 
 export const metadata: Metadata = {
