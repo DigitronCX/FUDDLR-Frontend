@@ -99,12 +99,14 @@ export default function BrandForm() {
                             {/* Country */}
                             <div className="text-secondary">
                                 <label className="block text-secondary text-sm font-medium mb-1">
-                                    Product Category <span className="text-red-500">*</span>
+                                    Years in Business <span className="text-red-500">*</span>
                                 </label>
                                 <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
-                                    <option>Select a Category</option>
-                                    <option>Pet Food</option>
-                                    <option>Pet Ice Cream</option>
+                                    <option>Select a Year</option>
+                                    <option>Startup (Less than 1 year)</option>
+                                    <option>1-2 Year</option>
+                                    <option>3-5 Year</option>
+                                    <option>5+ Year</option>
                                 </select>
                             </div>
                         </section>
