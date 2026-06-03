@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import SectionHero from './Main/SectionHero'
-import CarouselSection from './Main/CarouselSection'
+// import CarouselSection from './Main/CarouselSection'
 import SectionRetailers from './Main/SectionRetailers'
 import SectionCTA from './Main/SectionCTA'
 // import SectionFuddlerBrands from './Main/SectionBrands'
@@ -8,6 +8,9 @@ import SectionCTA from './Main/SectionCTA'
 // import SectionSteps from './Main/SectionSteps'
 // import SectionHowWorks from './Main/SectionHowWorks'
 
+const CarouselSection = dynamic(() => import("./Main/CarouselSection"), {
+  loading: () => <div className="min-h-screen" />,
+});
 const SectionFuddlerBrands = dynamic(() => import("./Main/SectionBrands"), {
   loading: () => <div className="min-h-screen" />,
 });
