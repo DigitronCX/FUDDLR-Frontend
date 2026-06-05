@@ -16,6 +16,8 @@ export default function FounderMsg() {
                             alt="Founder"
                             width={300}
                             height={300}
+                            priority
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-cover w-full h-full"
                         />
 

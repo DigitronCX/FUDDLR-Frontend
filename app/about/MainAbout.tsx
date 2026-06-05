@@ -14,12 +14,20 @@ export default function MainAbout() {
                     {/* Main Image */}
                     <div className="relative rounded-3xl overflow-hidden bg-brand w-3/4 flex justify-center z-20">
                         <Image
+                            src="/Sections/AboutPage.png"
+                            alt="Dog"
+                            width={350}
+                            height={200}
+                            priority
+                            fetchPriority="high"
+                        />
+                        {/* <Image
                             src="/Sections/AboutPage.png" // replace with your image
                             alt="Dog"
                             width={350}
                             height={200}
-                            className="object-contain w-auto h-auto"
-                        />
+                            className="object-contain w-auto h-full"
+                        /> */}
                     </div>
 
                     {/* Small Image */}
@@ -54,8 +62,8 @@ export default function MainAbout() {
                         We work with brands that care about what goes into their products, focusing on real ingredients, thoughtful nutrition, and complete transparency Because when it comes to our pets, only the best will do.
                     </p>
 
-                    
-                {/* <button>
+
+                    {/* <button>
                     <Link
                         href="/contact-us"
                         className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
