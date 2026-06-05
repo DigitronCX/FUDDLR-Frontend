@@ -32,9 +32,9 @@ export default function MainAbout() {
                     </div>
 
                     {/* Small Image */}
-                    {/* <div className="absolute z-20 bottom-2 md:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
+                    <div className="absolute z-20 bottom-2 md:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
                         <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" />
-                    </div> */}
+                    </div>
                     {/* <div className="absolute top-0 right-0 -translate-y-10 -translate-x-3 size-30 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10"></div> */}
                 </div>
 
