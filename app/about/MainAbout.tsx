@@ -29,7 +29,7 @@ export default function MainAbout() {
                             height={200}
                             priority
                             fetchPriority="high"
-                            className="object-contain w-auto h-full"
+                            className="object-contain w-full sm:w-auto h-auto sm:h-full"
                         />
                     </div>
 
