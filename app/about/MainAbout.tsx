@@ -20,6 +20,7 @@ export default function MainAbout() {
                             height={200}
                             priority
                             fetchPriority="high"
+                            className="w-full h-full"
                         />
                         {/* <Image
                             src="/Sections/AboutPage.png" // replace with your image
