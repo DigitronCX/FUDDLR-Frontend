@@ -13,22 +13,24 @@ export default function MainAbout() {
 
                     {/* Main Image */}
                     <div className="relative rounded-3xl overflow-hidden bg-brand w-3/4 flex justify-center z-20">
-                        <Image
+                        {/* <Image
                             src="/Sections/AboutPage.png"
                             alt="Dog"
                             width={350}
                             height={200}
                             priority
                             fetchPriority="high"
-                            className="w-full h-full"
-                        />
-                        {/* <Image
+                            className="w-full h-auto object-contain"
+                        /> */}
+                        <Image
                             src="/Sections/AboutPage.png" // replace with your image
                             alt="Dog"
                             width={350}
                             height={200}
+                            priority
+                            fetchPriority="high"
                             className="object-contain w-auto h-full"
-                        /> */}
+                        />
                     </div>
 
                     {/* Small Image */}
