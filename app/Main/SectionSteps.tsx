@@ -81,7 +81,7 @@ export default function WholesaleSteps() {
                 {/* RIGHT SIDE */}
                 <div className="md:relative hidden lg:flex items-center justify-center order-1 lg:order-2">
                     <Image
-                        src="/Sections/Steps.png"
+                        src="/Sections/Steps.webp"
                         alt="Steps"
                         width={700}
                         height={700}
