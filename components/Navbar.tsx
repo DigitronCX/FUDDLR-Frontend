@@ -22,7 +22,14 @@ const Navbar = () => {
 
                 {/* ---------- Logo ---------- */}
                 <section className="text-start px-2 sm:px-0 md:text-left">
-                    <Image src="/Logo/Logo.png" alt="Logo" width={200} height={200} className="w-32 h-auto object-contain" />
+                    {/* <Image src="/Logo/Logo.png" alt="Logo" width={200} height={200} className="w-32 h-auto object-contain" /> */}
+                    <Image
+  src="/Logo/Logo.png"
+  alt="Logo"
+  width={128}
+  height={128}
+  className="object-contain"
+/>
                     {/* <h3 className="text-base sm:text-2xl uppercase font-thin sm:tracking-widest">
                         Link City Whiskey
                     </h3> */}

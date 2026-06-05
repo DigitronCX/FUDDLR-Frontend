@@ -63,9 +63,9 @@ const CardsSection = () => {
         <div ref={containerRef} className="relative lg:h-[300vh] w-full py-10 lg:py-0 ">
             {/* <div className="sticky top-0 min-h-screen w-full overflow-x-hidden"> */}
             <div className="lg:sticky lg:top-0 min-h-screen w-full overflow-hidden">
-    
+
                 {/* <section className="w-full h-screen pl-10 flex items-center gap-10 overflow-hidden"> */}
-                 <section className="w-full min-h-screen px-5 lg:pl-10 flex flex-col lg:flex-row items-center gap-10">
+                <section className="w-full min-h-screen px-5 lg:pl-10 flex flex-col lg:flex-row items-center gap-10">
 
                     {/* LEFT CONTENT */}
                     <div>
@@ -73,7 +73,7 @@ const CardsSection = () => {
                             Are You a Brand <br /> Looking to Grow?
                         </h1>
 
-                        <p className="mt-6 text-gray-600 max-w-lg leading-relaxed text-sm sm:text-base">
+                        <p className="mt-6 text-gray-600 w-full sm:max-w-lg leading-relaxed text-sm sm:text-base">
                             Partner with FUDDLR to access a boutique distribution model designed to help your brand stand out & not get lost. We work closely with a curated selection of brands, offering dedicated support, retail connections, and optional sales growth packages to help you scale in the Australian market.
                         </p>
 
