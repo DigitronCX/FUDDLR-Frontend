@@ -382,8 +382,8 @@ function MobileCarousel({
             >
                 <div className="flex touch-pan-y">
                     {categories.map((cat) => (
-                        <div key={cat.id} className="flex-none w-full">
-                            <div className="h-[250px]" style={{ background: cat.bg }}>
+                        <div key={cat.id} className="flex-none w-full ">
+                            <div className="h-[250px] flex  justify-center" style={{ background: cat.bg }}>
                                 <Image
                                     width={320}
                                     height={250}
