@@ -25,13 +25,15 @@ export default function MainTrusted() {
                 {/* LEFT - Tablet Image */}
 
                 <div className="relative flex justify-start">
-                    <Image
-                        src="/Sections/TrustedWholesale.jpeg" // replace with your mockup image
-                        alt="FUDDLR dashboard"
-                        width={650}
-                        height={500}
-                        className="w-5/6 h-auto z-10 rounded-4xl"
-                    />
+                 <Image
+    src="/Sections/TrustedWholesale.jpeg"
+    alt="FUDDLR dashboard"
+    width={650}
+    height={500}
+    priority
+    sizes="(max-width: 1024px) 100vw, 50vw"
+    className="w-5/6 h-auto z-10 rounded-4xl"
+/>
 
                     {/* Small Image */}
                     <div className="absolute bottom-0 right-0 translate-y-1/4 -translate-x-3 size-24 sm:size-32 md:size-40 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10">
@@ -43,8 +45,8 @@ export default function MainTrusted() {
                             className="object-cover size-full"
                         />
                     </div>
-                    <div className="absolute top-0 left-10 h-40 w-full z-0 bg-accent blur-3xl rounded-full opacity-20" />
-                    <div className="absolute bottom-0 left-10 h-40 w-full z-0 bg-accent blur-3xl rounded-full opacity-20" />
+                    {/* <div className="absolute top-0 left-10 h-40 w-full z-0 bg-accent blur-xl rounded-full opacity-20" />
+                    <div className="absolute bottom-0 left-10 h-40 w-full z-0 bg-accent blur-xl rounded-full opacity-20" /> */}
                 </div>
                 {/* RIGHT CONTENT */}
                 <div>

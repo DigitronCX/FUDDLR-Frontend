@@ -66,10 +66,10 @@ export default function SectionFeature() {
                     >
                         <span className="absolute inset-0 translate-y-full bg-accent/20 transition-transform duration-500 ease-out group-hover:translate-y-0" />
 
-                        <h3 className="text-2xl text-secondary transition-all duration-300 group-hover:text-accent mb-3 font-youngSerif">
+                        <h3 className="text-2xl text-secondary transition-transform duration-300 group-hover:text-accent mb-3 font-youngSerif">
                             {item.title}
                         </h3>
-                        <p className="text-gray-600 text-sm transition-all duration-300 group-hover:text-secondary leading-relaxed">
+                        <p className="text-gray-600 text-sm transition-transform duration-300 group-hover:text-secondary leading-relaxed">
                             {item.desc}
                         </p>
 
