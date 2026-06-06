@@ -30,7 +30,8 @@ export default function SectionRetailers() {
                     <Image
                         // src="/Sections/Retailers.png"
                         src="/Sections/RetailersMain.webp"
-                        alt="FUDDLR"
+                        alt="Wholesale pet food and supplies for retailers"
+                        title="Trusted Wholesale Pet Supplies Distributor | FUDDLR"
                         width={1200}
                         height={1200}
                         loading="eager"

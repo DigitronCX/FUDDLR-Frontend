@@ -20,17 +20,18 @@ const SectionHero = () => {
                 {/* ============ Left Side ============ */}
                 <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left flex-1 gap-4 lg:mb-20">
 
-                    <h2 className='text-3xl md:text-5xl lg:text-[70px] font-bold text-secondary leading-tight font-youngSerif'>
+                    <h1 className='text-3xl md:text-5xl lg:text-[70px] font-bold text-secondary leading-tight font-youngSerif'>
                         Distributor of all <span className="text-brand">things pet.</span>
-                    </h2>
+                    </h1>
 
-                    <p className='text-sm sm:text-lg text-secondary font-poppins max-w-md'>
+                    <h4 className='text-sm sm:text-lg text-secondary font-poppins max-w-md'>
                         Boutique distribution of premium pet supplies, worldwide.
-                    </p>
+                    </h4>
                     <div className="w-10/12 lg:w-[55%] flex-1 relative flex md:hidden items-center justify-center">
                         <Image
                             src="/Sections/HeroHome.webp"
-                            alt="Dog"
+                            alt="Premium pet food and supplies for dogs from FUDDLR"
+                            title="FUDDLR - Premium Pet Food and Supplies Distributor"
                             width={640}
                             height={485}
                             priority
@@ -44,7 +45,9 @@ const SectionHero = () => {
                     <div className='flex flex-col md:flex-row justify-center items-center gap-2 mt-5'>
 
                         <Link
-                            rel="preload"
+                            title="FUDDLR - Register as a Wholesaler for Premium Pet Supplies"
+                            aria-label="Register as a wholesale retailer with FUDDLR"
+                            prefetch={true}
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >
@@ -59,7 +62,9 @@ const SectionHero = () => {
                             </span>
                         </Link>
                         <Link
-                            rel="preload"
+                            title="FUDDLR - Are you a brand? Sell on FUDDLR"
+                            aria-label="Are you a brand? Sell on FUDDLR"
+                            prefetch={true}
                             href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >
@@ -85,7 +90,8 @@ const SectionHero = () => {
                 <div className="w-10/12 lg:w-[55%] flex-1 relative md:flex hidden items-center justify-center">
                     <Image
                         src="/Sections/HeroHome.webp"
-                        alt="Dog"
+                        alt="Premium pet food and supplies for dogs from FUDDLR"
+                        title="FUDDLR - Premium Pet Food and Supplies Distributor"
                         width={600}
                         height={600}
                         priority

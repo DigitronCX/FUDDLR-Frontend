@@ -62,7 +62,8 @@ const Footer = () => {
                 <section className="flex items-start flex-col gap-2 max-w-11/12">
                     <Image
                         src="/Logo/LogoWhite.png"
-                        alt="Logo"
+                        title="FUDDLR - Healthy Pet Food, Nutrition and Pet Care"
+                        alt="FUDDLR logo - Healthy pet food and nutrition products"
                         width={200}
                         height={200}
                         className="w-28 sm:w-32 h-auto object-contain"

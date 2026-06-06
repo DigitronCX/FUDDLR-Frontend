@@ -79,7 +79,8 @@ export default function SectionFuddlerBrands() {
                                     width={700}
                                     height={700}
                                     src="/Sections/FuddlrBrands.webp"
-                                    alt="Products"
+                                    alt="Premium pet products available through FUDDLR brand distribution"
+                                    title="FUDDLR Brand Distribution and Wholesale Growth Partner"
                                     className="h-full object-contain w-full scale-125"
                                 />
                             </div>

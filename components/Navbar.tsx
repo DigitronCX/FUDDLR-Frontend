@@ -24,8 +24,9 @@ const Navbar = () => {
                 <section className="text-start px-2 sm:px-0 md:text-left">
                     {/* <Image src="/Logo/Logo.png" alt="Logo" width={200} height={200} className="w-32 h-auto object-contain" /> */}
                     <Image
+                        title="FUDDLR - Healthy Pet Food, Nutrition and Pet Care"
+                        alt="FUDDLR logo - Healthy pet food and nutrition products"
                         src="/Logo/Logo.png"
-                        alt="Fuddlr Logo"
                         width={128}
                         height={128}
                         className="object-contain"

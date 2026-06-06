@@ -6,13 +6,47 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const categories = [
-    { id: 2, name: "Supplements", bg: "#eaf4ea", image: "/Product/Supplements.webp" },
-    { id: 3, name: "Treats", bg: "#f5f5f5", image: "/Product/Treats.webp" },
-    { id: 4, name: "Ice Creams", bg: "#e8f4fd", image: "/Product/IceCream.webp" },
-    { id: 5, name: "Wet Food", bg: "#fdeaea", image: "/Product/Wet.png" },
-    { id: 6, name: "Dry Food", bg: "#fff8e1", image: "/Product/DryFood.webp" },
+    {
+        id: 2,
+        name: "Supplements",
+        bg: "#eaf4ea",
+        image: "/Product/Supplements.webp",
+        alt: "Pet supplements for dogs and cats",
+        title: "Premium Pet Supplements | FUDDLR"
+    },
+    {
+        id: 3,
+        name: "Treats",
+        bg: "#f5f5f5",
+        image: "/Product/Treats.webp",
+        alt: "Healthy pet treats for dogs and cats",
+        title: "Natural Pet Treats | FUDDLR"
+    },
+    {
+        id: 4,
+        name: "Ice Creams",
+        bg: "#e8f4fd",
+        image: "/Product/IceCream.webp",
+        alt: "Pet-friendly ice cream treats for dogs",
+        title: "Dog Ice Cream & Frozen Pet Treats | FUDDLR"
+    },
+    {
+        id: 5,
+        name: "Wet Food",
+        bg: "#fdeaea",
+        image: "/Product/Wet.png",
+        alt: "Premium wet food for dogs and cats",
+        title: "Wet Pet Food | Premium Nutrition | FUDDLR"
+    },
+    {
+        id: 6,
+        name: "Dry Food",
+        bg: "#fff8e1",
+        image: "/Product/DryFood.webp",
+        alt: "Nutritious dry food for dogs and cats",
+        title: "Dry Pet Food & Kibble | FUDDLR"
+    }
 ];
-
 const N = categories.length;
 
 type CarouselSizing = {
@@ -258,7 +292,8 @@ export default function CategoryCarousel() {
                                         width={sizing.cardWidth}
                                         height={sizing.imageHeight}
                                         src={cat.image}
-                                        alt={cat.name}
+                                        alt={cat.alt}
+                                        title={cat.title}
                                         loading="eager"
                                         draggable={false}
                                         className="bg-[#ffffff]"
@@ -388,7 +423,8 @@ function MobileCarousel({
                                     width={320}
                                     height={250}
                                     src={cat.image}
-                                    alt={cat.name}
+                                    alt={cat.alt}
+                                    title={cat.title}
                                     draggable={false}
                                     className="w-auto h-auto object-contain"
                                 />

@@ -88,7 +88,8 @@ export default function SectionCTA() {
                         <div className="relative h-[200px] md:h-[330px] overflow-hidden rounded-[36px] group-hover/image:scale-105 transition-transform duration-500 ease-out">
                             <Image
                                 src="/Sections/Retailers.webp"
-                                alt="Dog treats"
+                                alt="Retailers stocking premium pet products from FUDDLR"
+                                title="FUDDLR Wholesale Pet Supplies for Retailers"
                                 className="relative z-10 object-contain"
                                 width={1000}
                                 height={1000}
@@ -138,7 +139,8 @@ export default function SectionCTA() {
                         <div className="relative h-[200px] md:h-[330px] flex items-center justify-center group-hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/Sections/Brands.webp"
-                                alt="Dog treats"
+                                alt="Pet brands growing through FUDDLR wholesale distribution network"
+                                title="FUDDLR Brand Distribution and Growth Program"
                                 className="absolute -bottom-5 md:-bottom-15 left-4 z-10 object-contain h-48 md:h-full w-full scale-115"
                                 width={1000}
                                 height={1000}

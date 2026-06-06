@@ -82,7 +82,8 @@ export default function WholesaleSteps() {
                 <div className="md:relative hidden lg:flex items-center justify-center order-1 lg:order-2">
                     <Image
                         src="/Sections/Steps.webp"
-                        alt="Steps"
+                        alt="Dog representing FUDDLR wholesale pet products"
+                        title="FUDDLR Wholesale Pet Supplies"
                         width={700}
                         height={700}
                         className="w-full md:absolute md:-top-72 max-w-[250px] md:max-w-[450px] object-contain"

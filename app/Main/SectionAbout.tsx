@@ -13,7 +13,8 @@ export default function SectionAbout() {
                     <div className="relative rounded-3xl overflow-hidden z-20 w-3/4 flex justify-center">
                         <Image
                             src="/Sections/About-One.webp" // replace with your image
-                            alt="Dog"
+                            alt="Happy dog representing premium pet nutrition and care from FUDDLR"
+                            title="About FUDDLR - Premium Pet Supplies Distributor"
                             width={400}
                             height={400}
                             className="object-contain w-auto h-auto"
@@ -24,7 +25,8 @@ export default function SectionAbout() {
                     <div className="absolute bottom-5 sm:bottom-10 lg:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-28 sm:size-34 md:size-42 rounded-2xl overflow-hidden z-30">
                         <Image
                             src="/Sections/About-Two.png" // replace with your image
-                            alt="Dog playing"
+                            alt="Dog enjoying healthy and premium pet products"
+                            title="FUDDLR Pet Care and Nutrition"
                             width={100}
                             height={100}
                             className="object-cover w-full h-auto"
