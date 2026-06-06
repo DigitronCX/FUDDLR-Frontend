@@ -1,19 +1,16 @@
 "use client";
 import Image from "next/image";
-
 const brands = [
- 
-  { name: "Mood Food", logo: "/Brands/Brand-2.png" },
-  { name: "Josera", logo: "/Brands/Brand-3.png" },
-  { name: "Dog Yog", logo: "/Brands/Brand-4.png" },
-  { name: "Ipromea", logo: "/Brands/Brand-5.png" },
-  { name: "Vetactive8", logo: "/Brands/Brand-6.png" },
-  { name: "Fishtastic", logo: "/Brands/Brand-11.png" },
-  { name: "Feed for thought", logo: "/Brands/Brand-8.png" },
-  { name: "Naturawr", logo: "/Brands/Brand-9.png" },
-  { name: "Classy tails", logo: "/Brands/Brand-10.png" },
+  { name: "Mood Food", logo: "/Brands/Brand-2.png", alt: "Mood Food – Premium Pet Food" },
+  { name: "Josera", logo: "/Brands/Brand-3.png", alt: "Josera – High Quality Pet Nutrition" },
+  { name: "Dog Yog", logo: "/Brands/Brand-4.png", alt: "Dog Yog – Natural Pet Yogurt" },
+  { name: "Ipromea", logo: "/Brands/Brand-5.png", alt: "Ipromea – Healthy Pet Treats" },
+  { name: "Vetactive8", logo: "/Brands/Brand-6.png", alt: "Vetactive8 – Veterinary Approved Supplements" },
+  { name: "Fishtastic", logo: "/Brands/Brand-11.png", alt: "Fishtastic – Fish-Based Pet Nutrition" },
+  { name: "Feed for thought", logo: "/Brands/Brand-8.png", alt: "Feed for Thought – Nutritious Pet Food" },
+  { name: "Naturawr", logo: "/Brands/Brand-9.png", alt: "Naturawr – Natural Pet Treats" },
+  { name: "Classy tails", logo: "/Brands/Brand-10.png", alt: "Classy Tails – Premium Pet Products" },
 ];
-
 export default function FeaturedBrands() {
   return (
     <section className="py-10 md:py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden">
@@ -53,7 +50,8 @@ export default function FeaturedBrands() {
               <div className="relative w-full h-34 mb-4">
                 <Image
                   src={brand.logo}
-                  alt={brand.name}
+                  alt={brand.alt}
+                  title={brand.name}
                   height={300}
                   width={300}
                   className="object-cover w-full h-full"

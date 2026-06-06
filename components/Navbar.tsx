@@ -5,13 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 const PagesNav = [
-    { name: "Home", path: "/" },
-    // { name: "Products", path: "/product" },
-    { name: "Our Brands", path: "/our-brands" },
-    { name: "Why Fuddlr", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", title: "Go to FUDDLR Home Page" },
+    // { name: "Products", path: "/product", title: "View FUDDLR Products" },
+    { name: "Our Brands", path: "/our-brands", title: "Explore FUDDLR Brand Partnerships" },
+    { name: "Why Fuddlr", path: "/about", title: "Learn About FUDDLR – Pet Nutrition & Distribution" },
+    { name: "Contact", path: "/contact", title: "Contact FUDDLR for Brand Partnership" },
 ];
-
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -40,7 +39,7 @@ const Navbar = () => {
                     <ul className="flex gap-10 text-sm capitalize">
                         {PagesNav.map((page, index) => (
                             <li key={index}>
-                                <Link href={page.path} className="text-foreground hover:text-brand transition-colors">{page.name}</Link>
+                                <Link title={page.title} aria-label={page.title} href={page.path} className="text-foreground hover:text-brand transition-colors">{page.name}</Link>
                             </li>
                         ))}
                     </ul>

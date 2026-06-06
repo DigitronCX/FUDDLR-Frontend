@@ -2,26 +2,22 @@
 import { IconBrandFacebook, IconBrandInstagram, IconClock, IconLocation, IconMail, IconPhoneCall } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-
 const Mainlinks = [
-    { name: "Home", path: "/" },
-    // { name: "Products", path: "/product" },
-    { name: "Our Brands", path: "/our-brands" },
-    { name: "Why Fuddlr", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", title: "Go to FUDDLR Home Page" },
+    { name: "Our Brands", path: "/our-brands", title: "Explore FUDDLR Brand Partnerships" },
+    { name: "Why Fuddlr", path: "/about", title: "Learn About FUDDLR – Pet Nutrition & Distribution" },
+    { name: "Contact", path: "/contact", title: "Contact FUDDLR for Brand Partnership" },
 ];
 
 const OtherPages = [
-    { name: "FAQ's", path: "/faq" },
-    { name: "Brands Apply Here", path: "/" },
-    { name: "Wholesale Application", path: "/" },
+    { name: "FAQ's", path: "/faq", title: "Frequently Asked Questions – FUDDLR" },
+    { name: "Brands Apply Here", path: "/contact", title: "Apply to Become a FUDDLR Brand Partner" },
+    { name: "Wholesale Application", path: "/contact", title: "Submit a Wholesale Distribution Application" },
 ];
 
 const QuickLinks = [
-    // { name: "Company", path: "/" },
-    { name: "Terms & Conditions", path: "/terms-and-conditions" },
-    { name: "Privacy Policy", path: "/privacy-policy" },
-    // { name: "About", path: "/about-us" },
+    { name: "Terms & Conditions", path: "/terms-and-conditions", title: "FUDDLR Terms & Conditions" },
+    { name: "Privacy Policy", path: "/privacy-policy", title: "FUDDLR Privacy Policy" },
 ];
 
 const Contactus = [
@@ -45,11 +41,15 @@ const Contactus = [
 const Followus = [
     {
         icon: IconBrandFacebook,
-        path: "https://www.facebook.com/fuddlr/"
+        path: "https://www.facebook.com/fuddlr/",
+        title: "Follow FUDDLR on Facebook",
+        ariaLabel: "Follow FUDDLR on Facebook"
     },
     {
         icon: IconBrandInstagram,
-        path: "https://www.instagram.com/fuddlr/"
+        path: "https://www.instagram.com/fuddlr/",
+        title: "Follow FUDDLR on Instagram",
+        ariaLabel: "Follow FUDDLR on Instagram"
     },
 ];
 const Footer = () => {
@@ -79,7 +79,7 @@ const Footer = () => {
                             {
                                 Followus.map((item, index) => (
                                     <li key={index} className="text-white  p-2 sm:size-12 size-8 rounded-full">
-                                        <Link href={item.path} target="_blank" className="cursor-pointer">
+                                        <Link href={item.path} target="_blank" rel="noopener noreferrer" className="cursor-pointer" title={item.title} aria-label={item.ariaLabel}>
                                             <item.icon strokeWidth={1.5} />
                                         </Link>
                                     </li>
@@ -101,6 +101,8 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     href={item.path}
+                                    title={item.title}
+                                    aria-label={item.title}
                                     className="hover:text-white transition-colors font-light text-xs sm:text-sm">
                                     {item.name}
                                 </Link>
@@ -117,6 +119,8 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     href={item.path}
+                                    title={item.title}
+                                    aria-label={item.title}
                                     className="hover:text-white font-light text-xs sm:text-sm transition-colors">
                                     {item.name}
                                 </Link>
@@ -133,6 +137,8 @@ const Footer = () => {
                             <li key={index}>
                                 <Link
                                     href={item.path}
+                                    title={item.title}
+                                    aria-label={item.title}
                                     className="hover:text-white font-light text-xs sm:text-sm transition-colors">
                                     {item.name}
                                 </Link>
@@ -174,8 +180,11 @@ const Footer = () => {
                     <p>
                         Powered by{" "}
                         <Link
-                            target="_blank"
                             href="https://digitroncx.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Visit DigitronCX website"
+                            aria-label="Visit DigitronCX website"
                             className="text-background font-extrabold"
                         >
                             DigitronCX

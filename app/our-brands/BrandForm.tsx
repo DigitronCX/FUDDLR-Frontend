@@ -151,6 +151,8 @@ export default function BrandForm() {
 
                         <button
                             type="submit"
+                            aria-label="Submit brand partnership application"
+                            title="Submit brand partnership application"
                             className="w-full group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30 cursor-pointer"
                         >
                             <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
@@ -182,28 +184,11 @@ export default function BrandForm() {
                         width={1000}
                         height={1000}
                         src="/Sections/FuddlrForm.png" // replace with your image
-                        alt="Dog"
+                        alt="Happy dog representing FUDDLR pet nutrition and brand partnership application"
+                        title="FUDDLR Brand Partnership Form"
                         className="rounded-3xl w-[85%] object-cover z-20"
                     />
                     <div className="bg-brand absolute top-1/2 -translate-y-1/2 w-9/12 right-1/6 h-[80%] rounded-3xl z-10"></div>
-                    {/* Floating Icons */}
-                    {/* <div className="absolute left-0 top-1/3 bg-brand text-white p-4 rounded-full shadow-lg size-20 flex items-center justify-center text-3xl z-20">
-                        <div className="p-2 bg-white rounded-full">
-                            <IconMail className="size-7 text-brand" />
-                        </div>
-                    </div>
-
-                    <div className="absolute bottom-1/3 right-1/3 bg-brand text-white p-4 rounded-full shadow-lg z-20 size-20 flex items-center justify-center text-3xl">
-                        <div className="p-2 bg-white rounded-full">
-                            <IconMapPinFilled className="size-6 text-brand" />
-                        </div>
-                    </div>
-
-                    <div className="absolute bottom-15 left-8 bg-brand text-white p-4 rounded-full shadow-lg z-20 size-20 flex items-center justify-center text-3xl">
-                        <div className="p-2 bg-white rounded-full">
-                            <IconPhoneCall className="size-6 text-brand" />
-                        </div>
-                    </div> */}
                 </div>
             </div>
 
