@@ -48,7 +48,7 @@ const SectionHero = () => {
                             title="FUDDLR - Register as a Wholesaler for Premium Pet Supplies"
                             aria-label="Register as a wholesale retailer with FUDDLR"
                             prefetch={true}
-                            href="/contact-us"
+                            href="/contact"
                             className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >
                             <span
@@ -65,7 +65,7 @@ const SectionHero = () => {
                             title="FUDDLR - Are you a brand? Sell on FUDDLR"
                             aria-label="Are you a brand? Sell on FUDDLR"
                             prefetch={true}
-                            href="/contact-us"
+                            href="/contact"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                         >
                             <span

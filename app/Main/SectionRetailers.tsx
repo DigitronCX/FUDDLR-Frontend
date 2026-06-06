@@ -82,7 +82,8 @@ export default function SectionRetailers() {
                         ))}
                     </div>
                     <Link
-                        href="/contact"
+                        href="/contact" title="Get started with FUDDLR wholesale pet supply partnership"
+                        aria-label="Get started with FUDDLR wholesale pet supply partnership"
                         className="group mt-5 relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-14 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                     >
                         <span
@@ -95,9 +96,6 @@ export default function SectionRetailers() {
                             Let&apos;s Begin <IconArrowUpRight className="size-4" />
                         </span>
                     </Link>
-                    {/* <button className="mt-5 px-2 text-sm sm:text-base sm:px-10 flex gap-2 py-2 sm:py-2 bg-brand rounded-4xl cursor-pointer border-4 border-transparent text-white hover:border-brand/80 hover:text-white transition-colors z-20">
-                        Lets Begin <IconArrowUpRight className="text-white" />
-                    </button> */}
                 </div>
             </div>
         </section>

@@ -63,7 +63,8 @@ export default function SectionAbout() {
                             <p className="text-sm sm:text-base text-secondary font-youngSerif">Competitive Pricing</p>
                         </div>
                     </div>
-                    <Link
+                    <Link title="Learn about FUDDLR pet supplies distribution"
+                        aria-label="Learn about FUDDLR pet supplies distribution"
                         href="/about"
                         className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                     >

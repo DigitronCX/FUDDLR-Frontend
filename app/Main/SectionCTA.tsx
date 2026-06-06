@@ -65,6 +65,8 @@ export default function SectionCTA() {
 
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
+                                    title="Apply to stock and distribute our brands"
+                                    aria-label="Apply to stock and distribute our brands"
                                     href="/contact"
                                     className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                                 >
@@ -79,9 +81,6 @@ export default function SectionCTA() {
                                     </span>
                                 </Link>
                             </div>
-                            {/* <button className="mt-8 rounded-full bg-[#00b67a] px-7 py-3 text-xs font-medium text-white transition hover:bg-[#009f6a]">
-                                Apply to Stock Our Brands
-                            </button> */}
                         </div>
 
                         {/* Image */}
@@ -124,6 +123,8 @@ export default function SectionCTA() {
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
                                     href="/contact"
+                                    title="Apply for Product Distribution Partnership"
+                                    aria-label="Apply for Product Distribution Partnership"
                                     className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#5d3fd2] border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                                 >
                                     <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover/button:translate-y-0"></span>
