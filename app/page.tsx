@@ -3,10 +3,18 @@ import SectionHero from './Main/SectionHero'
 // import CarouselSection from './Main/CarouselSection'
 import SectionRetailers from './Main/SectionRetailers'
 import SectionCTA from './Main/SectionCTA'
+import { createPageMetadata } from './seo'
 // import SectionFuddlerBrands from './Main/SectionBrands'
 // import SectionAbout from './Main/SectionAbout'
 // import SectionSteps from './Main/SectionSteps'
 // import SectionHowWorks from './Main/SectionHowWorks'
+
+export const metadata = createPageMetadata({
+  title: "Wholesale Pet Supplies for Retailers",
+  description:
+    "Discover FUDDLR's curated pet supply range, wholesale pricing, and retail support for growing pet businesses.",
+  path: "/",
+});
 
 const CarouselSection = dynamic(() => import("./Main/CarouselSection"), {
   loading: () => <div className="min-h-screen" />,
