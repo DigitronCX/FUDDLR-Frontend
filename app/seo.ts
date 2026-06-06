@@ -25,7 +25,7 @@ export function createPageMetadata({
   image = siteConfig.ogImage,
   noIndex = false,
 }: PageMetadataInput): Metadata {
-  const robots = noIndex
+  const robots: Metadata["robots"] = noIndex
     ? {
         index: false,
         follow: false,
@@ -51,7 +51,14 @@ export function createPageMetadata({
   return {
     title,
     description,
-    alternates: path ? { canonical: path } : undefined,
+    metadataBase: new URL(siteConfig.url),
+
+    alternates: path
+      ? {
+          canonical: path,
+        }
+      : undefined,
+
     openGraph: {
       title,
       description,
@@ -68,12 +75,15 @@ export function createPageMetadata({
         },
       ],
     },
+
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      creator: siteConfig.twitterHandle,
       images: [image],
     },
+
     robots,
   };
 }
