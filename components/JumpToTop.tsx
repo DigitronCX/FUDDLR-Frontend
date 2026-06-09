@@ -20,7 +20,7 @@ const JumpToTop = () => {
                 <IconChevronUp />
             </button>
             <a
-                href="https://wa.me/0416165987"
+                href="https://wa.me/61416165987"
                 className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#00b67a] bg-white text-[#00b67a] shadow-md transition hover:bg-[#00b67a] hover:text-white cursor-pointer"
                 target="_blank"
                 rel="noopener noreferrer"
