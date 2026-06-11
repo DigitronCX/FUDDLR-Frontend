@@ -24,6 +24,9 @@ const unbounded = Unbounded({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  verification: {
+    google: 'DckUgPhUJ8Wc8ejeV3oMZlhjffKEOQQ8zHTWzVdkcLo',
+  },
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
