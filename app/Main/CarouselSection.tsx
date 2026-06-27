@@ -4,50 +4,64 @@ import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { getAllCategories } from "@/services/productService";
 
-const categories = [
-    {
-        id: 2,
-        name: "Supplements",
-        bg: "#eaf4ea",
-        image: "/Product/Supplements.webp",
-        alt: "Pet supplements for dogs and cats",
-        title: "Premium Pet Supplements | FUDDLR"
-    },
-    {
-        id: 3,
-        name: "Treats",
-        bg: "#f5f5f5",
-        image: "/Product/Treats.webp",
-        alt: "Healthy pet treats for dogs and cats",
-        title: "Natural Pet Treats | FUDDLR"
-    },
-    {
-        id: 4,
-        name: "Ice Creams",
-        bg: "#e8f4fd",
-        image: "/Product/IceCream.webp",
-        alt: "Pet-friendly ice cream treats for dogs",
-        title: "Dog Ice Cream & Frozen Pet Treats | FUDDLR"
-    },
-    {
-        id: 5,
-        name: "Wet Food",
-        bg: "#fdeaea",
-        image: "/Product/Wet.png",
-        alt: "Premium wet food for dogs and cats",
-        title: "Wet Pet Food | Premium Nutrition | FUDDLR"
-    },
-    {
-        id: 6,
-        name: "Dry Food",
-        bg: "#fff8e1",
-        image: "/Product/DryFood.webp",
-        alt: "Nutritious dry food for dogs and cats",
-        title: "Dry Pet Food & Kibble | FUDDLR"
-    }
-];
-const N = categories.length;
+interface FeatureImage {
+    _id: string;
+    url: string;
+    public_id: string;
+}
+
+interface Feature {
+    _id: string;
+    name: string;
+    images: FeatureImage[];
+    createdAt: string;
+    updatedAt: string;
+}
+// const categories = [
+//     {
+//         id: 2,
+//         name: "Supplements",
+//         bg: "#eaf4ea",
+//         image: "/Product/Supplements.webp",
+//         alt: "Pet supplements for dogs and cats",
+//         title: "Premium Pet Supplements | FUDDLR"
+//     },
+//     {
+//         id: 3,
+//         name: "Treats",
+//         bg: "#f5f5f5",
+//         image: "/Product/Treats.webp",
+//         alt: "Healthy pet treats for dogs and cats",
+//         title: "Natural Pet Treats | FUDDLR"
+//     },
+//     {
+//         id: 4,
+//         name: "Ice Creams",
+//         bg: "#e8f4fd",
+//         image: "/Product/IceCream.webp",
+//         alt: "Pet-friendly ice cream treats for dogs",
+//         title: "Dog Ice Cream & Frozen Pet Treats | FUDDLR"
+//     },
+//     {
+//         id: 5,
+//         name: "Wet Food",
+//         bg: "#fdeaea",
+//         image: "/Product/Wet.png",
+//         alt: "Premium wet food for dogs and cats",
+//         title: "Wet Pet Food | Premium Nutrition | FUDDLR"
+//     },
+//     {
+//         id: 6,
+//         name: "Dry Food",
+//         bg: "#fff8e1",
+//         image: "/Product/DryFood.webp",
+//         alt: "Nutritious dry food for dogs and cats",
+//         title: "Dry Pet Food & Kibble | FUDDLR"
+//     }
+// ];
+// // const N = categories.length;
 
 type CarouselSizing = {
     cardWidth: number;
@@ -118,12 +132,25 @@ export default function CategoryCarousel() {
         duration: 28,
         skipSnaps: false,
     });
+    const [categories, setAllCategories] = useState<Feature[]>([]);
+
+    useEffect(() => {
+        const getCategories = async () => {
+            const res = await getAllCategories()
+            if (res?.success) {
+                setAllCategories(res?.features)
+                console.log(res?.features, 'allCategories')
+            }
+        }
+        getCategories()
+    }, [])
+    const N = Math.max(categories.length, 4);
 
     const [offsets, setOffsets] = useState<number[]>(() => categories.map((_, i) => i));
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [viewportWidth, setViewportWidth] = useState(0);
-
     useLayoutEffect(() => {
+
         const updateViewportWidth = () => setViewportWidth(window.innerWidth);
 
         updateViewportWidth();
@@ -178,20 +205,6 @@ export default function CategoryCarousel() {
             emblaApi.off("scroll", handleScroll);
             emblaApi.off("reInit", handleScroll);
         };
-        // if (!emblaApi) return;
-
-        // emblaApi.on("scroll", syncOffsets);
-        // emblaApi.on("select", syncSelected);
-        // emblaApi.on("reInit", syncOffsets);
-
-        // syncOffsets();
-        // syncSelected();
-
-        // return () => {
-        //     emblaApi.off("scroll", syncOffsets);
-        //     emblaApi.off("select", syncSelected);
-        //     emblaApi.off("reInit", syncOffsets);
-        // };
     }, [emblaApi, syncOffsets, syncSelected]);
 
     useLayoutEffect(() => {
@@ -248,7 +261,7 @@ export default function CategoryCarousel() {
                 >
                     <div className="flex">
                         {categories.map((cat) => (
-                            <div key={cat.id} className="flex-none" style={{ width: sizing.cardWidth }} />
+                            <div key={cat._id} className="flex-none" style={{ width: sizing.cardWidth }} />
                         ))}
                     </div>
                 </div>
@@ -256,19 +269,6 @@ export default function CategoryCarousel() {
                 <div
                     className="relative flex items-center justify-center w-full select-none"
                     style={{ height: sizing.desktopHeight }}
-                // onPointerDown={(e) => {
-                //     console.log(e, ".........................")
-                //     // const root = emblaApi?.rootNode();
-                //     // if (!root) return;
-                //     // root.dispatchEvent(new PointerEvent("pointerdown", {
-                //     //     clientX: e.clientX,
-                //     //     clientY: e.clientY,
-                //     //     pointerId: e.pointerId,
-                //     //     pointerType: e.pointerType,
-                //     //     bubbles: true,
-                //     //     cancelable: true,
-                //     // }));
-                // }}
                 >
                     {categories.map((cat, i) => {
                         const offset = offsets[i] ?? i;
@@ -279,7 +279,7 @@ export default function CategoryCarousel() {
 
                         return (
                             <div
-                                key={cat.id}
+                                key={cat._id}
                                 style={{
                                     ...cardStyle(offset, sizing.cardWidth, sizing.step),
                                     cursor: isActive ? "grab" : "pointer",
@@ -290,14 +290,14 @@ export default function CategoryCarousel() {
                             >
                                 <div
                                     className="relative overflow-hidden"
-                                    style={{ height: sizing.imageHeight, background: cat.bg }}
+                                    style={{ height: sizing.imageHeight }}
                                 >
                                     <Image
                                         width={sizing.cardWidth}
                                         height={sizing.imageHeight}
-                                        src={cat.image}
-                                        alt={cat.alt}
-                                        title={cat.title}
+                                        src={cat?.images?.[0]?.url}
+                                        alt={cat?.name}
+                                        title={cat?.name}
                                         loading="eager"
                                         draggable={false}
                                         className="bg-[#ffffff]"
@@ -330,7 +330,7 @@ export default function CategoryCarousel() {
                 </div>
             </div>
 
-            <MobileCarousel selectedIndex={selectedIndex} scrollTo={scrollTo} />
+            <MobileCarousel selectedIndex={selectedIndex} scrollTo={scrollTo} categories={categories} />
 
             <div className="flex mx-auto items-center gap-6 mt-16">
                 <button
@@ -374,9 +374,11 @@ export default function CategoryCarousel() {
 }
 
 function MobileCarousel({
+    categories,
     selectedIndex,
     scrollTo,
 }: {
+    categories: Feature[];
     selectedIndex: number;
     scrollTo: (i: number) => void;
 }) {
@@ -416,19 +418,18 @@ function MobileCarousel({
         <div className="md:hidden w-full mt-10">
             <div
                 ref={mobileRef}
-                // className="overflow-hidden w-full max-w-[92vw] sm:max-w-[360px] mx-auto rounded-2xl shadow-lg"
                 className="overflow-hidden w-full mx-auto max-w-[360px] rounded-2xl shadow-lg"
             >
                 <div className="flex touch-pan-y">
                     {categories.map((cat) => (
-                        <div key={cat.id} className="flex-none w-full ">
-                            <div className="h-[250px] flex  justify-center" style={{ background: cat.bg }}>
+                        <div key={cat._id} className="flex-none w-full ">
+                            <div className="h-[250px] flex justify-center">
                                 <Image
                                     width={320}
                                     height={250}
-                                    src={cat.image}
-                                    alt={cat.alt}
-                                    title={cat.title}
+                                    src={cat?.images?.[0]?.url}
+                                    alt={cat.name}
+                                    title={cat.name}
                                     draggable={false}
                                     className="w-auto h-auto object-contain"
                                 />
