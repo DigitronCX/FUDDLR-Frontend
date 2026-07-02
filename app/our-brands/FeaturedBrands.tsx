@@ -61,9 +61,9 @@ export default function FeaturedBrands() {
                       key={data._id}
                       src={data?.url}
                       title={brand?.name}
-                      height={300}
-                      width={300}
-                      className="object-cover w-full h-full"
+                      height={500}
+                      width={500}
+                      className="object-contain w-full h-full"
                     />
                   ))
                 }
