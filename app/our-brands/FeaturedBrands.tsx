@@ -39,7 +39,7 @@ export default function FeaturedBrands() {
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif text-gray-900">
             Our Featured{" "}
-            <span className="text-green-600">Brands</span>
+            <span className="text-brand">Brands</span>
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl text-sm sm:text-base">
             Simple, honest nutrition for pets sourced from brands that truly care.
