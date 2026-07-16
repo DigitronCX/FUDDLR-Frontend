@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -66,7 +65,9 @@ export default function SectionCTA() {
 
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
-                                    href="/contact-us"
+                                    title="Apply to stock and distribute our brands"
+                                    aria-label="Apply to stock and distribute our brands"
+                                    href="/contact"
                                     className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                                 >
                                     <span
@@ -80,16 +81,14 @@ export default function SectionCTA() {
                                     </span>
                                 </Link>
                             </div>
-                            {/* <button className="mt-8 rounded-full bg-[#00b67a] px-7 py-3 text-xs font-medium text-white transition hover:bg-[#009f6a]">
-                                Apply to Stock Our Brands
-                            </button> */}
                         </div>
 
                         {/* Image */}
                         <div className="relative h-[200px] md:h-[330px] overflow-hidden rounded-[36px] group-hover/image:scale-105 transition-transform duration-500 ease-out">
                             <Image
                                 src="/Sections/Retailers.webp"
-                                alt="Dog treats"
+                                alt="Retailers stocking premium pet products from FUDDLR"
+                                title="FUDDLR Wholesale Pet Supplies for Retailers"
                                 className="relative z-10 object-contain"
                                 width={1000}
                                 height={1000}
@@ -123,7 +122,9 @@ export default function SectionCTA() {
                             {/* Button Group */}
                             <div className="mt-4 sm:mt-8 group/button">
                                 <Link
-                                    href="/contact-us"
+                                    href="/contact"
+                                    title="Apply for Product Distribution Partnership"
+                                    aria-label="Apply for Product Distribution Partnership"
                                     className="relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#5d3fd2] border border-[#5d3fd2] px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                                 >
                                     <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover/button:translate-y-0"></span>
@@ -139,7 +140,8 @@ export default function SectionCTA() {
                         <div className="relative h-[200px] md:h-[330px] flex items-center justify-center group-hover:scale-105 transition-all duration-300">
                             <Image
                                 src="/Sections/Brands.webp"
-                                alt="Dog treats"
+                                alt="Pet brands growing through FUDDLR wholesale distribution network"
+                                title="FUDDLR Brand Distribution and Growth Program"
                                 className="absolute -bottom-5 md:-bottom-15 left-4 z-10 object-contain h-48 md:h-full w-full scale-115"
                                 width={1000}
                                 height={1000}

@@ -94,7 +94,9 @@ export default function SectionHowWorks() {
                         </div>
                         <div className="mt-4 sm:mt-10 mx-auto">
                             <Link
-                                href="/contact-us"
+                                href="/contact"
+                                title="Apply to become a FUDDLR brand partner"
+                                aria-label="Apply to become a FUDDLR brand partner"
                                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                             >
                                 <span
@@ -108,9 +110,6 @@ export default function SectionHowWorks() {
                                 </span>
                             </Link>
                         </div>
-                        {/* <button className="mt-10 rounded-full bg-emerald-500 px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium text-white transition hover:bg-emerald-600 mx-auto">
-                            Apply Now →
-                        </button> */}
                     </div>
 
                     {/* Brands */}
@@ -147,7 +146,9 @@ export default function SectionHowWorks() {
 
                         <div className="mt-4 sm:mt-10 mx-auto">
                             <Link
-                                href="/contact-us"
+                                href="/our-brands"
+                                title="Get started with brand partnership opportunities"
+                                aria-label="Get started with brand partnership opportunities"
                                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#6c4ce4] border border-[#6c4ce4] px-4 sm:px-4 lg:px-10 py-2 md:py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                             >
                                 <span
@@ -161,9 +162,6 @@ export default function SectionHowWorks() {
                                 </span>
                             </Link>
                         </div>
-                        {/* <button className="mt-10 rounded-full bg-violet-500 px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium text-white transition hover:bg-violet-600 w-fit mx-auto ">
-                            Get Started →
-                        </button> */}
                     </div>
                 </div>
             </div>

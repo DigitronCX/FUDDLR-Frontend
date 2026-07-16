@@ -5,7 +5,7 @@ import Link from "next/link";
 const features = [
     {
         title: "Trading Portal for Retailers",
-        desc: "A simple, intuitive ordering portal that lets you browse.",
+        desc: "A simple, intuitive ordering portal that let's you browse.",
     },
     {
         title: "Access Wholesale Pricing",
@@ -13,7 +13,7 @@ const features = [
     },
     {
         title: "Low or No Bulky MOQ's",
-        desc: "lexible order quantities that let you manage cash",
+        desc: "Flexible order quantities that let you manage cash",
     },
 ];
 
@@ -29,11 +29,16 @@ export default function SectionRetailers() {
                 <div className="relative flex flex-col items-center justify-center order-1 lg:order-0">
                     <Image
                         // src="/Sections/Retailers.png"
-                        src="/Sections/Retailers.png"
-                        alt="FUDDLR"
-                        width={700}
-                        height={700}
-                        className="w-[85%] sm:w-[70%] lg:w-[90%] h-auto drop-shadow-xl lg:-rotate-2 z-10"
+                        src="/Sections/RetailersMain.webp"
+                        alt="Wholesale pet food and supplies for retailers"
+                        title="Trusted Wholesale Pet Supplies Distributor | FUDDLR"
+                        width={1200}
+                        height={1200}
+                        loading="eager"
+                        sizes="(max-width: 640px) 85vw,
+                                (max-width: 1024px) 70vw,
+                                45vw"
+                        className="w-[85%] sm:w-[70%] lg:w-[90%] h-auto drop-shadow-xl lg:-rotate-2 z-10 object-cover"
                     />
                     {/* Glow */}
                     <div className="absolute top-0 left-10 h-32 sm:h-40 w-full bg-accent blur-2xl rounded-full opacity-30" />
@@ -77,7 +82,8 @@ export default function SectionRetailers() {
                         ))}
                     </div>
                     <Link
-                        href="/contact-us"
+                        href="/contact" title="Get started with FUDDLR wholesale pet supply partnership"
+                        aria-label="Get started with FUDDLR wholesale pet supply partnership"
                         className="group mt-5 relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-14 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                     >
                         <span
@@ -87,14 +93,10 @@ export default function SectionRetailers() {
                         <span
                             className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs flex gap-1 items-center"
                         >
-                            Lets Begin <IconArrowUpRight className="size-4" />
+                            Let&apos;s Begin <IconArrowUpRight className="size-4" />
                         </span>
                     </Link>
-                    {/* <button className="mt-5 px-2 text-sm sm:text-base sm:px-10 flex gap-2 py-2 sm:py-2 bg-brand rounded-4xl cursor-pointer border-4 border-transparent text-white hover:border-brand/80 hover:text-white transition-colors z-20">
-                        Lets Begin <IconArrowUpRight className="text-white" />
-                    </button> */}
                 </div>
-
             </div>
         </section>
     );

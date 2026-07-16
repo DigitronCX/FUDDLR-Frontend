@@ -1,3 +1,4 @@
+"use client";
 import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ export default function BrandForm() {
                         <p className="text-sm tracking-widest text-secondary">
                             Contact Form
                         </p>
-                        <h3 className="text-3xl font-medium text-secondary font-youngSerif">Apply to Join FUDDLR</h3>
+                        <h3 className="text-3xl font-medium text-secondary font-youngSerif">Apply to Join <span className="text-brand">FUDDLR</span> </h3>
                         <p className="text-sm text-secondary">
                             We are partner with selected brands. Tell us a bit about yours.
                         </p>
@@ -98,12 +99,14 @@ export default function BrandForm() {
                             {/* Country */}
                             <div className="text-secondary">
                                 <label className="block text-secondary text-sm font-medium mb-1">
-                                    Product Category <span className="text-red-500">*</span>
+                                    Years in Business <span className="text-red-500">*</span>
                                 </label>
                                 <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
-                                    <option>Select a Category</option>
-                                    <option>Pet Food</option>
-                                    <option>Pet Ice Cream</option>
+                                    <option>Select a Year</option>
+                                    <option>Startup (Less than 1 year)</option>
+                                    <option>1-2 Year</option>
+                                    <option>3-5 Year</option>
+                                    <option>5+ Year</option>
                                 </select>
                             </div>
                         </section>
@@ -148,6 +151,8 @@ export default function BrandForm() {
 
                         <button
                             type="submit"
+                            aria-label="Submit brand partnership application"
+                            title="Submit brand partnership application"
                             className="w-full group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30 cursor-pointer"
                         >
                             <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
@@ -179,28 +184,11 @@ export default function BrandForm() {
                         width={1000}
                         height={1000}
                         src="/Sections/FuddlrForm.png" // replace with your image
-                        alt="Dog"
+                        alt="Happy dog representing FUDDLR pet nutrition and brand partnership application"
+                        title="FUDDLR Brand Partnership Form"
                         className="rounded-3xl w-[85%] object-cover z-20"
                     />
                     <div className="bg-brand absolute top-1/2 -translate-y-1/2 w-9/12 right-1/6 h-[80%] rounded-3xl z-10"></div>
-                    {/* Floating Icons */}
-                    {/* <div className="absolute left-0 top-1/3 bg-brand text-white p-4 rounded-full shadow-lg size-20 flex items-center justify-center text-3xl z-20">
-                        <div className="p-2 bg-white rounded-full">
-                            <IconMail className="size-7 text-brand" />
-                        </div>
-                    </div>
-
-                    <div className="absolute bottom-1/3 right-1/3 bg-brand text-white p-4 rounded-full shadow-lg z-20 size-20 flex items-center justify-center text-3xl">
-                        <div className="p-2 bg-white rounded-full">
-                            <IconMapPinFilled className="size-6 text-brand" />
-                        </div>
-                    </div>
-
-                    <div className="absolute bottom-15 left-8 bg-brand text-white p-4 rounded-full shadow-lg z-20 size-20 flex items-center justify-center text-3xl">
-                        <div className="p-2 bg-white rounded-full">
-                            <IconPhoneCall className="size-6 text-brand" />
-                        </div>
-                    </div> */}
                 </div>
             </div>
 

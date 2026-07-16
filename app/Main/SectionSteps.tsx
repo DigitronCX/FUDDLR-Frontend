@@ -1,12 +1,10 @@
 import {
-    IconArrowUpRight,
     IconCheck,
     IconCurrencyDollar,
     IconFileDescription,
     IconShoppingCartPlus,
 } from "@tabler/icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const steps = [
     {
@@ -45,7 +43,7 @@ export default function WholesaleSteps() {
                 </h2>
             </div>
 
-            <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+            <div className="mx-auto grid lg:grid-cols-2 gap-10 items-center">
                 {/* LEFT SIDE */}
                 <div className="flex flex-col items-center justify-center order-2 lg:order-1">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
@@ -78,35 +76,14 @@ export default function WholesaleSteps() {
                         ))}
                     </div>
 
-                    {/* Button */}
-                    <div className="mt-8 md:mt-10 flex justify-center">
-                        <Link
-                            href="/contact-us"
-                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
-                        >
-                            <span
-                                className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"
-                            ></span>
-
-                            <span
-                                className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs flex gap-2 items-center"
-                            >
-                                Apply Now <IconArrowUpRight size={20} />
-                            </span>
-                        </Link>
-
-                        {/* <button className="px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium bg-brand rounded-full cursor-pointer border border-transparent text-white hover:border-brand/80 transition-colors flex gap-2 items-center">
-                            Apply Now <IconArrowUpRight size={20} />
-                        </button> */}
-                    </div>
-
                 </div>
 
                 {/* RIGHT SIDE */}
                 <div className="md:relative hidden lg:flex items-center justify-center order-1 lg:order-2">
                     <Image
-                        src="/Sections/Steps.png"
-                        alt="Steps"
+                        src="/Sections/Steps.webp"
+                        alt="Dog representing FUDDLR wholesale pet products"
+                        title="FUDDLR Wholesale Pet Supplies"
                         width={700}
                         height={700}
                         className="w-full md:absolute md:-top-72 max-w-[250px] md:max-w-[450px] object-contain"

@@ -3,27 +3,109 @@
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { getAllCategories } from "@/services/productService";
 
-const categories = [
-    
-    { id: 2, name: "Supplements", bg: "#eaf4ea", image: "/Product/Supplements.webp" },
-    { id: 3, name: "Treats", bg: "#f5f5f5", image: "/Product/Treats.webp" },
-    { id: 4, name: "Ice Creams", bg: "#e8f4fd", image: "/Product/IceCream.webp" },
-    { id: 5, name: "Wet Food", bg: "#fdeaea", image: "/Product/Wet.png" },
-    { id: 6, name: "Dry Food", bg: "#fff8e1", image: "/Product/DryFood.webp" },
-];
+interface FeatureImage {
+    _id: string;
+    url: string;
+    public_id: string;
+}
 
-const N = categories.length;
-const CARD_W = 300;   // px — base card width
-const STEP = CARD_W * 0.76; // horizontal spacing between card centres
+interface Feature {
+    _id: string;
+    name: string;
+    images: FeatureImage[];
+    createdAt: string;
+    updatedAt: string;
+}
+// const categories = [
+//     {
+//         id: 2,
+//         name: "Supplements",
+//         bg: "#eaf4ea",
+//         image: "/Product/Supplements.webp",
+//         alt: "Pet supplements for dogs and cats",
+//         title: "Premium Pet Supplements | FUDDLR"
+//     },
+//     {
+//         id: 3,
+//         name: "Treats",
+//         bg: "#f5f5f5",
+//         image: "/Product/Treats.webp",
+//         alt: "Healthy pet treats for dogs and cats",
+//         title: "Natural Pet Treats | FUDDLR"
+//     },
+//     {
+//         id: 4,
+//         name: "Ice Creams",
+//         bg: "#e8f4fd",
+//         image: "/Product/IceCream.webp",
+//         alt: "Pet-friendly ice cream treats for dogs",
+//         title: "Dog Ice Cream & Frozen Pet Treats | FUDDLR"
+//     },
+//     {
+//         id: 5,
+//         name: "Wet Food",
+//         bg: "#fdeaea",
+//         image: "/Product/Wet.png",
+//         alt: "Premium wet food for dogs and cats",
+//         title: "Wet Pet Food | Premium Nutrition | FUDDLR"
+//     },
+//     {
+//         id: 6,
+//         name: "Dry Food",
+//         bg: "#fff8e1",
+//         image: "/Product/DryFood.webp",
+//         alt: "Nutritious dry food for dogs and cats",
+//         title: "Dry Pet Food & Kibble | FUDDLR"
+//     }
+// ];
+// // const N = categories.length;
 
-function cardStyle(offset: number): React.CSSProperties {
+type CarouselSizing = {
+    cardWidth: number;
+    step: number;
+    desktopHeight: number;
+    imageHeight: number;
+};
+
+function getCarouselSizing(viewportWidth: number): CarouselSizing {
+    const baseCardWidth = 300;
+    const baseStep = baseCardWidth * 0.70;
+    const baseDesktopHeight = 360;
+    const baseImageHeight = 260;
+
+    const scale = viewportWidth >= 3100
+        ? 3.4
+        : viewportWidth >= 2560
+            ? 2.4
+            : viewportWidth >= 1920
+                ? 1.6
+                : viewportWidth >= 1536
+                    ? 1.4
+                    : viewportWidth >= 1326
+                        ? 1.2
+                        : viewportWidth >= 1280
+                            ? 1.1
+                            : viewportWidth >= 1024
+                                ? 1
+                                : 0.9;
+
+    return {
+        cardWidth: Math.round(baseCardWidth * scale),
+        step: Math.round(baseStep * scale),
+        desktopHeight: Math.round(baseDesktopHeight * scale),
+        imageHeight: Math.round(baseImageHeight * scale),
+    };
+}
+
+function cardStyle(offset: number, cardWidth: number, step: number): React.CSSProperties {
     const abs = Math.min(Math.abs(offset), 2.5);
     const scale = 1 - abs * 0.145;
     const opacity = 1 - abs * 0.245;
     const zIndex = Math.round(30 - abs * 10);
-    const tx = offset * STEP;
+    const tx = offset * step;
     const shadow = abs < 0.3
         ? "0 20px 50px rgba(0,0,0,0.18)"
         : "0 6px 20px rgba(0,0,0,0.09)";
@@ -31,7 +113,7 @@ function cardStyle(offset: number): React.CSSProperties {
     return {
         position: "absolute",
         left: "50%",
-        width: CARD_W,
+        width: cardWidth,
         borderRadius: 20,
         overflow: "hidden",
         willChange: "transform, opacity",
@@ -47,14 +129,37 @@ export default function CategoryCarousel() {
         loop: true,
         startIndex: 0,
         align: "center",
-        duration: 28,         // lower = snappier
+        duration: 28,
         skipSnaps: false,
     });
+    const [categories, setAllCategories] = useState<Feature[]>([]);
 
-    const [offsets, setOffsets] = useState<number[]>(() =>
-        categories.map((_, i) => i)   // initial: 0,1,2,3,4,5
-    );
+    useEffect(() => {
+        const getCategories = async () => {
+            const res = await getAllCategories()
+            if (res?.success) {
+                setAllCategories(res?.features)
+                console.log(res?.features, 'allCategories')
+            }
+        }
+        getCategories()
+    }, [])
+    const N = Math.max(categories.length, 4);
+
+    const [offsets, setOffsets] = useState<number[]>(() => categories.map((_, i) => i));
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [viewportWidth, setViewportWidth] = useState(0);
+    useLayoutEffect(() => {
+
+        const updateViewportWidth = () => setViewportWidth(window.innerWidth);
+
+        updateViewportWidth();
+        window.addEventListener("resize", updateViewportWidth);
+
+        return () => window.removeEventListener("resize", updateViewportWidth);
+    }, []);
+
+    const sizing = getCarouselSizing(viewportWidth);
 
     const syncOffsets = useCallback(() => {
         if (!emblaApi) return;
@@ -77,29 +182,41 @@ export default function CategoryCarousel() {
         setSelectedIndex(emblaApi.selectedScrollSnap());
     }, [emblaApi]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!emblaApi) return;
-        emblaApi.on("scroll", syncOffsets);
-        emblaApi.on("select", syncSelected);
-        emblaApi.on("reInit", syncOffsets);
-        syncOffsets();
-        syncSelected();
+
+        const handleSelect = () => {
+            setSelectedIndex(emblaApi.selectedScrollSnap());
+        };
+
+        const handleScroll = () => {
+            syncOffsets();
+        };
+
+        emblaApi.on("select", handleSelect);
+        emblaApi.on("scroll", handleScroll);
+        emblaApi.on("reInit", handleScroll);
+
+        emblaApi.emit("select");
+        emblaApi.emit("scroll");
+
         return () => {
-            emblaApi.off("scroll", syncOffsets);
-            emblaApi.off("select", syncSelected);
-            emblaApi.off("reInit", syncOffsets);
+            emblaApi.off("select", handleSelect);
+            emblaApi.off("scroll", handleScroll);
+            emblaApi.off("reInit", handleScroll);
         };
     }, [emblaApi, syncOffsets, syncSelected]);
 
-    /* ── Controls ── */
+    useLayoutEffect(() => {
+        emblaApi?.reInit();
+    }, [emblaApi, sizing.cardWidth, sizing.step]);
+
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
     const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
 
     return (
-        <section className="px-4 py-10 sm:px-6 lg:p-20 flex flex-col items-start justify-center min-h-screen overflow-hidden">
-
-            {/* ── Header ── */}
+        <section className="px-4 py-10 sm:px-6 lg:px-12 xl:px-16 lg:py-16 flex flex-col items-start justify-center min-h-screen overflow-hidden">
             <div className="flex flex-col items-start space-y-4 text-foreground w-full">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-youngSerif leading-tight">
                     Our <span className="text-brand">Categories</span>
@@ -111,30 +228,31 @@ export default function CategoryCarousel() {
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-5 mt-4 w-full sm:w-auto">
                     <Link
-                        href="/contact-us"
+                        href="/"
+                        title="Login to FUDDLR wholesale portal"
+                        aria-label="Login to FUDDLR wholesale pet product portal"
                         className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                     >
                         <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                        <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs">
+                        <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs capitalize">
                             Login to browse our range
                         </span>
                     </Link>
                     <Link
-                        href="/contact-us"
-                        className="group relative inline-flex items-center justify- overflow-hidden rounded-full bg-white border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                        title="Apply as a FUDDLR wholesale customer"
+                        aria-label="Apply as a wholesale customer or retailer with FUDDLR"
+                        href="/contact"
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white border border-brand px-4 sm:px-2 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
                     >
                         <span className="absolute inset-0 translate-y-full bg-brand transition-transform duration-500 ease-out group-hover:translate-y-0" />
-                        <span className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs ">
+                        <span className="relative z-10 font-semibold text-brand transition-colors duration-300 group-hover:text-white text-xs capitalize">
                             New customer? Apply Here
                         </span>
                     </Link>
                 </div>
             </div>
 
-            {/* ── Desktop — Coverflow Visual Layer ── */}
-            <div className="hidden md:block w-full mt-20">
-
-                {/* Hidden Embla scroll container — captures drag but renders nothing */}
+            <div className="hidden md:block w-full mt-12">
                 <div
                     ref={emblaRef}
                     className="overflow-hidden"
@@ -143,26 +261,14 @@ export default function CategoryCarousel() {
                 >
                     <div className="flex">
                         {categories.map((cat) => (
-                            <div key={cat.id} className="flex-none" style={{ width: CARD_W }} />
+                            <div key={cat._id} className="flex-none" style={{ width: sizing.cardWidth }} />
                         ))}
                     </div>
                 </div>
 
                 <div
                     className="relative flex items-center justify-center w-full select-none"
-                    style={{ height: 360 }}
-                    onPointerDown={(e) => {
-                        const root = emblaApi?.rootNode();
-                        if (!root) return;
-                        root.dispatchEvent(new PointerEvent("pointerdown", {
-                            clientX: e.clientX,
-                            clientY: e.clientY,
-                            pointerId: e.pointerId,
-                            pointerType: e.pointerType,
-                            bubbles: true,
-                            cancelable: true,
-                        }));
-                    }}
+                    style={{ height: sizing.desktopHeight }}
                 >
                     {categories.map((cat, i) => {
                         const offset = offsets[i] ?? i;
@@ -171,39 +277,34 @@ export default function CategoryCarousel() {
 
                         if (absOffset > 2.7) return null;
 
-                        const imgScale = 0.82 + (1 - 0.82) * Math.max(0, 1 - absOffset);
-
                         return (
                             <div
-                                key={cat.id}
+                                key={cat._id}
                                 style={{
-                                    ...cardStyle(offset),
+                                    ...cardStyle(offset, sizing.cardWidth, sizing.step),
                                     cursor: isActive ? "grab" : "pointer",
                                 }}
                                 onClick={() => {
                                     if (!isActive) scrollTo(i);
                                 }}
                             >
-                                {/* Image */}
                                 <div
                                     className="relative overflow-hidden"
-                                    style={{ height: 260, background: cat.bg }}
+                                    style={{ height: sizing.imageHeight }}
                                 >
                                     <Image
-                                        width={CARD_W}
-                                        height={260}
-                                        src={cat.image}
-                                        alt={cat.name}
+                                        width={sizing.cardWidth}
+                                        height={sizing.imageHeight}
+                                        src={cat?.images?.[0]?.url}
+                                        alt={cat?.name}
+                                        title={cat?.name}
+                                        loading="eager"
                                         draggable={false}
-                                        className='bg-[#ececec]'
+                                        className="bg-[#ffffff]"
                                         style={{
                                             width: "100%",
                                             height: "100%",
-                                            // objectFit: "cover",
-                                            // objectFit: "fill",
                                             objectFit: "contain",
-                                            // transformOrigin: "center top",
-                                            // transform: `scale(${imgScale})`,
                                             transition: "transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)",
                                             pointerEvents: "none",
                                             userSelect: "none",
@@ -211,7 +312,6 @@ export default function CategoryCarousel() {
                                     />
                                 </div>
 
-                                {/* Label */}
                                 <div className="bg-[#f6ffe6] px-4 py-5 text-center">
                                     <p
                                         className="text-[#2d6a4f] tracking-[0.02em] leading-snug"
@@ -230,27 +330,19 @@ export default function CategoryCarousel() {
                 </div>
             </div>
 
-            {/* ── Mobile — Embla native full-width slider ── */}
-            <MobileCarousel selectedIndex={selectedIndex} scrollTo={scrollTo} />
+            <MobileCarousel selectedIndex={selectedIndex} scrollTo={scrollTo} categories={categories} />
 
-            {/* ── Arrow + Dot Controls ── */}
             <div className="flex mx-auto items-center gap-6 mt-16">
-
                 <button
                     onClick={scrollPrev}
                     aria-label="Previous category"
-                    className="w-10 h-10 rounded-full border-2 border-gray-200 bg-white
-                     flex items-center justify-center cursor-pointer text-gray-400
-                     transition-colors duration-200
-                     hover:border-[#4db8d4] hover:text-[#4db8d4]"
+                    className="w-10 h-10 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center cursor-pointer text-gray-400 transition-colors duration-200 hover:border-[#4db8d4] hover:text-[#4db8d4]"
                 >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 18 9 12 15 6" />
                     </svg>
                 </button>
 
-                {/* Dots */}
                 <div className="flex gap-2 items-center">
                     {categories.map((_, i) => (
                         <button
@@ -270,13 +362,9 @@ export default function CategoryCarousel() {
                 <button
                     onClick={scrollNext}
                     aria-label="Next category"
-                    className="w-10 h-10 rounded-full border-2 border-gray-200 bg-white
-                     flex items-center justify-center cursor-pointer text-gray-400
-                     transition-colors duration-200
-                     hover:border-[#4db8d4] hover:text-[#4db8d4]"
+                    className="w-10 h-10 rounded-full border-2 border-gray-200 bg-white flex items-center justify-center cursor-pointer text-gray-400 transition-colors duration-200 hover:border-[#4db8d4] hover:text-[#4db8d4]"
                 >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6" />
                     </svg>
                 </button>
@@ -285,11 +373,12 @@ export default function CategoryCarousel() {
     );
 }
 
-//    MobileCarousel
 function MobileCarousel({
+    categories,
     selectedIndex,
     scrollTo,
 }: {
+    categories: Feature[];
     selectedIndex: number;
     scrollTo: (i: number) => void;
 }) {
@@ -300,31 +389,49 @@ function MobileCarousel({
         duration: 25,
     });
 
-    /* Mirror desktop selection to mobile */
     const prevSelectedRef = useRef(selectedIndex);
+
     useEffect(() => {
         if (!mobileApi || selectedIndex === prevSelectedRef.current) return;
         prevSelectedRef.current = selectedIndex;
         mobileApi.scrollTo(selectedIndex);
     }, [mobileApi, selectedIndex]);
 
+    useEffect(() => {
+        if (!mobileApi) return;
+
+        const syncDesktopSelection = () => {
+            scrollTo(mobileApi.selectedScrollSnap());
+        };
+
+        mobileApi.on("select", syncDesktopSelection);
+        mobileApi.on("reInit", syncDesktopSelection);
+        syncDesktopSelection();
+
+        return () => {
+            mobileApi.off("select", syncDesktopSelection);
+            mobileApi.off("reInit", syncDesktopSelection);
+        };
+    }, [mobileApi, scrollTo]);
+
     return (
         <div className="md:hidden w-full mt-10">
             <div
                 ref={mobileRef}
-                className="overflow-hidden w-full max-w-[320px] mx-auto rounded-2xl shadow-lg"
+                className="overflow-hidden w-full mx-auto max-w-[360px] rounded-2xl shadow-lg"
             >
                 <div className="flex touch-pan-y">
                     {categories.map((cat) => (
-                        <div key={cat.id} className="flex-none w-full">
-                            <div className="h-[250px]" style={{ background: cat.bg }}>
+                        <div key={cat._id} className="flex-none w-full ">
+                            <div className="h-[250px] flex justify-center">
                                 <Image
                                     width={320}
                                     height={250}
-                                    src={cat.image}
+                                    src={cat?.images?.[0]?.url}
                                     alt={cat.name}
+                                    title={cat.name}
                                     draggable={false}
-                                    className="w-full h-full object-cover"
+                                    className="w-auto h-auto object-contain"
                                 />
                             </div>
                             <div className="bg-[#f6ffe6] py-6 text-center">

@@ -1,6 +1,5 @@
 import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function MainAbout() {
     return (
@@ -15,24 +14,26 @@ export default function MainAbout() {
                     {/* Main Image */}
                     <div className="relative rounded-3xl overflow-hidden bg-brand w-3/4 flex justify-center z-20">
                         <Image
+                            src="/Sections/AboutPage.png"
+                            alt="Dog"
+                            width={350}
+                            height={200}
+                            className="max-w-full h-auto"
+                        />
+                        {/* <Image
                             src="/Sections/AboutPage.png" // replace with your image
                             alt="Dog"
                             width={350}
                             height={200}
-                            className="object-contain w-auto h-auto"
-                        />
+                            priority
+                            fetchPriority="high"
+                            className="object-contain w-full sm:w-auto h-auto sm:h-full"
+                        /> */}
                     </div>
 
                     {/* Small Image */}
                     <div className="absolute z-20 bottom-2 md:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-20 sm:size-28 md:size-30  rounded-2xl bg-accent overflow-hidden shadow-lg flex items-center justify-center">
                         <IconPawFilled className="text-white size-10 sm:size-12 md:size-14 -rotate-15" />
-                        {/* <Image
-                            src="/Images/Vector.svg" // replace with your image
-                            alt="Dog playing"
-                            width={100}
-                            height={100}
-                            className="object-cover size-12"
-                        /> */}
                     </div>
                     {/* <div className="absolute top-0 right-0 -translate-y-10 -translate-x-3 size-30 rounded-2xl bg-linear-to-tl from-background to-accent/40 overflow-hidden shadow-lg flex items-center justify-center z-10"></div> */}
                 </div>
@@ -55,8 +56,8 @@ export default function MainAbout() {
                         We work with brands that care about what goes into their products, focusing on real ingredients, thoughtful nutrition, and complete transparency Because when it comes to our pets, only the best will do.
                     </p>
 
-                    
-                <button>
+
+                    {/* <button>
                     <Link
                         href="/contact-us"
                         className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
@@ -66,7 +67,7 @@ export default function MainAbout() {
                             About Us
                         </span>
                     </Link>
-                </button>
+                </button> */}
                 </div>
             </div>
         </section>

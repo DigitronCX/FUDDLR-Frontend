@@ -1,4 +1,4 @@
-// import { IconMail, IconMapPin, IconMapPinFilled, IconPhoneCall } from "@tabler/icons-react";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 

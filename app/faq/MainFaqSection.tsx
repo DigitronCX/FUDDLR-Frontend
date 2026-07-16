@@ -2,7 +2,6 @@
 
 import { IconChevronDownFilled, IconQuestionMark } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 
 const faqData = [
@@ -57,7 +56,7 @@ const item = {
     },
 };
 
-const FaqSection = () => {
+const MainFaqSection = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
     const toggleShow = (id: number) => {
@@ -156,7 +155,7 @@ const FaqSection = () => {
                         );
                     })}
                 </motion.div>
-                <div className="flex w-full gap-8">
+                {/* <div className="flex w-full gap-8">
                     <button>
                         <Link
                             href="/contact-us"
@@ -179,11 +178,11 @@ const FaqSection = () => {
                             </span>
                         </Link>
                     </button>
-                </div>
+                </div> */}
             </motion.section>
 
         </div>
     );
 };
 
-export default FaqSection;
+export default MainFaqSection;

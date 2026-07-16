@@ -1,14 +1,36 @@
-"use client"
-import BrandMarquee from '@/components/BrandMarquee'
-import SectionAbout from './Main/SectionAbout'
+import dynamic from 'next/dynamic'
 import SectionHero from './Main/SectionHero'
+// import CarouselSection from './Main/CarouselSection'
 import SectionRetailers from './Main/SectionRetailers'
-import SectionFuddlerBrands from './Main/SectionBrands'
 import SectionCTA from './Main/SectionCTA'
-import CarouselSection from './Main/CarouselSection'
-import SectionSteps from './Main/SectionSteps'
-import MainCTA from './Main/MainCTA'
-import SectionHowWorks from './Main/SectionHowWorks'
+import { createPageMetadata } from './seo'
+// import SectionFuddlerBrands from './Main/SectionBrands'
+// import SectionAbout from './Main/SectionAbout'
+// import SectionSteps from './Main/SectionSteps'
+// import SectionHowWorks from './Main/SectionHowWorks'
+
+export const metadata = createPageMetadata({
+  title: "Wholesale Pet Supplies for Retailers",
+  description:
+    "Discover FUDDLR's curated pet supply range, wholesale pricing, and retail support for growing pet businesses.",
+  path: "/",
+});
+
+const CarouselSection = dynamic(() => import("./Main/CarouselSection"), {
+  loading: () => <div className="min-h-screen" />,
+});
+const SectionFuddlerBrands = dynamic(() => import("./Main/SectionBrands"), {
+  loading: () => <div className="min-h-screen" />,
+});
+const SectionAbout = dynamic(() => import("./Main/SectionAbout"), {
+  loading: () => <div className="min-h-screen" />,
+});
+const SectionHowWorks = dynamic(() => import("./Main/SectionHowWorks"), {
+  loading: () => <div className="min-h-screen" />,
+});
+const SectionSteps = dynamic(() => import("./Main/SectionSteps"), {
+  loading: () => <div className="min-h-screen" />,
+});
 
 const page = () => {
   return (
@@ -20,7 +42,6 @@ const page = () => {
       <SectionFuddlerBrands />
       <SectionAbout />
       <SectionCTA />
-      {/* <MainCTA /> */}
       <SectionHowWorks />
     </main>
   )

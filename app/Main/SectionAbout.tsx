@@ -12,8 +12,9 @@ export default function SectionAbout() {
                     {/* Main Image */}
                     <div className="relative rounded-3xl overflow-hidden z-20 w-3/4 flex justify-center">
                         <Image
-                            src="/Sections/About-One.png" // replace with your image
-                            alt="Dog"
+                            src="/Sections/About-One.webp" // replace with your image
+                            alt="Happy dog representing premium pet nutrition and care from FUDDLR"
+                            title="About FUDDLR - Premium Pet Supplies Distributor"
                             width={400}
                             height={400}
                             className="object-contain w-auto h-auto"
@@ -24,7 +25,8 @@ export default function SectionAbout() {
                     <div className="absolute bottom-5 sm:bottom-10 lg:bottom-0 left-0 translate-y-1/4 md:-translate-x-3 size-28 sm:size-34 md:size-42 rounded-2xl overflow-hidden z-30">
                         <Image
                             src="/Sections/About-Two.png" // replace with your image
-                            alt="Dog playing"
+                            alt="Dog enjoying healthy and premium pet products"
+                            title="FUDDLR Pet Care and Nutrition"
                             width={100}
                             height={100}
                             className="object-cover w-full h-auto"
@@ -37,7 +39,7 @@ export default function SectionAbout() {
                 {/* RIGHT: Content */}
                 <div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl mb-6 text-secondary font-youngSerif">
-                        About <span className="text-green-500">FUDDLR</span>
+                        About <span className="text-brand">FUDDLR</span>
                     </h2>
 
                     <p className="text-primary mb-4 font-light leading-relaxed text-sm sm:text-base">
@@ -61,8 +63,9 @@ export default function SectionAbout() {
                             <p className="text-sm sm:text-base text-secondary font-youngSerif">Competitive Pricing</p>
                         </div>
                     </div>
-                    <Link
-                        href="/contact-us"
+                    <Link title="Learn about FUDDLR pet supplies distribution"
+                        aria-label="Learn about FUDDLR pet supplies distribution"
+                        href="/about"
                         className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
                     >
                         <span

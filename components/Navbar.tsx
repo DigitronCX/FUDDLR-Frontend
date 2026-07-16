@@ -1,18 +1,16 @@
 "use client"
-import { IconMenu, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 const PagesNav = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Products", path: "/product" },
-    { name: "Our Brands", path: "/our-brands" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", title: "Go to FUDDLR Home Page" },
+    // { name: "Products", path: "/product", title: "View FUDDLR Products" },
+    { name: "Our Brands", path: "/our-brands", title: "Explore FUDDLR Brand Partnerships" },
+    { name: "Why Fuddlr", path: "/about", title: "Learn About FUDDLR – Pet Nutrition & Distribution" },
+    { name: "Contact", path: "/contact", title: "Contact FUDDLR for Brand Partnership" },
 ];
-
-
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -23,7 +21,15 @@ const Navbar = () => {
 
                 {/* ---------- Logo ---------- */}
                 <section className="text-start px-2 sm:px-0 md:text-left">
-                    <Image src="/Logo/Logo.png" alt="Logo" width={200} height={200} className="w-32 h-auto object-contain" />
+                    {/* <Image src="/Logo/Logo.png" alt="Logo" width={200} height={200} className="w-32 h-auto object-contain" /> */}
+                    <Image
+                        title="FUDDLR - Healthy Pet Food, Nutrition and Pet Care"
+                        alt="FUDDLR logo - Healthy pet food and nutrition products"
+                        src="/Logo/Logo.png"
+                        width={128}
+                        height={128}
+                        className="object-contain"
+                    />
                     {/* <h3 className="text-base sm:text-2xl uppercase font-thin sm:tracking-widest">
                         Link City Whiskey
                     </h3> */}
@@ -33,7 +39,7 @@ const Navbar = () => {
                     <ul className="flex gap-10 text-sm capitalize">
                         {PagesNav.map((page, index) => (
                             <li key={index}>
-                                <Link href={page.path} className="text-foreground hover:text-brand transition-colors">{page.name}</Link>
+                                <Link title={page.title} aria-label={page.title} href={page.path} className="text-foreground hover:text-brand transition-colors">{page.name}</Link>
                             </li>
                         ))}
                     </ul>
@@ -42,7 +48,7 @@ const Navbar = () => {
                 {/* ---------- Contact Btn ---------- */}
                 <section className="hidden md:flex items-center gap-3">
                     <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand/20 border border-brand px-4 sm:px-8 py-3 transition-all duration-300 hover:-translate-y-1"
                     >
                         <span
@@ -56,7 +62,7 @@ const Navbar = () => {
                         </span>
                     </Link>
                     <Link
-                        href="/contact-us"
+                        href="/contact"
                         className="group relative inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-8 py-3 transition-all duration-300 hover:-translate-y-1"
                     >
                         <span
@@ -79,7 +85,7 @@ const Navbar = () => {
                     {menuOpen ? (
                         <IconX className="size-5" />
                     ) : (
-                        <IconMenu className="size-5" />
+                        <IconMenu2 className="size-5" />
                     )}
                 </button>
             </div>
@@ -113,13 +119,13 @@ const Navbar = () => {
 
                 {/* ---------- Contact Btn ---------- */}
                 <section className="flex w-full px-8 md:flex-row justify-start items-start gap-3">
-                    <Link href="/contact-us">
+                    <Link href="/contact">
                         <button className="px-5 text-xs sm:text-xs sm:px-3 flex gap-2 py-3 border font-medium bg-transparent rounded-3xl cursor-pointer text-background hover:text-white hover:bg-brand transition-colors">
                             Brands Apply Here
                         </button>
                     </Link>
                     {/* <span className="hidden md:block border-l h-6 border-gray-700"></span> */}
-                    <Link href="/contact-us">
+                    <Link href="/contact">
                         <button className="px-5 text-xs sm:text-xs sm:px-3 flex gap-2 py-3 font-medium bg-background/40 rounded-3xl cursor-pointer text-white hover:text-secondary hover:bg-background transition-colors">
                             Retailers Sign in
                         </button>

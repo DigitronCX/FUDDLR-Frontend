@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import ContactSection from "./ContactForm";
 import FaqSection from "../about/FaqSection";
 

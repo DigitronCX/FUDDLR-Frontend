@@ -1,5 +1,3 @@
-// components/BrandsSection.jsx
-
 import { IconCircleCheck } from "@tabler/icons-react";
 import Image from "next/image";
 

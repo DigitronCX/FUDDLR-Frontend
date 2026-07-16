@@ -95,7 +95,7 @@ const products = [
 
 export default function Home() {
     return (
-        <main className="min-h-screen px-14 py-20 relative overflow-hidden">
+        <main className="min-h-screen md:px-14 px-4 md:py-20 py-10 relative overflow-hidden">
             {/*Background Blobs*/}
             {/* <div className="z-0">
                 <div className="absolute top-5 left-10 size-14 bg-accent rounded-xl opacity-20 " />
@@ -112,22 +112,22 @@ export default function Home() {
                     <p className="text-xs tracking-[5px] text-primary uppercase">
                         Our Product
                     </p>
-                    <h1 className="text-5xl mt-2 text-secondary font-youngSerif">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl mt-2 text-secondary font-youngSerif">
                         Explore Our{" "}
                         <span className="text-brand">Product</span> Range
                     </h1>
-                    <p className="text-primary mt-3 max-w-3xl mx-auto">
+                    <p className="text-xs sm:text-sm md:text-base text-primary mt-3 max-w-3xl mx-auto">
                         Browse through our carefully organized product range, where items are
                         grouped by categories and brands for a seamless shopping experience.
                     </p>
                 </div>
 
 
-                <div className="grid grid-cols-[1fr_2fr] gap-10">
+                <div className="grid lg:grid-cols-[1fr_2fr] grid-cols-1 gap-10">
                     {/* Sidebar */}
                     <div className="flex flex-col gap-20">
                         <Sidebar />
-                        <div className="relative mt-20 flex justify-center md:justify-center w-full">
+                        <div className="relative mt-20 hidden lg:flex justify-center md:justify-center w-full">
 
                             {/* Main Image */}
                             <div className="relative rounded-3xl overflow-hidden bg-brand to-accent/50 w-3/4 flex justify-center z-20">
@@ -162,7 +162,7 @@ export default function Home() {
                             12 Item Show
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                             {products.map((product) => (
                                 <ProductCard key={product.id} product={product} />
                             ))}

@@ -19,17 +19,30 @@ export default function Sidebar() {
     return (
         <div>
             {/* Search */}
-            <div className="flex justify-center gap-3 mb-10">
+            <div className="flex flex-col md:flex-row justify-center gap-3 mb-10">
                 <input
                     type="text"
                     placeholder="Search..."
                     className="w-80 px-4 py-2 placeholder:text-gray-400 rounded-full border border-gray-200 outline-none focus:border-secondary focus:ring-1 focus:ring-secondary"
                 />
-                <button className="px-6 py-2 border border-green-500 text-green-500 rounded-full hover:bg-green-500 hover:text-white transition">
+                <button
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand border border-brand px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 cursor-pointer"
+                    >
+                        <span
+                            className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"
+                        ></span>
+
+                        <span
+                            className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-brand text-xs sm:text-xs"
+                        >
+                            SEARCH
+                        </span>
+                    </button>
+                {/* <button className="px-6 py-1.5 sm:py-2 border border-green-500 text-green-500 rounded-full hover:bg-green-500 hover:text-white transition w-fit text-xs md:text-base">
                     SEARCH
-                </button>
+                </button> */}
             </div>
-            <h2 className="text-2xl mb-4 text-secondary font-youngSerif">Brands</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl mb-4 text-secondary font-youngSerif">Brands</h2>
 
             <div className="flex flex-wrap gap-3">
                 {brands.map((brand, i) => (
@@ -47,7 +60,7 @@ export default function Sidebar() {
                     </button>
                 ))}
             </div>
-            <h2 className="text-2xl my-4 text-secondary font-youngSerif">Categories</h2>
+            <h2 className="text-lg sm:text-xl md:text-2xl my-4 text-secondary font-youngSerif">Categories</h2>
 
             <div className="flex flex-wrap gap-3">
                 {categories.map((brand, i) => (
