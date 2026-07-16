@@ -55,7 +55,7 @@ export default function ContactSection() {
                             </label>
                             <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
                                 <option>Select a Country</option>
-                                <option>USA</option>
+                                <option>Australia</option>
                                 <option>UK</option>
                                 <option>Canada</option>
                             </select>
