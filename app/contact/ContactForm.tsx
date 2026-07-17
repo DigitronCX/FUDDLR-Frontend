@@ -1,9 +1,47 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 // components/ContactSection.jsx
 export default function ContactSection() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        country: '',
+        message: ''
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const form = new FormData(e.currentTarget);
+            form.append("access_key", "81ffe91e-f557-4ba7-becc-f55296fc6479");
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: form,
+            });
+            setFormData({
+                name: '',
+                email: '',
+                country: '',
+                message: ''
+            });
+            alert("Form submitted successfully!");
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+
+    };
     return (
         <section className="px-4 py-10 sm:px-6 lg:p-20 relative overflow-hidden">
 
@@ -23,13 +61,17 @@ export default function ContactSection() {
                     </p>
                     <h3 className="text-2xl sm:text-3xl font-medium mb-6 text-secondary font-youngSerif">Contact Form</h3>
 
-                    <form className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         {/* Name */}
                         <div>
                             <label className="block text-sm text-secondary font-medium mb-1">
                                 Name <span className="text-red-500">*</span>
                             </label>
                             <input
+                                onChange={handleChange}
+                                value={formData.name}
+                                id="name"
+                                name='name'
                                 type="text"
                                 placeholder="e.g. Enter your first name"
                                 className="inp-primary"
@@ -42,6 +84,10 @@ export default function ContactSection() {
                                 Email <span className="text-red-500">*</span>
                             </label>
                             <input
+                                onChange={handleChange}
+                                value={formData.email}
+                                id="email"
+                                name='email'
                                 type="email"
                                 placeholder="e.g. Enter your best email"
                                 className="inp-primary"
@@ -53,7 +99,10 @@ export default function ContactSection() {
                             <label className="block text-sm  text-secondary font-medium mb-1">
                                 Country <span className="text-red-500">*</span>
                             </label>
-                            <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
+                            <select onChange={handleChange}
+                                value={formData.country}
+                                id="country"
+                                name='country' className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
                                 <option>Select a Country</option>
                                 <option>Australia</option>
                                 <option>New Zealand</option>
@@ -69,7 +118,10 @@ export default function ContactSection() {
                                 Message
                             </label>
                             <textarea
-                                rows={5}
+                                onChange={handleChange}
+                                value={formData.message}
+                                id="message"
+                                name='message' rows={5}
                                 placeholder="Write your message"
                                 className="inp-primary"
                             ></textarea>
@@ -77,7 +129,7 @@ export default function ContactSection() {
 
                         <div className="text-secondary flex gap-2">
                             <input type="checkbox" name="checkbox" id="checkbox" className="border rounded-none border-gray-500" />
-                            <label htmlFor="checkbox" className="text-sm">Terms and Conditions <span className="text-brand">Privacy Policy </span><span className="text-red-500">*</span></label>
+                            <label htmlFor="checkbox" className="text-sm">Terms and Conditions <a href="/privacy-policy" className="text-brand">Privacy Policy </a><span className="text-red-500">*</span></label>
                         </div>
                         <button
                             type="submit"
