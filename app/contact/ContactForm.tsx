@@ -11,7 +11,7 @@ export default function ContactSection() {
         country: '',
         message: ''
     });
-
+    const [agreed, setAgreed] = useState(false);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({
@@ -21,6 +21,10 @@ export default function ContactSection() {
     }
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!agreed) {
+            alert("Please accept the Privacy Policy before submitting.");
+            return;
+        }
         try {
             const form = new FormData(e.currentTarget);
             form.append("access_key", "81ffe91e-f557-4ba7-becc-f55296fc6479");
@@ -128,7 +132,14 @@ export default function ContactSection() {
                         </div>
 
                         <div className="text-secondary flex gap-2">
-                            <input type="checkbox" name="checkbox" id="checkbox" className="border rounded-none border-gray-500" />
+                            {/* <input type="checkbox" name="checkbox" id="checkbox" className="border rounded-none border-gray-500" /> */}
+                            <input
+                                type="checkbox"
+                                id="checkbox"
+                                checked={agreed}
+                                onChange={(e) => setAgreed(e.target.checked)}
+                                className="border rounded-none border-gray-500"
+                            />
                             <label htmlFor="checkbox" className="text-sm">Terms and Conditions <a href="/privacy-policy" className="text-brand">Privacy Policy </a><span className="text-red-500">*</span></label>
                         </div>
                         <button
