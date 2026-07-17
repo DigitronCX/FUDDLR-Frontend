@@ -1,9 +1,65 @@
 "use client";
 import { IconPawFilled } from "@tabler/icons-react";
 import Image from "next/image";
+import { useState } from "react";
 
 // components/ContactSection.jsx
 export default function BrandForm() {
+    const [formData, setFormData] = useState({
+        brandName: '',
+        website: '',
+        fullName: '',
+        email: '',
+        contact: '',
+        yearsInBusiness: '',
+        message: '',
+        currentlyStocked: ''
+    });
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!formData.brandName || !formData.fullName || !formData.email || !formData.contact || !formData.yearsInBusiness || !formData.website || !formData.currentlyStocked) {
+            alert("Please fill all the required fields.");
+            return;
+        }
+        try {
+            const form = new FormData();
+            form.append("access_key", "57177dda-3016-4f3c-bb75-0f38a1d2a324");
+            // form.append("access_key", "81ffe91e-f557-4ba7-becc-f55296fc6479");
+            form.append("subject", `Fuddlr Brand Inquiry | ${formData.fullName}`);
+            form.append("from_name", formData.fullName);
+
+            form.append("Brand Name", formData.brandName);
+            form.append("Website / Instagram", formData.website);
+            form.append("Full Name", formData.fullName);
+            form.append("Email", formData.email);
+            form.append("Contact", formData.contact);
+            form.append("Years in Business", formData.yearsInBusiness);
+            form.append("Currently Stocked", formData.currentlyStocked);
+            form.append("Message", formData.message);
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: form,
+            });
+            const data = await response.json();
+            console.log('datagethis', data)
+            if (data?.success) {
+                alert("Form submitted successfully!");
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
+    };
     return (
         <section className="py-10 px-6 lg:px-20 relative overflow-hidden">
             {/* Background blobs */}
@@ -31,7 +87,7 @@ export default function BrandForm() {
                         </p>
                     </div>
 
-                    <form className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {/* Name */}
                             <div>
@@ -40,7 +96,10 @@ export default function BrandForm() {
                                 </label>
                                 <input
                                     type="text"
-                                    id="brandName"
+                                    name="brandName"
+                                    data-label="Brand Name"
+                                    onChange={handleChange}
+                                    value={formData.brandName}
                                     placeholder="e.g. Enter your brand name"
                                     className="inp-primary"
                                 />
@@ -52,6 +111,10 @@ export default function BrandForm() {
                                 </label>
                                 <input
                                     type="text"
+                                    name="website"
+                                    data-label="Website/Instagram"
+                                    onChange={handleChange}
+                                    value={formData.website}
                                     placeholder="e.g. Website url or instagram link"
                                     className="inp-primary"
                                 />
@@ -65,7 +128,10 @@ export default function BrandForm() {
                                 </label>
                                 <input
                                     type="text"
-                                    id='fullName'
+                                    name='fullName'
+                                    data-label="Full Name"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
                                     placeholder="e.g. Enter your full name"
                                     className="inp-primary"
                                 />
@@ -77,6 +143,10 @@ export default function BrandForm() {
                                     Email <span className="text-red-500">*</span>
                                 </label>
                                 <input
+                                    name='email'
+                                    data-label="Email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     type="email"
                                     placeholder="e.g. Enter your best email"
                                     className="inp-primary"
@@ -91,6 +161,10 @@ export default function BrandForm() {
                                 </label>
                                 <input
                                     type="tel"
+                                    name='contact'
+                                    data-label="Contact"
+                                    value={formData.contact}
+                                    onChange={handleChange}
                                     placeholder="e.g. Enter your phone no"
                                     className="inp-primary"
                                 />
@@ -101,7 +175,10 @@ export default function BrandForm() {
                                 <label className="block text-secondary text-sm font-medium mb-1">
                                     Years in Business <span className="text-red-500">*</span>
                                 </label>
-                                <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
+                                <select onChange={handleChange}
+                                    value={formData.yearsInBusiness}
+                                    data-label="Years in Business"
+                                    name='yearsInBusiness' className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
                                     <option>Select a Year</option>
                                     <option>Startup (Less than 1 year)</option>
                                     <option>1-2 Year</option>
@@ -118,6 +195,10 @@ export default function BrandForm() {
                             </label>
                             <textarea
                                 rows={5}
+                                name='message'
+                                value={formData.message}
+                                onChange={handleChange}
+                                data-label="Message"
                                 placeholder="Write your message"
                                 className="inp-primary"
                             ></textarea>
@@ -129,13 +210,20 @@ export default function BrandForm() {
                             </label>
                             <div className="flex items-center gap-5">
                                 <label htmlFor="" className='flex items-center gap-2'>
-                                    <input type="radio" name="stockedInRetail" id="stockedInRetail" value="yes" className='accent-brand size-3' />
+                                    <input type="radio" onChange={handleChange}
+                                        value={"Yes"}
+                                        name='currentlyStocked'
+                                        data-label="Currently in stocked"
+                                        className='accent-brand size-3' />
                                     <p className='text-sm text-secondary'>
                                         Yes
                                     </p>
                                 </label>
                                 <label htmlFor="" className='flex items-center gap-2'>
-                                    <input type="radio" name="stockedInRetail" id="stockedInRetail" value="no" className='accent-brand size-3' />
+                                    <input type="radio" onChange={handleChange}
+                                        value={"No"}
+                                        data-label="Currently in stocked"
+                                        name="currentlyStocked" className='accent-brand size-3' />
                                     <p className='text-sm text-secondary'>
                                         No
                                     </p>

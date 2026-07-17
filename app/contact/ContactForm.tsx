@@ -31,7 +31,6 @@ export default function ContactSection() {
         }
         try {
             const form = new FormData(e.currentTarget);
-            // form.append("access_key", "81ffe91e-f557-4ba7-becc-f55296fc6479"); 
             form.append("access_key", "57177dda-3016-4f3c-bb75-0f38a1d2a324");
             form.append("subject", "New Contact Inquiry | Fuddler");
             form.append("from_name", formData.name);
