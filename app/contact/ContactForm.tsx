@@ -50,7 +50,7 @@ export default function ContactSection() {
 
                         {/* Country */}
                         <div className="text-secondary">
-                            <label className="block text-secondary text-sm font-medium mb-1">
+                            <label className="block text-sm  text-secondary font-medium mb-1">
                                 Country <span className="text-red-500">*</span>
                             </label>
                             <select className="w-full border border-brand rounded-lg px-2 py-2 text-secondary text-xs placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/400">
@@ -89,7 +89,7 @@ export default function ContactSection() {
                             </span>
                         </button>
 
-                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-2 mt-4 w-full sm:w-auto">
+                        {/* <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-2 mt-4 w-full sm:w-auto">
                             <Link
                                 href="/contact-us"
                                 className="group relative w-full inline-flex items-center justify-center overflow-hidden bg-brand rounded-full border border-brand px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
@@ -108,7 +108,7 @@ export default function ContactSection() {
                                     Apply Now Brands
                                 </span>
                             </Link>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
 
