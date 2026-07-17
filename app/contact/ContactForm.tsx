@@ -149,7 +149,7 @@ export default function ContactSection() {
                         <button
                             type="submit"
                             disabled={!agreed}
-                            className="w-full group relative inline-flex items-center justify-center overflow-hidden bg-secondary rounded-full border border-secondary px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30"
+                            className="w-full group relative inline-flex items-center justify-center overflow-hidden bg-secondary rounded-full border border-secondary px-4 sm:px-6 lg:px-8 py-3 md:py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/30 cursor-pointer"
                         >
                             <span className="absolute inset-0 translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0" />
                             <span className="relative z-10 font-semibold text-white transition-colors duration-300 group-hover:text-secondary text-xs">
