@@ -25,6 +25,10 @@ export default function ContactSection() {
             alert("Please accept the Privacy Policy before submitting.");
             return;
         }
+        if (!formData.name || !formData.email || !formData.country || !formData.message) {
+            alert("Please fill all the required fields.");
+            return;
+        }
         try {
             const form = new FormData(e.currentTarget);
             form.append("access_key", "81ffe91e-f557-4ba7-becc-f55296fc6479");
