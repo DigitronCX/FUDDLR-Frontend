@@ -49,9 +49,18 @@ export default function BrandForm() {
                 body: form,
             });
             const data = await response.json();
-            console.log('datagethis', data)
             if (data?.success) {
-                alert("Form submitted successfully!");
+                setFormData({
+                    brandName: '',
+                    website: '',
+                    fullName: '',
+                    email: '',
+                    contact: '',
+                    yearsInBusiness: '',
+                    message: '',
+                    currentlyStocked: ''
+                })
+                alert("Thank you for your inquiry! We will get back to you soon.");
             } else {
                 alert(data.message);
             }

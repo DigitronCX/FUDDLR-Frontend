@@ -40,8 +40,13 @@ export default function ContactSection() {
                 body: form,
             });
             const data = await response.json();
-            console.log('datagethis', data)
             if (data?.success) {
+                setFormData({
+                    name: '',
+                    email: '',
+                    country: '',
+                    message: ''
+                });
                 alert("Form submitted successfully!");
             } else {
                 alert(data.message);
